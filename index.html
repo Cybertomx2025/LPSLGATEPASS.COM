@@ -102,6 +102,10 @@
         .btn-remove-row { background: none; border: none; color: #c0392b; cursor: pointer; font-size: 14px; padding: 2px 5px; border-radius: 3px; transition: background 0.2s; }
         .btn-remove-row:hover { background: rgba(192,57,43,0.1); }
 
+        .btn-view-all-files { background: linear-gradient(135deg, #9b59b6, #8e44ad); color: #fff; font-weight: 700; font-size: 13px; padding: 10px 20px; border: none; border-radius: 8px; cursor: pointer; display: inline-flex; align-items: center; gap: 8px; transition: all 0.3s; font-family: 'Inter', sans-serif; position: relative; }
+        .btn-view-all-files:hover { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(155,89,182,0.35); }
+        .btn-view-all-files .file-count-dot { background: #fff; color: #8e44ad; font-size: 10px; font-weight: 800; padding: 1px 7px; border-radius: 10px; min-width: 18px; text-align: center; }
+
         .section-divider { display: flex; align-items: center; gap: 8px; margin: 16px 0 10px; }
         .section-divider::after { content: ''; flex: 1; height: 1px; background: var(--border); }
         .section-divider span { font-size: 11px; font-weight: 700; color: var(--accent); text-transform: uppercase; letter-spacing: 0.1em; white-space: nowrap; }
@@ -165,6 +169,47 @@
         .attach-count-badge { display: inline-flex; align-items: center; gap: 4px; background: rgba(155,89,182,0.12); color: #bb8fce; border: 1px solid rgba(155,89,182,0.25); padding: 2px 8px; border-radius: 10px; font-size: 11px; font-weight: 700; cursor: pointer; transition: all 0.2s; }
         .attach-count-badge:hover { background: rgba(155,89,182,0.2); border-color: rgba(155,89,182,0.4); }
 
+        /* All Files Modal Styles */
+        .all-files-pass-group { background: var(--input-bg); border: 1px solid var(--border); border-radius: 12px; overflow: hidden; margin-bottom: 16px; animation: fadeIn 0.3s ease; }
+        .all-files-pass-header { display: flex; align-items: center; justify-content: space-between; padding: 14px 18px; background: var(--emerald-deep); border-bottom: 1px solid var(--emerald); cursor: pointer; transition: background 0.2s; }
+        .all-files-pass-header:hover { background: var(--emerald); }
+        .all-files-pass-header-left { display: flex; align-items: center; gap: 12px; }
+        .all-files-pass-sr { font-family: 'Courier New', monospace; font-weight: 800; font-size: 15px; color: var(--accent); }
+        .all-files-pass-info { font-size: 13px; color: #a8e6c1; }
+        .all-files-pass-info small { color: #6b9b7d; font-weight: 400; }
+        .all-files-pass-file-count { background: var(--accent); color: #1a1a1a; font-size: 11px; font-weight: 800; padding: 3px 10px; border-radius: 10px; }
+        .all-files-pass-toggle { color: #a8e6c1; font-size: 14px; transition: transform 0.3s; }
+        .all-files-pass-toggle.collapsed { transform: rotate(-90deg); }
+        .all-files-pass-body { padding: 16px; display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 12px; }
+        .all-files-pass-body.collapsed { display: none; }
+        .all-file-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 10px; overflow: hidden; transition: all 0.2s; position: relative; }
+        .all-file-card:hover { border-color: var(--accent); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,0.3); }
+        .all-file-card-thumb { width: 100%; aspect-ratio: 4/3; object-fit: cover; background: #1a1d1a; display: flex; align-items: center; justify-content: center; overflow: hidden; }
+        .all-file-card-thumb img { width: 100%; height: 100%; object-fit: cover; }
+        .all-file-card-thumb .file-icon-big { font-size: 40px; color: var(--muted); opacity: 0.4; }
+        .all-file-card-body { padding: 10px 12px; }
+        .all-file-card-name { font-size: 12px; font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+        .all-file-card-meta { font-size: 10px; color: var(--muted); margin-top: 3px; display: flex; align-items: center; gap: 8px; }
+        .all-file-card-actions { display: flex; gap: 4px; margin-top: 8px; }
+        .all-file-card-actions .btn-icon { width: 28px; height: 28px; font-size: 11px; }
+        .all-file-card-delete-confirm { position: absolute; inset: 0; background: rgba(0,0,0,0.88); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px; z-index: 5; border-radius: 10px; animation: fadeIn 0.2s ease; }
+        .all-file-card-delete-confirm p { font-size: 12px; font-weight: 600; color: var(--fg); text-align: center; padding: 0 12px; }
+        .all-file-card-delete-confirm .confirm-btns { display: flex; gap: 8px; }
+        .all-file-card-delete-confirm .btn-sm { padding: 6px 16px; border-radius: 6px; font-size: 12px; font-weight: 600; cursor: pointer; border: none; font-family: 'Inter', sans-serif; transition: all 0.2s; }
+        .all-file-card-delete-confirm .btn-sm.yes { background: var(--red-accent); color: #fff; }
+        .all-file-card-delete-confirm .btn-sm.yes:hover { background: #e74c3c; }
+        .all-file-card-delete-confirm .btn-sm.no { background: var(--border); color: var(--fg); }
+        .all-file-card-delete-confirm .btn-sm.no:hover { background: var(--muted); }
+
+        .standalone-section { margin-bottom: 16px; }
+        .standalone-header { display: flex; align-items: center; justify-content: space-between; padding: 14px 18px; background: rgba(155,89,182,0.15); border: 1px solid rgba(155,89,182,0.3); border-radius: 12px; cursor: pointer; transition: all 0.2s; margin-bottom: 0; }
+        .standalone-header:hover { background: rgba(155,89,182,0.25); }
+        .standalone-header-left { display: flex; align-items: center; gap: 12px; }
+        .standalone-header i { font-size: 18px; color: #bb8fce; }
+        .standalone-header span { font-size: 14px; font-weight: 700; color: #bb8fce; }
+        .standalone-body { padding: 16px 0 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 12px; }
+        .standalone-body.collapsed { display: none; }
+
         .preview-overlay { position: fixed; inset: 0; z-index: 2000; background: rgba(0,0,0,0.92); display: none; align-items: center; justify-content: center; padding: 20px; cursor: zoom-out; }
         .preview-overlay.show { display: flex; }
         .preview-overlay img { max-width: 95vw; max-height: 90vh; border-radius: 8px; box-shadow: 0 20px 60px rgba(0,0,0,0.5); }
@@ -190,6 +235,8 @@
             .reg-table thead th, .reg-table tbody td { padding: 8px 6px; }
             .search-box { width: 100%; }
             .edit-items-row { grid-template-columns: 1fr 60px 50px 80px 30px; font-size: 11px; }
+            .btn-view-all-files { font-size: 12px; padding: 8px 14px; }
+            .all-files-pass-body { grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); }
         }
         @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; } }
     </style>
@@ -211,13 +258,20 @@
                 <div style="font-size: 9px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.15em;">Limburg Power Solutions Ltd</div>
             </div>
         </div>
-        <div style="display: flex;">
-            <button class="tab-btn active" id="tabCreate" onclick="switchTab('create')">
-                <i class="fas fa-plus-circle"></i> Create Pass
-            </button>
-            <button class="tab-btn" id="tabRegistry" onclick="switchTab('registry')">
-                <i class="fas fa-list-ul"></i> All Passes
-                <span class="tab-badge" id="regCount">0</span>
+        <div style="display: flex; align-items: center; gap: 10px; flex-wrap: wrap;">
+            <div style="display: flex;">
+                <button class="tab-btn active" id="tabCreate" onclick="switchTab('create')">
+                    <i class="fas fa-plus-circle"></i> Create Pass
+                </button>
+                <button class="tab-btn" id="tabRegistry" onclick="switchTab('registry')">
+                    <i class="fas fa-list-ul"></i> All Passes
+                    <span class="tab-badge" id="regCount">0</span>
+                </button>
+            </div>
+            <button class="btn-view-all-files" onclick="openAllFilesModal()" title="View all gate passes & uploaded files">
+                <i class="fas fa-folder-open"></i>
+                <span>All Files</span>
+                <span class="file-count-dot" id="totalFileCountDot">0</span>
             </button>
         </div>
     </div>
@@ -405,7 +459,7 @@
     </div>
 </div>
 
-<!-- ======================== UPLOAD MODAL (All File Types) ======================== -->
+<!-- ======================== UPLOAD MODAL ======================== -->
 <div class="modal-overlay" id="uploadModal">
     <div class="modal-box" style="max-width:560px;">
         <button class="modal-close" onclick="closeUploadModal()"><i class="fas fa-xmark"></i></button>
@@ -414,27 +468,20 @@
             <h3 style="font-size:20px;font-weight:800;">Upload Files</h3>
             <p style="font-size:13px;color:var(--muted);margin-top:6px;">Upload scanned gate passes, photos, PDFs or any document</p>
         </div>
-
-        <!-- Link to pass -->
         <div style="margin-bottom:16px;">
             <label class="form-label">Link to Gate Pass (optional)</label>
             <select class="form-input" id="uploadPassSelect" style="cursor:pointer;">
                 <option value="">-- No link (standalone upload) --</option>
             </select>
         </div>
-
         <div class="upload-zone" id="uploadZone" onclick="document.getElementById('uploadFileInput').click()">
             <i class="fas fa-file-arrow-up" style="display:block;"></i>
             <p style="font-size:14px;font-weight:600;color:var(--fg);margin-bottom:4px;">Click to browse or drag & drop</p>
             <p style="font-size:12px;color:var(--muted);">JPG, PNG, PDF, DOCX, or any file type</p>
         </div>
         <input type="file" id="uploadFileInput" multiple accept="*/*" style="display:none;" onchange="handleFileSelect(event)">
-
-        <!-- Selected files list -->
-        <div id="uploadFileList" style="display:none;margin-top:16px;display:flex;flex-direction:column;gap:8px;"></div>
-
+        <div id="uploadFileList" style="display:none;margin-top:16px;flex-direction:column;gap:8px;"></div>
         <div id="uploadResult" style="display:none;margin-top:18px;padding:14px;border-radius:8px;border:1px solid var(--border);background:var(--input-bg);"></div>
-
         <div style="margin-top:18px;display:flex;gap:10px;justify-content:flex-end;">
             <button class="btn-secondary" onclick="closeUploadModal()"><i class="fas fa-xmark"></i> Close</button>
             <button class="btn-download" id="uploadSaveBtn" onclick="uploadSelectedFiles()" style="display:none;padding:10px 20px;font-size:13px;"><i class="fas fa-check"></i> Upload Files</button>
@@ -453,6 +500,33 @@
             </div>
         </div>
         <div style="padding:20px;max-height:65vh;overflow-y:auto;" class="form-scroll" id="attachGrid"></div>
+    </div>
+</div>
+
+<!-- ======================== ALL FILES MODAL (NEW) ======================== -->
+<div class="modal-overlay" id="allFilesModal">
+    <div class="modal-box" style="max-width:900px;padding:0;overflow:hidden;">
+        <div style="padding:16px 20px;border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;background:var(--bg-card);z-index:5;">
+            <div style="display:flex;align-items:center;gap:12px;">
+                <div style="width:40px;height:40px;background:rgba(155,89,182,0.15);border:1px solid rgba(155,89,182,0.3);border-radius:10px;display:flex;align-items:center;justify-content:center;">
+                    <i class="fas fa-folder-tree" style="font-size:18px;color:#bb8fce;"></i>
+                </div>
+                <div>
+                    <div style="font-weight:700;font-size:16px;">All Gate Passes & Files</div>
+                    <div style="font-size:11px;color:var(--muted);margin-top:2px;" id="allFilesSubtitle">Loading...</div>
+                </div>
+            </div>
+            <div style="display:flex;gap:8px;align-items:center;">
+                <button class="btn-icon danger" onclick="deleteAllFilesConfirm()" title="Delete all files" id="deleteAllFilesBtn" style="display:none;"><i class="fas fa-trash"></i></button>
+                <button class="modal-close" onclick="closeAllFilesModal()"><i class="fas fa-xmark"></i></button>
+            </div>
+        </div>
+        <div style="padding:20px;max-height:75vh;overflow-y:auto;" class="form-scroll" id="allFilesContent">
+            <div style="text-align:center;padding:40px;color:var(--muted);">
+                <i class="fas fa-spinner fa-spin" style="font-size:24px;margin-bottom:12px;display:block;"></i>
+                <p>Loading files...</p>
+            </div>
+        </div>
     </div>
 </div>
 
@@ -477,6 +551,9 @@
 
 <!-- Toast -->
 <div class="toast" id="toast"><i class="fas fa-check-circle"></i><span id="toastMsg"></span></div>
+
+<!-- Hidden file input for import -->
+<input type="file" id="importFileInput" accept=".json" style="display:none;" onchange="handleImportFile(event)">
 
 <script>
     // ============================
@@ -582,668 +659,1092 @@
     // ============================
     // Init
     // ============================
-    const today = new Date();
-    const dateStr = today.toISOString().split('T')[0];
+    const todayDate = new Date();
+    const dateStr = todayDate.toISOString().split('T')[0];
     document.getElementById('gpDate').value = dateStr;
 
-    function getNextSerial() {
-        let counter = parseInt(localStorage.getItem(COUNTER_KEY) || '0') + 1;
+    function init() {
+        generateSrNo();
+        addItemRow();
+        renderRegistry();
+        updateTotalFileCount();
+
+        // Live preview listeners
+        ['gpDate','gpClient','gpCarriedBy','gpAddress','gpMobile','gpPurpose'].forEach(id => {
+            const el = document.getElementById(id);
+            if (el) { el.addEventListener('input', updatePreview); el.addEventListener('change', updatePreview); }
+        });
+        document.querySelectorAll('input[name="passType"]').forEach(r => r.addEventListener('change', updatePreview));
+        updatePreview();
+
+        // Upload drag & drop
+        const zone = document.getElementById('uploadZone');
+        zone.addEventListener('dragover', (e) => { e.preventDefault(); zone.classList.add('drag-over'); });
+        zone.addEventListener('dragleave', () => zone.classList.remove('drag-over'));
+        zone.addEventListener('drop', (e) => { e.preventDefault(); zone.classList.remove('drag-over'); handleFileSelect({ target: { files: e.dataTransfer.files } }); });
+
+        // Close dropdowns on outside click
+        document.addEventListener('click', (e) => {
+            if (!e.target.closest('.dropdown-wrap')) closeAllDropdowns();
+            if (!e.target.closest('.row-dropdown')) document.querySelectorAll('.row-dropdown.open').forEach(d => d.classList.remove('open'));
+        });
+    }
+
+    // ============================
+    // Serial Number
+    // ============================
+    function generateSrNo() {
+        let counter = parseInt(localStorage.getItem(COUNTER_KEY) || '0');
+        counter++;
         localStorage.setItem(COUNTER_KEY, counter.toString());
-        return `LPS-${today.getFullYear()}-${String(counter).padStart(4, '0')}`;
-    }
-    document.getElementById('gpSrNo').value = getNextSerial();
-
-    addItemRow();
-    updatePreview();
-    updateRegCount();
-
-    // ============================
-    // Helpers
-    // ============================
-    function esc(s) { const d = document.createElement('div'); d.textContent = s || ''; return d.innerHTML; }
-    function getPassList() { try { return JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]'); } catch { return []; } }
-    function updateRegCount() { document.getElementById('regCount').textContent = getPassList().length; }
-    function formatFileSize(bytes) {
-        if (bytes < 1024) return bytes + ' B';
-        if (bytes < 1048576) return (bytes / 1024).toFixed(1) + ' KB';
-        return (bytes / 1048576).toFixed(1) + ' MB';
-    }
-    function getFileIconClass(type) {
-        if (!type) return 'other';
-        if (type.startsWith('image/')) return 'img';
-        if (type === 'application/pdf') return 'pdf';
-        return 'other';
-    }
-    function getFileIconName(type) {
-        if (!type) return 'fa-file';
-        if (type.startsWith('image/')) return 'fa-file-image';
-        if (type === 'application/pdf') return 'fa-file-pdf';
-        if (type.includes('word') || type.includes('document')) return 'fa-file-word';
-        if (type.includes('sheet') || type.includes('excel')) return 'fa-file-excel';
-        return 'fa-file';
+        const sr = 'LPSL-' + String(counter).padStart(4, '0');
+        document.getElementById('gpSrNo').value = sr;
+        return sr;
     }
 
     // ============================
     // Tab Switching
     // ============================
     function switchTab(tab) {
-        document.getElementById('createPanel').style.display = tab === 'create' ? 'block' : 'none';
-        document.getElementById('registryPanel').style.display = tab === 'registry' ? 'block' : 'none';
         document.getElementById('tabCreate').classList.toggle('active', tab === 'create');
         document.getElementById('tabRegistry').classList.toggle('active', tab === 'registry');
+        document.getElementById('createPanel').style.display = tab === 'create' ? 'block' : 'none';
+        document.getElementById('registryPanel').style.display = tab === 'registry' ? 'block' : 'none';
         if (tab === 'registry') renderRegistry();
     }
 
     // ============================
-    // Items Management (Create)
+    // Items (Create Form)
     // ============================
     function addItemRow() {
         itemIdCounter++;
         const id = itemIdCounter;
         currentItems.push({ id, desc: '', unit: '', qty: '', remarks: '' });
-        const container = document.getElementById('itemsFormContainer');
-        const row = document.createElement('div');
-        row.id = `item-form-${id}`;
-        row.style.cssText = 'display:grid;grid-template-columns:1fr 70px 60px 100px 32px;gap:6px;align-items:center;padding:8px 10px;background:var(--input-bg);border:1px solid var(--border);border-radius:6px;animation:fadeIn 0.25s ease;';
-        row.innerHTML = `<input type="text" class="form-input" style="font-size:12px;padding:7px 10px;" placeholder="Item description" oninput="updateItem(${id},'desc',this.value)"><input type="text" class="form-input" style="font-size:12px;padding:7px 10px;text-align:center;" placeholder="PCS" oninput="updateItem(${id},'unit',this.value)"><input type="text" class="form-input" style="font-size:12px;padding:7px 10px;text-align:center;" placeholder="0" oninput="updateItem(${id},'qty',this.value)"><input type="text" class="form-input" style="font-size:12px;padding:7px 10px;" placeholder="Remarks" oninput="updateItem(${id},'remarks',this.value)"><button class="btn-remove-row" onclick="removeItemRow(${id})" title="Remove"><i class="fas fa-xmark"></i></button>`;
-        container.appendChild(row);
+        renderItemsForm();
+    }
+
+    function removeItemRow(id) {
+        currentItems = currentItems.filter(i => i.id !== id);
+        if (currentItems.length === 0) addItemRow();
+        else renderItemsForm();
+    }
+
+    function renderItemsForm() {
+        const c = document.getElementById('itemsFormContainer');
+        c.innerHTML = currentItems.map((item, idx) => `
+            <div style="display:grid;grid-template-columns:1fr 80px 65px 110px 34px;gap:6px;align-items:center;padding:8px 10px;background:var(--input-bg);border:1px solid var(--border);border-radius:6px;animation:fadeIn 0.25s ease;">
+                <input type="text" class="form-input" placeholder="Description" value="${esc(item.desc)}" oninput="updateItem(${item.id},'desc',this.value)" style="padding:6px 10px;">
+                <input type="text" class="form-input" placeholder="Unit" value="${esc(item.unit)}" oninput="updateItem(${item.id},'unit',this.value)" style="padding:6px 10px;">
+                <input type="text" class="form-input" placeholder="Qty" value="${esc(item.qty)}" oninput="updateItem(${item.id},'qty',this.value)" style="padding:6px 10px;">
+                <input type="text" class="form-input" placeholder="Remarks" value="${esc(item.remarks)}" oninput="updateItem(${item.id},'remarks',this.value)" style="padding:6px 10px;">
+                <button class="btn-remove-row" onclick="removeItemRow(${item.id})" title="Remove"><i class="fas fa-xmark"></i></button>
+            </div>
+        `).join('');
         updatePreview();
     }
-    function updateItem(id, field, value) { const item = currentItems.find(i => i.id === id); if (item) item[field] = value; updatePreview(); }
-    function removeItemRow(id) { currentItems = currentItems.filter(i => i.id !== id); const el = document.getElementById(`item-form-${id}`); if (el) el.remove(); if (!currentItems.length) addItemRow(); updatePreview(); }
+
+    function updateItem(id, field, value) {
+        const item = currentItems.find(i => i.id === id);
+        if (item) item[field] = value;
+        updatePreview();
+    }
 
     // ============================
-    // Preview Update (Create)
+    // Live Preview
     // ============================
     function updatePreview() {
-        const sel = document.querySelector('input[name="passType"]:checked').value;
-        document.querySelectorAll('input[name="passTypePreview"]').forEach(r => r.checked = r.value === sel);
-        const dv = document.getElementById('gpDate').value;
-        document.getElementById('pDate').textContent = dv ? new Date(dv + 'T00:00:00').toLocaleDateString('en-IN', { day: '2-digit', month: 'short', year: 'numeric' }) : '--';
-        document.getElementById('pSrNo').textContent = document.getElementById('gpSrNo').value;
-        setField('pClient', document.getElementById('gpClient').value);
-        setField('pCarriedBy', document.getElementById('gpCarriedBy').value);
-        setField('pAddress', document.getElementById('gpAddress').value);
-        setField('pMobile', document.getElementById('gpMobile').value);
-        setField('pPurpose', document.getElementById('gpPurpose').value);
-        renderItemsTable('itemsTableBody', currentItems);
-        const note = document.getElementById('gpNote').value.trim();
-        const stamp = document.getElementById('pNoteStamp');
-        if (note) { stamp.textContent = note.toUpperCase(); stamp.classList.add('show'); } else { stamp.classList.remove('show'); }
+        const type = document.querySelector('input[name="passType"]:checked')?.value || 'Returnable';
+        const date = document.getElementById('gpDate').value;
+        const srNo = document.getElementById('gpSrNo').value;
+        const client = document.getElementById('gpClient').value;
+        const carriedBy = document.getElementById('gpCarriedBy').value;
+        const address = document.getElementById('gpAddress').value;
+        const mobile = document.getElementById('gpMobile').value;
+        const purpose = document.getElementById('gpPurpose').value;
+        const note = document.getElementById('gpNote').value;
+
+        document.querySelectorAll('input[name="passTypePreview"]').forEach(r => r.checked = r.value === type);
+        document.getElementById('pDate').textContent = date ? formatDate(date) : '--';
+        document.getElementById('pSrNo').textContent = srNo;
+        setFieldVal('pClient', client);
+        setFieldVal('pCarriedBy', carriedBy);
+        setFieldVal('pAddress', address);
+        setFieldVal('pMobile', mobile);
+        setFieldVal('pPurpose', purpose);
+
+        const noteBox = document.getElementById('pNoteStamp');
+        if (note.trim()) { noteBox.textContent = note; noteBox.classList.add('show'); }
+        else { noteBox.classList.remove('show'); }
+
+        const validItems = currentItems.filter(i => i.desc.trim() || i.qty.trim());
+        const tbody = document.getElementById('itemsTableBody');
+        if (validItems.length === 0) {
+            tbody.innerHTML = '<tr class="empty-row"><td colspan="5">No items added yet</td></tr>';
+        } else {
+            tbody.innerHTML = validItems.map((item, i) => `<tr><td>${i+1}</td><td>${esc(item.desc)}</td><td>${esc(item.unit)}</td><td>${esc(item.qty)}</td><td>${esc(item.remarks)}</td></tr>`).join('');
+        }
     }
-    function setField(elId, val) { const el = document.getElementById(elId); if (val.trim()) { el.textContent = val.trim(); el.classList.remove('empty'); } else { el.textContent = 'Not provided'; el.classList.add('empty'); } }
-    function renderItemsTable(tbodyId, items) {
-        const tbody = document.getElementById(tbodyId);
-        const filled = items.filter(i => (i.desc || '').trim());
-        if (!filled.length) { tbody.innerHTML = '<tr class="empty-row"><td colspan="5">No items added yet</td></tr>'; return; }
-        let h = '';
-        filled.forEach((item, idx) => { h += `<tr><td>${idx+1}</td><td style="text-align:left;font-weight:500;">${esc(item.desc)||'—'}</td><td>${esc(item.unit)||'—'}</td><td>${esc(item.qty)||'—'}</td><td style="font-size:11px;color:#555;">${esc(item.remarks)||'—'}</td></tr>`; });
-        for (let i = 0; i < Math.max(0, 4 - filled.length); i++) h += `<tr><td style="color:#ccc;">${filled.length+i+1}</td><td></td><td></td><td></td><td></td></tr>`;
-        tbody.innerHTML = h;
+
+    function setFieldVal(id, val) {
+        const el = document.getElementById(id);
+        if (val.trim()) { el.textContent = val; el.classList.remove('empty'); }
+        else { el.textContent = 'Not provided'; el.classList.add('empty'); }
     }
-    ['gpClient','gpCarriedBy','gpAddress','gpMobile','gpPurpose','gpDate'].forEach(id => { const el = document.getElementById(id); el.addEventListener('input', updatePreview); el.addEventListener('change', updatePreview); });
 
     // ============================
-    // Build Gate Pass HTML
+    // Generate Gate Pass HTML
     // ============================
-    function buildPassHTML(data) {
-        const items = data.items || [];
-        const filledItems = items.filter(i => (i.desc || '').trim());
-        const itemsRows = filledItems.map((item, idx) => `<tr><td>${idx+1}</td><td style="text-align:left;font-weight:500;">${esc(item.desc)||'—'}</td><td>${esc(item.unit)||'—'}</td><td>${esc(item.qty)||'—'}</td><td style="font-size:11px;color:#555;">${esc(item.remarks)||'—'}</td></tr>`).join('');
-        const emptyRows = Array.from({length: Math.max(0, 4 - filledItems.length)}, (_, i) => { const n = filledItems.length + i + 1; return `<tr><td style="color:#ccc;">${n}</td><td></td><td></td><td></td><td></td></tr>`; }).join('');
-        const dateFormatted = data.date ? new Date(data.date+'T00:00:00').toLocaleDateString('en-IN',{day:'2-digit',month:'short',year:'numeric'}) : '--';
-        const noteStamp = data.note ? `<div class="gp-note-box show">${esc(data.note).toUpperCase()}</div>` : '<div class="gp-note-box"></div>';
-        return `<div class="gate-pass" style="width:760px;background:#fff;color:#000;font-family:'Inter',sans-serif;font-size:12px;border:2px solid #000;position:relative;">
-            <div class="gp-header" style="display:flex;align-items:center;justify-content:space-between;padding:12px 18px;border-bottom:2px solid #000;"><div style="display:flex;align-items:center;gap:12px;"><img src="https://z-cdn-media.chatglm.cn/files/d5e1f8e4-de6c-4aa3-baca-c8e3ac756f23.png?auth_key=1882562728-186c577ea1c042abb2bd5beb48c61184-0-1daa0eb13aa71be2ae2e9cd4a3159ce5" alt="Logo" style="width:70px;height:70px;object-fit:contain;flex-shrink:0;"><div><div style="font-size:16px;font-weight:800;color:#000;line-height:1.2;text-transform:uppercase;">Limburg Power Solutions Ltd</div><div style="font-size:9px;color:#444;margin-top:2px;">Plot No. 45-48, Industrial Area Phase-II,<br>Chandigarh - 160002, India</div></div></div><div style="text-align:right;font-size:9.5px;color:#333;line-height:1.6;"><div><strong>Ph:</strong> +91-172-4001234</div><div><strong>Email:</strong> info@limburgpower.com</div><div><strong>Web:</strong> www.limburgpower.com</div><div style="margin-top:4px;font-weight:800;color:#000;font-size:10px;">GSTIN: 04AABCL1234A1Z5</div></div></div>
-            <div style="text-align:center;padding:10px 0;border-bottom:1.5px solid #000;"><div style="font-size:20px;font-weight:900;text-transform:uppercase;letter-spacing:0.15em;color:#000;">Gate Pass</div></div>
-            <div style="display:flex;align-items:center;gap:24px;padding:8px 18px;border-bottom:1.5px solid #000;font-size:12px;font-weight:600;"><label style="display:flex;align-items:center;gap:5px;"><input type="radio" ${data.type==='Returnable'?'checked':''} disabled style="accent-color:#000;width:14px;height:14px;"> Returnable</label><label style="display:flex;align-items:center;gap:5px;"><input type="radio" ${data.type!=='Returnable'?'checked':''} disabled style="accent-color:#000;width:14px;height:14px;"> Non Returnable</label><div style="margin-left:auto;display:flex;align-items:center;gap:6px;"><span style="font-weight:700;">Date:</span><span style="font-weight:500;">${dateFormatted}</span></div><div style="display:flex;align-items:center;gap:6px;"><span style="font-weight:700;">SR No:</span><span style="font-weight:600;">${esc(data.srNo)}</span></div></div>
-            <div style="display:grid;grid-template-columns:auto 1fr auto 1fr;gap:0;border-bottom:1.5px solid #000;"><div style="padding:7px 12px;border-right:1px solid #999;background:#f0f0ec;font-weight:700;color:#222;min-width:90px;">Client</div><div style="padding:7px 12px;color:#111;font-weight:500;">${esc(data.client)||'<span style="color:#bbb;font-style:italic;">Not provided</span>'}</div><div style="padding:7px 12px;border-right:1px solid #999;background:#f0f0ec;font-weight:700;color:#222;min-width:90px;">Carried By</div><div style="padding:7px 12px;color:#111;font-weight:500;">${esc(data.carriedBy)||'<span style="color:#bbb;font-style:italic;">Not provided</span>'}</div></div>
-            <div style="display:grid;grid-template-columns:auto 1fr auto 1fr;gap:0;border-bottom:1.5px solid #000;"><div style="padding:7px 12px;border-right:1px solid #999;background:#f0f0ec;font-weight:700;color:#222;min-width:90px;">Address</div><div style="padding:7px 12px;color:#111;font-weight:500;grid-column:span 3;">${esc(data.address)||'<span style="color:#bbb;font-style:italic;">Not provided</span>'}</div></div>
-            <div style="display:grid;grid-template-columns:auto 1fr auto 1fr;gap:0;border-bottom:none;"><div style="padding:7px 12px;border-right:1px solid #999;background:#f0f0ec;font-weight:700;color:#222;min-width:90px;">Mobile No.</div><div style="padding:7px 12px;color:#111;font-weight:500;">${esc(data.mobile)||'<span style="color:#bbb;font-style:italic;">Not provided</span>'}</div><div style="padding:7px 12px;border-right:1px solid #999;background:#f0f0ec;font-weight:700;color:#222;min-width:90px;">Purpose</div><div style="padding:7px 12px;color:#111;font-weight:500;">${esc(data.purpose)||'<span style="color:#bbb;font-style:italic;">Not provided</span>'}</div></div>
-            <table style="width:100%;border-collapse:collapse;"><thead><tr><th style="background:#1a1a1a;color:#fff;font-size:10.5px;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;padding:7px 8px;text-align:center;border:1px solid #333;width:40px;">SL</th><th style="background:#1a1a1a;color:#fff;font-size:10.5px;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;padding:7px 8px;text-align:left;border:1px solid #333;">Description</th><th style="background:#1a1a1a;color:#fff;font-size:10.5px;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;padding:7px 8px;text-align:center;border:1px solid #333;width:65px;">Unit</th><th style="background:#1a1a1a;color:#fff;font-size:10.5px;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;padding:7px 8px;text-align:center;border:1px solid #333;width:65px;">Qty</th><th style="background:#1a1a1a;color:#fff;font-size:10.5px;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;padding:7px 8px;text-align:center;border:1px solid #333;width:120px;">Remarks</th></tr></thead><tbody>${itemsRows||'<tr><td colspan="5" style="color:#bbb;font-style:italic;text-align:center;padding:14px 8px;font-size:11px;">No items</td></tr>'}${emptyRows}</tbody></table>
-            ${noteStamp}
-            <div style="display:grid;grid-template-columns:1fr 1fr 1fr 1fr;border-top:1.5px solid #000;"><div style="padding:10px 12px 12px;text-align:center;border-right:1px solid #999;min-height:70px;display:flex;flex-direction:column;justify-content:flex-end;"><div style="border-top:1px solid #000;padding-top:5px;font-size:9.5px;font-weight:700;text-transform:uppercase;letter-spacing:0.05em;color:#222;margin-top:auto;">Received By</div></div><div style="padding:10px 12px 12px;text-align:center;border-right:1px solid #999;min-height:70px;display:flex;flex-direction:column;justify-content:flex-end;"><div style="border-top:1px solid #000;padding-top:5px;font-size:9.5px;font-weight:700;text-transform:uppercase;letter-spacing:0.05em;color:#222;margin-top:auto;">Prepared By</div></div><div style="padding:10px 12px 12px;text-align:center;border-right:1px solid #999;min-height:70px;display:flex;flex-direction:column;justify-content:flex-end;"><div style="border-top:1px solid #000;padding-top:5px;font-size:9.5px;font-weight:700;text-transform:uppercase;letter-spacing:0.05em;color:#222;margin-top:auto;">Store Incharge</div></div><div style="padding:10px 12px 12px;text-align:center;min-height:70px;display:flex;flex-direction:column;justify-content:flex-end;"><div style="border-top:1px solid #000;padding-top:5px;font-size:9.5px;font-weight:700;text-transform:uppercase;letter-spacing:0.05em;color:#222;margin-top:auto;">Authorized Sign</div></div></div>
+    function generatePassHTML(data) {
+        const items = (data.items || []).filter(i => i.desc.trim() || i.qty.trim());
+        const itemsRows = items.length === 0
+            ? '<tr class="empty-row"><td colspan="5">No items added</td></tr>'
+            : items.map((item, i) => `<tr><td>${i+1}</td><td>${esc(item.desc)}</td><td>${esc(item.unit)}</td><td>${esc(item.qty)}</td><td>${esc(item.remarks)}</td></tr>`).join('');
+
+        const noteBox = data.note && data.note.trim()
+            ? `<div class="gp-note-box show">${esc(data.note)}</div>`
+            : '<div class="gp-note-box"></div>';
+
+        return `<div class="gate-pass">
+            <div class="gp-header">
+                <div class="gp-header-left">
+                    <img src="https://z-cdn-media.chatglm.cn/files/d5e1f8e4-de6c-4aa3-baca-c8e3ac756f23.png?auth_key=1882562728-186c577ea1c042abb2bd5beb48c61184-0-1daa0eb13aa71be2ae2e9cd4a3159ce5" alt="Logo" class="gp-logo">
+                    <div><div class="gp-company-name">Limburg Power Solutions Ltd</div><div class="gp-company-sub">Plot No. 45-48, Industrial Area Phase-II,<br>Chandigarh - 160002, India</div></div>
+                </div>
+                <div class="gp-header-right"><div><strong>Ph:</strong> +91-172-4001234</div><div><strong>Email:</strong> info@limburgpower.com</div><div><strong>Web:</strong> www.limburgpower.com</div><div style="margin-top:4px;font-weight:800;color:#000;font-size:10px;">GSTIN: 04AABCL1234A1Z5</div></div>
+            </div>
+            <div class="gp-title-row"><div class="gp-title">Gate Pass</div></div>
+            <div class="gp-checkbox-row">
+                <label class="gp-cb"><input type="radio" ${data.type==='Returnable'?'checked':''} disabled style="accent-color:#000;width:14px;height:14px;"><span>Returnable</span></label>
+                <label class="gp-cb"><input type="radio" ${data.type==='Non Returnable'?'checked':''} disabled style="accent-color:#000;width:14px;height:14px;"><span>Non Returnable</span></label>
+                <div style="margin-left:auto;display:flex;align-items:center;gap:6px;"><span style="font-weight:700;">Date:</span><span style="font-weight:500;">${data.date ? formatDate(data.date) : '--'}</span></div>
+                <div style="display:flex;align-items:center;gap:6px;"><span style="font-weight:700;">SR No:</span><span style="font-weight:600;">${esc(data.srNo)}</span></div>
+            </div>
+            <div class="gp-fields-row"><div class="gp-field-cell">Client</div><div class="gp-field-cell"><span class="gp-field-val${data.client?'':' empty'}">${data.client?esc(data.client):'Not provided'}</span></div><div class="gp-field-cell">Carried By</div><div class="gp-field-cell"><span class="gp-field-val${data.carriedBy?'':' empty'}">${data.carriedBy?esc(data.carriedBy):'Not provided'}</span></div></div>
+            <div class="gp-fields-row"><div class="gp-field-cell">Address</div><div class="gp-field-cell" style="grid-column:span 3;"><span class="gp-field-val${data.address?'':' empty'}">${data.address?esc(data.address):'Not provided'}</span></div></div>
+            <div class="gp-fields-row" style="border-bottom:none;"><div class="gp-field-cell">Mobile No.</div><div class="gp-field-cell"><span class="gp-field-val${data.mobile?'':' empty'}">${data.mobile?esc(data.mobile):'Not provided'}</span></div><div class="gp-field-cell">Purpose</div><div class="gp-field-cell"><span class="gp-field-val${data.purpose?'':' empty'}">${data.purpose?esc(data.purpose):'Not provided'}</span></div></div>
+            <table class="gp-table"><thead><tr><th style="width:40px;">SL</th><th>Description</th><th style="width:65px;">Unit</th><th style="width:65px;">Qty</th><th style="width:120px;">Remarks</th></tr></thead><tbody>${itemsRows}</tbody></table>
+            ${noteBox}
+            <div class="gp-footer"><div class="gp-sig"><div class="gp-sig-line">Received By</div></div><div class="gp-sig"><div class="gp-sig-line">Prepared By</div></div><div class="gp-sig"><div class="gp-sig-line">Store Incharge</div></div><div class="gp-sig"><div class="gp-sig-line">Authorized Sign</div></div></div>
         </div>`;
     }
 
     // ============================
-    // Save & Download (Create)
+    // Save & Download
     // ============================
     function saveAndDownload() {
         const client = document.getElementById('gpClient').value.trim();
         const carriedBy = document.getElementById('gpCarriedBy').value.trim();
-        const filledItems = currentItems.filter(i => i.desc.trim());
-        if (!client) { showToast('Please enter the client name.', 'warning'); document.getElementById('gpClient').focus(); return; }
-        if (!carriedBy) { showToast('Please enter who is carrying the items.', 'warning'); document.getElementById('gpCarriedBy').focus(); return; }
-        if (!filledItems.length) { showToast('Please add at least one item.', 'warning'); return; }
-        const data = { id: Date.now().toString(36) + Math.random().toString(36).slice(2, 6), srNo: document.getElementById('gpSrNo').value, date: document.getElementById('gpDate').value, type: document.querySelector('input[name="passType"]:checked').value, client, carriedBy, address: document.getElementById('gpAddress').value.trim(), mobile: document.getElementById('gpMobile').value.trim(), purpose: document.getElementById('gpPurpose').value.trim(), note: document.getElementById('gpNote').value.trim(), items: filledItems.map(i => ({ desc: i.desc.trim(), unit: i.unit.trim(), qty: i.qty.trim(), remarks: i.remarks.trim() })), createdAt: new Date().toISOString() };
-        const list = getPassList(); list.unshift(data); localStorage.setItem(STORAGE_KEY, JSON.stringify(list));
-        downloadPassPDF(data, () => { showToast(`Pass ${data.srNo} saved and downloaded!`, 'success'); updateRegCount(); resetForm(); });
-    }
+        if (!client || !carriedBy) { showToast('Please fill Client Name and Carried By', 'warning'); return; }
 
-    function downloadPassPDF(data, callback) {
-        const btn = document.getElementById('downloadBtn');
-        btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Generating...'; btn.style.pointerEvents = 'none';
-        const tempDiv = document.createElement('div'); tempDiv.innerHTML = buildPassHTML(data); const element = tempDiv.firstElementChild; document.body.appendChild(element);
-        const opt = { margin: [4,2,4,2], filename: `GatePass_${data.srNo}.pdf`, image: { type: 'jpeg', quality: 0.98 }, html2canvas: { scale: 2, useCORS: true, backgroundColor: '#ffffff' }, jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' } };
-        html2pdf().set(opt).from(element).save().then(() => { document.body.removeChild(element); btn.innerHTML = '<i class="fas fa-file-pdf"></i> Save & Download'; btn.style.pointerEvents = 'auto'; if (callback) callback(); }).catch(err => { document.body.removeChild(element); btn.innerHTML = '<i class="fas fa-file-pdf"></i> Save & Download'; btn.style.pointerEvents = 'auto'; showToast('PDF generation failed.', 'error'); });
+        const data = {
+            id: 'gp_' + Date.now(),
+            srNo: document.getElementById('gpSrNo').value,
+            date: document.getElementById('gpDate').value,
+            type: document.querySelector('input[name="passType"]:checked').value,
+            client, carriedBy,
+            address: document.getElementById('gpAddress').value.trim(),
+            mobile: document.getElementById('gpMobile').value.trim(),
+            purpose: document.getElementById('gpPurpose').value.trim(),
+            note: document.getElementById('gpNote').value.trim(),
+            items: JSON.parse(JSON.stringify(currentItems)),
+            createdAt: new Date().toISOString()
+        };
+
+        const list = getPassList();
+        list.unshift(data);
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(list));
+
+        const html = generatePassHTML(data);
+        const container = document.createElement('div');
+        container.innerHTML = html;
+        document.body.appendChild(container);
+        html2pdf().set({ margin: 5, filename: `GatePass_${data.srNo}.pdf`, image: { type: 'jpeg', quality: 0.98 }, html2canvas: { scale: 2, useCORS: true }, jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' } }).from(container.firstChild).save().then(() => {
+            document.body.removeChild(container);
+            showToast('Gate pass saved & downloaded successfully!');
+            resetForm();
+            renderRegistry();
+            updateTotalFileCount();
+        }).catch(err => {
+            document.body.removeChild(container);
+            showToast('PDF generation failed. Pass saved locally.', 'error');
+            console.error(err);
+            resetForm();
+            renderRegistry();
+            updateTotalFileCount();
+        });
     }
 
     function resetForm() {
-        document.getElementById('gpClient').value = ''; document.getElementById('gpCarriedBy').value = ''; document.getElementById('gpAddress').value = ''; document.getElementById('gpMobile').value = ''; document.getElementById('gpPurpose').value = ''; document.getElementById('gpNote').value = ''; document.getElementById('gpDate').value = new Date().toISOString().split('T')[0];
-        document.querySelector('input[name="passType"][value="Returnable"]').checked = true; document.getElementById('gpSrNo').value = getNextSerial();
-        currentItems = []; itemIdCounter = 0; document.getElementById('itemsFormContainer').innerHTML = ''; addItemRow(); updatePreview();
+        document.getElementById('gpDate').value = dateStr;
+        document.getElementById('gpClient').value = '';
+        document.getElementById('gpCarriedBy').value = '';
+        document.getElementById('gpAddress').value = '';
+        document.getElementById('gpMobile').value = '';
+        document.getElementById('gpPurpose').value = '';
+        document.getElementById('gpNote').value = '';
+        document.querySelector('input[name="passType"][value="Returnable"]').checked = true;
+        currentItems = [];
+        itemIdCounter = 0;
+        addItemRow();
+        generateSrNo();
+        updatePreview();
     }
 
     // ============================
-    // Dropdown Management
+    // Registry
     // ============================
-    function toggleDropdown(menuId) { const menu = document.getElementById(menuId); const isOpen = menu.classList.contains('open'); closeAllDropdowns(); if (!isOpen) menu.classList.add('open'); }
-    function toggleRowDropdown(event, id) { event.stopPropagation(); const menu = document.getElementById(`rowDrop-${id}`); const isOpen = menu.classList.contains('open'); closeAllDropdowns(); if (!isOpen) menu.classList.add('open'); }
-    function closeAllDropdowns() { document.querySelectorAll('.dropdown-menu, .row-dropdown').forEach(m => m.classList.remove('open')); }
-    document.addEventListener('click', (e) => { if (!e.target.closest('.dropdown-wrap')) closeAllDropdowns(); });
-
-    // ============================
-    // Registry Rendering (with attachment counts)
-    // ============================
-    let attachCountsCache = {};
-
-    async function loadAttachCounts() {
-        const allFiles = await dbGetAll();
-        attachCountsCache = {};
-        allFiles.forEach(f => { attachCountsCache[f.passId] = (attachCountsCache[f.passId] || 0) + 1; });
+    function getPassList() {
+        try { return JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]'); } catch { return []; }
     }
 
     async function renderRegistry() {
-        await loadAttachCounts();
         const list = getPassList();
-        const search = (document.getElementById('searchBox').value || '').toLowerCase();
-        const filterType = document.getElementById('filterType').value;
+        const search = (document.getElementById('searchBox')?.value || '').toLowerCase();
+        const filterType = document.getElementById('filterType')?.value || 'all';
+
         let filtered = list.filter(p => {
-            const ms = !search || p.srNo.toLowerCase().includes(search) || (p.client || '').toLowerCase().includes(search) || (p.carriedBy || '').toLowerCase().includes(search) || (p.purpose || '').toLowerCase().includes(search);
-            const mt = filterType === 'all' || p.type === filterType;
-            return ms && mt;
+            const matchSearch = !search || p.srNo.toLowerCase().includes(search) || (p.client||'').toLowerCase().includes(search) || (p.carriedBy||'').toLowerCase().includes(search) || (p.purpose||'').toLowerCase().includes(search);
+            const matchType = filterType === 'all' || p.type === filterType;
+            return matchSearch && matchType;
         });
 
-        const total = list.length, ret = list.filter(p => p.type === 'Returnable').length, nonRet = list.filter(p => p.type === 'Non Returnable').length;
-        const thisMonth = list.filter(p => { if (!p.date) return false; const d = new Date(p.date+'T00:00:00'); const n = new Date(); return d.getMonth() === n.getMonth() && d.getFullYear() === n.getFullYear(); }).length;
-        const totalFiles = Object.values(attachCountsCache).reduce((a, b) => a + b, 0);
-
-        document.getElementById('statsRow').innerHTML = `
-            <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:10px;padding:14px 16px;"><div style="font-size:10px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:0.1em;">Total Passes</div><div style="font-size:26px;font-weight:900;color:var(--fg);margin-top:4px;">${total}</div></div>
-            <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:10px;padding:14px 16px;"><div style="font-size:10px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:0.1em;">Returnable</div><div style="font-size:26px;font-weight:900;color:#6ddb98;margin-top:4px;">${ret}</div></div>
-            <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:10px;padding:14px 16px;"><div style="font-size:10px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:0.1em;">Non-Returnable</div><div style="font-size:26px;font-weight:900;color:#e88;margin-top:4px;">${nonRet}</div></div>
-            <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:10px;padding:14px 16px;"><div style="font-size:10px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:0.1em;">Uploaded Files</div><div style="font-size:26px;font-weight:900;color:#bb8fce;margin-top:4px;">${totalFiles}</div></div>`;
-
+        document.getElementById('regCount').textContent = list.length;
         const tbody = document.getElementById('regTableBody');
         const emptyState = document.getElementById('emptyState');
-        const table = document.getElementById('regTable');
-        if (!filtered.length) { table.style.display = 'none'; emptyState.style.display = 'block'; return; }
-        table.style.display = 'table'; emptyState.style.display = 'none';
 
-        tbody.innerHTML = filtered.map(p => {
-            const itemCount = (p.items || []).filter(i => (i.desc || '').trim()).length;
-            const dateFormatted = p.date ? new Date(p.date+'T00:00:00').toLocaleDateString('en-IN',{day:'2-digit',month:'short',year:'numeric'}) : '--';
-            const typeClass = p.type === 'Returnable' ? 'type-returnable' : 'type-non-returnable';
-            const fileCount = attachCountsCache[p.id] || 0;
-            const fileBadge = fileCount > 0 ? `<span class="attach-count-badge" onclick="openAttachViewer('${p.id}');event.stopPropagation();"><i class="fas fa-paperclip" style="font-size:10px;"></i> ${fileCount}</span>` : '<span style="color:var(--muted);font-size:11px;">—</span>';
-            return `<tr>
-                <td><span class="sr-cell">${esc(p.srNo)}</span></td>
-                <td style="white-space:nowrap;">${dateFormatted}</td>
-                <td><span class="type-badge ${typeClass}">${esc(p.type || '—')}</span></td>
-                <td style="font-weight:600;max-width:140px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">${esc(p.client) || '—'}</td>
-                <td style="max-width:110px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">${esc(p.carriedBy) || '—'}</td>
-                <td><span style="background:var(--accent-glow);color:var(--accent);padding:2px 8px;border-radius:10px;font-size:11px;font-weight:700;">${itemCount}</span></td>
-                <td>${fileBadge}</td>
-                <td style="max-width:90px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;color:var(--muted);">${esc(p.purpose) || '—'}</td>
-                <td style="text-align:center;"><div style="display:flex;gap:4px;justify-content:center;position:relative;">
-                    <button class="btn-icon attach" onclick="openAttachViewer('${p.id}')" title="Attachments"><i class="fas fa-paperclip"></i></button>
-                    <button class="btn-icon edit" onclick="openEditModal('${p.id}')" title="Edit"><i class="fas fa-pen"></i></button>
-                    <button class="btn-icon download" onclick="downloadSinglePass('${p.id}')" title="Download PDF"><i class="fas fa-file-pdf"></i></button>
-                    <div class="dropdown-wrap" style="position:relative;">
-                        <button class="btn-icon" onclick="toggleRowDropdown(event,'${p.id}')" title="More"><i class="fas fa-ellipsis-vertical"></i></button>
-                        <div class="row-dropdown" id="rowDrop-${p.id}">
-                            <button class="dropdown-item" onclick="viewPass('${p.id}');closeAllDropdowns();"><i class="fas fa-eye" style="color:var(--accent);"></i> View Pass</button>
-                            <button class="dropdown-item" onclick="openEditModal('${p.id}');closeAllDropdowns();"><i class="fas fa-pen-to-square" style="color:#3498db;"></i> Edit Pass</button>
-                            <button class="dropdown-item" onclick="openAttachViewer('${p.id}');closeAllDropdowns();"><i class="fas fa-paperclip" style="color:#bb8fce;"></i> Attachments</button>
-                            <button class="dropdown-item" onclick="downloadSinglePass('${p.id}');closeAllDropdowns();"><i class="fas fa-download" style="color:#2ecc71;"></i> Download PDF</button>
-                            <div class="dropdown-divider"></div>
-                            <button class="dropdown-item" onclick="duplicatePass('${p.id}');closeAllDropdowns();"><i class="fas fa-copy" style="color:#e67e22;"></i> Duplicate</button>
-                            <button class="dropdown-item" onclick="deletePass('${p.id}');closeAllDropdowns();" style="color:var(--red-accent);"><i class="fas fa-trash"></i> Delete</button>
+        if (filtered.length === 0) {
+            tbody.innerHTML = '';
+            emptyState.style.display = 'block';
+            document.getElementById('regTable').style.display = 'none';
+        } else {
+            emptyState.style.display = 'none';
+            document.getElementById('regTable').style.display = 'table';
+
+            const rows = [];
+            for (const p of filtered) {
+                const files = await dbGetByPassId(p.id);
+                const fileCount = files.length;
+                const itemCount = (p.items || []).filter(i => i.desc.trim() || i.qty.trim()).length;
+                const typeClass = p.type === 'Returnable' ? 'type-returnable' : 'type-non-returnable';
+                const fileBadge = fileCount > 0
+                    ? `<span class="attach-count-badge" onclick="event.stopPropagation();openAttachModal('${p.id}')"><i class="fas fa-paperclip" style="font-size:9px;"></i> ${fileCount}</span>`
+                    : '<span style="color:var(--muted);font-size:11px;">0</span>';
+
+                rows.push(`<tr>
+                    <td class="sr-cell">${esc(p.srNo)}</td>
+                    <td>${p.date ? formatDate(p.date) : '--'}</td>
+                    <td><span class="type-badge ${typeClass}">${esc(p.type)}</span></td>
+                    <td style="font-weight:600;max-width:150px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;" title="${esc(p.client)}">${esc(p.client)}</td>
+                    <td style="max-width:120px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;" title="${esc(p.carriedBy)}">${esc(p.carriedBy)}</td>
+                    <td style="text-align:center;">${itemCount}</td>
+                    <td style="text-align:center;">${fileBadge}</td>
+                    <td style="max-width:120px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;" title="${esc(p.purpose)}">${esc(p.purpose || '--')}</td>
+                    <td style="text-align:center;">
+                        <div style="display:flex;gap:4px;justify-content:center;">
+                            <button class="btn-icon" onclick="viewPass('${p.id}')" title="View"><i class="fas fa-eye"></i></button>
+                            <button class="btn-icon download" onclick="downloadPass('${p.id}')" title="Download PDF"><i class="fas fa-file-pdf"></i></button>
+                            <button class="btn-icon edit" onclick="editPass('${p.id}')" title="Edit"><i class="fas fa-pen"></i></button>
+                            <button class="btn-icon danger" onclick="deletePass('${p.id}')" title="Delete"><i class="fas fa-trash"></i></button>
                         </div>
-                    </div>
-                </div></td>
-            </tr>`;
-        }).join('');
+                    </td>
+                </tr>`);
+            }
+            tbody.innerHTML = rows.join('');
+        }
+
+        // Stats
+        const totalFiles = await dbGetAll();
+        const statsRow = document.getElementById('statsRow');
+        statsRow.innerHTML = `
+            <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:10px;padding:16px;text-align:center;">
+                <div style="font-size:28px;font-weight:900;color:var(--accent);">${list.length}</div>
+                <div style="font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:0.08em;font-weight:600;">Total Passes</div>
+            </div>
+            <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:10px;padding:16px;text-align:center;">
+                <div style="font-size:28px;font-weight:900;color:#6ddb98;">${list.filter(p=>p.type==='Returnable').length}</div>
+                <div style="font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:0.08em;font-weight:600;">Returnable</div>
+            </div>
+            <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:10px;padding:16px;text-align:center;">
+                <div style="font-size:28px;font-weight:900;color:#e88;">${list.filter(p=>p.type==='Non Returnable').length}</div>
+                <div style="font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:0.08em;font-weight:600;">Non-Returnable</div>
+            </div>
+            <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:10px;padding:16px;text-align:center;">
+                <div style="font-size:28px;font-weight:900;color:#bb8fce;">${totalFiles.length}</div>
+                <div style="font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:0.08em;font-weight:600;">Uploaded Files</div>
+            </div>
+        `;
+
+        updateTotalFileCount();
     }
 
     // ============================
-    // View / Download / Delete / Duplicate Pass
+    // View / Download / Edit / Delete Pass
     // ============================
     function viewPass(id) {
-        const pass = getPassList().find(p => p.id === id);
-        if (!pass) { showToast('Pass not found.', 'error'); return; }
+        const list = getPassList();
+        const p = list.find(x => x.id === id);
+        if (!p) return;
         viewingPassId = id;
-        document.getElementById('modalTitle').textContent = `Gate Pass - ${pass.srNo}`;
-        document.getElementById('modalSubtitle').textContent = `${pass.type} | ${pass.client || 'No client'} | ${pass.carriedBy || 'N/A'}`;
-        document.getElementById('modalPassContainer').innerHTML = buildPassHTML(pass);
+        document.getElementById('modalTitle').textContent = 'Gate Pass - ' + p.srNo;
+        document.getElementById('modalSubtitle').textContent = `${p.client} | ${p.carriedBy} | ${formatDate(p.date)}`;
+        document.getElementById('modalPassContainer').innerHTML = generatePassHTML(p);
         document.getElementById('viewModal').classList.add('show');
     }
-    function downloadFromModal() { if (viewingPassId) downloadSinglePass(viewingPassId); }
+
     function closeModal() { document.getElementById('viewModal').classList.remove('show'); viewingPassId = null; }
 
-    function downloadSinglePass(id) {
-        const pass = getPassList().find(p => p.id === id);
-        if (!pass) { showToast('Pass not found.', 'error'); return; }
-        showToast(`Generating PDF for ${pass.srNo}...`, 'info');
-        const tempDiv = document.createElement('div'); tempDiv.innerHTML = buildPassHTML(pass); const element = tempDiv.firstElementChild; document.body.appendChild(element);
-        const opt = { margin: [4,2,4,2], filename: `GatePass_${pass.srNo}.pdf`, image: { type: 'jpeg', quality: 0.98 }, html2canvas: { scale: 2, useCORS: true, backgroundColor: '#ffffff' }, jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' } };
-        html2pdf().set(opt).from(element).save().then(() => { document.body.removeChild(element); showToast(`Downloaded ${pass.srNo}`, 'success'); }).catch(err => { document.body.removeChild(element); showToast('PDF generation failed.', 'error'); });
+    function downloadFromModal() {
+        if (viewingPassId) downloadPass(viewingPassId);
+    }
+
+    function downloadPass(id) {
+        const list = getPassList();
+        const p = list.find(x => x.id === id);
+        if (!p) return;
+        const html = generatePassHTML(p);
+        const container = document.createElement('div');
+        container.innerHTML = html;
+        document.body.appendChild(container);
+        html2pdf().set({ margin: 5, filename: `GatePass_${p.srNo}.pdf`, image: { type: 'jpeg', quality: 0.98 }, html2canvas: { scale: 2, useCORS: true }, jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' } }).from(container.firstChild).save().then(() => {
+            document.body.removeChild(container);
+            showToast('PDF downloaded!');
+        }).catch(err => { document.body.removeChild(container); showToast('Download failed', 'error'); console.error(err); });
+    }
+
+    function editPass(id) {
+        const list = getPassList();
+        const p = list.find(x => x.id === id);
+        if (!p) return;
+        document.getElementById('editPassId').value = id;
+        document.getElementById('editDate').value = p.date || '';
+        document.getElementById('editSrNo').value = p.srNo;
+        document.getElementById('editClient').value = p.client || '';
+        document.getElementById('editCarriedBy').value = p.carriedBy || '';
+        document.getElementById('editAddress').value = p.address || '';
+        document.getElementById('editMobile').value = p.mobile || '';
+        document.getElementById('editPurpose').value = p.purpose || '';
+        document.getElementById('editNote').value = p.note || '';
+        document.querySelectorAll('input[name="editPassType"]').forEach(r => r.checked = r.value === p.type);
+        document.getElementById('editModalSubtitle').textContent = `${p.srNo} | ${p.client}`;
+
+        editItems = JSON.parse(JSON.stringify(p.items || []));
+        editItemIdCounter = 0;
+        if (editItems.length === 0) addEditItemRow();
+        else renderEditItems();
+
+        updateEditPreview();
+        document.getElementById('editModal').classList.add('show');
+    }
+
+    function closeEditModal() { document.getElementById('editModal').classList.remove('show'); }
+
+    function addEditItemRow() {
+        editItemIdCounter++;
+        editItems.push({ id: editItemIdCounter, desc: '', unit: '', qty: '', remarks: '' });
+        renderEditItems();
+    }
+
+    function removeEditItemRow(id) {
+        editItems = editItems.filter(i => i.id !== id);
+        if (editItems.length === 0) addEditItemRow();
+        else renderEditItems();
+    }
+
+    function renderEditItems() {
+        const c = document.getElementById('editItemsContainer');
+        c.innerHTML = editItems.map(item => `
+            <div class="edit-items-row">
+                <input type="text" class="form-input" placeholder="Description" value="${esc(item.desc)}" oninput="updateEditItem(${item.id},'desc',this.value)" style="padding:6px 10px;">
+                <input type="text" class="form-input" placeholder="Unit" value="${esc(item.unit)}" oninput="updateEditItem(${item.id},'unit',this.value)" style="padding:6px 10px;">
+                <input type="text" class="form-input" placeholder="Qty" value="${esc(item.qty)}" oninput="updateEditItem(${item.id},'qty',this.value)" style="padding:6px 10px;">
+                <input type="text" class="form-input" placeholder="Remarks" value="${esc(item.remarks)}" oninput="updateEditItem(${item.id},'remarks',this.value)" style="padding:6px 10px;">
+                <button class="btn-remove-row" onclick="removeEditItemRow(${item.id})" title="Remove"><i class="fas fa-xmark"></i></button>
+            </div>
+        `).join('');
+    }
+
+    function updateEditItem(id, field, value) {
+        const item = editItems.find(i => i.id === id);
+        if (item) item[field] = value;
+        updateEditPreview();
+    }
+
+    function updateEditPreview() {
+        const data = {
+            srNo: document.getElementById('editSrNo').value,
+            date: document.getElementById('editDate').value,
+            type: document.querySelector('input[name="editPassType"]:checked')?.value || 'Returnable',
+            client: document.getElementById('editClient').value,
+            carriedBy: document.getElementById('editCarriedBy').value,
+            address: document.getElementById('editAddress').value,
+            mobile: document.getElementById('editMobile').value,
+            purpose: document.getElementById('editPurpose').value,
+            note: document.getElementById('editNote').value,
+            items: editItems
+        };
+        document.getElementById('editPreviewWrap').innerHTML = generatePassHTML(data);
+    }
+
+    function saveEditedPass() {
+        const id = document.getElementById('editPassId').value;
+        const client = document.getElementById('editClient').value.trim();
+        const carriedBy = document.getElementById('editCarriedBy').value.trim();
+        if (!client || !carriedBy) { showToast('Please fill Client Name and Carried By', 'warning'); return; }
+
+        const list = getPassList();
+        const idx = list.findIndex(x => x.id === id);
+        if (idx === -1) return;
+
+        list[idx] = {
+            ...list[idx],
+            date: document.getElementById('editDate').value,
+            type: document.querySelector('input[name="editPassType"]:checked').value,
+            client, carriedBy,
+            address: document.getElementById('editAddress').value.trim(),
+            mobile: document.getElementById('editMobile').value.trim(),
+            purpose: document.getElementById('editPurpose').value.trim(),
+            note: document.getElementById('editNote').value.trim(),
+            items: JSON.parse(JSON.stringify(editItems)),
+            updatedAt: new Date().toISOString()
+        };
+
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(list));
+        closeEditModal();
+        renderRegistry();
+        showToast('Gate pass updated successfully!');
+    }
+
+    function downloadEditedPass() {
+        const data = {
+            srNo: document.getElementById('editSrNo').value,
+            date: document.getElementById('editDate').value,
+            type: document.querySelector('input[name="editPassType"]:checked')?.value || 'Returnable',
+            client: document.getElementById('editClient').value,
+            carriedBy: document.getElementById('editCarriedBy').value,
+            address: document.getElementById('editAddress').value,
+            mobile: document.getElementById('editMobile').value,
+            purpose: document.getElementById('editPurpose').value,
+            note: document.getElementById('editNote').value,
+            items: editItems
+        };
+        const html = generatePassHTML(data);
+        const container = document.createElement('div');
+        container.innerHTML = html;
+        document.body.appendChild(container);
+        html2pdf().set({ margin: 5, filename: `GatePass_${data.srNo}.pdf`, image: { type: 'jpeg', quality: 0.98 }, html2canvas: { scale: 2, useCORS: true }, jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' } }).from(container.firstChild).save().then(() => {
+            document.body.removeChild(container);
+            showToast('PDF downloaded!');
+        }).catch(err => { document.body.removeChild(container); showToast('Download failed', 'error'); });
     }
 
     function deletePass(id) {
-        const pass = getPassList().find(p => p.id === id);
-        if (!pass) return;
-        document.getElementById('confirmTitle').textContent = 'Delete Gate Pass?';
-        document.getElementById('confirmMsg').textContent = `This will permanently delete pass ${pass.srNo} for "${pass.client || 'N/A'}" and all its uploaded files.`;
-        document.getElementById('confirmAction').onclick = async () => {
-            const newList = getPassList().filter(p => p.id !== id);
-            localStorage.setItem(STORAGE_KEY, JSON.stringify(newList));
+        const list = getPassList();
+        const p = list.find(x => x.id === id);
+        if (!p) return;
+        showConfirm('Delete Gate Pass?', `Are you sure you want to delete ${p.srNo} for ${p.client}? All linked files will also be deleted.`, async () => {
             await dbDeleteByPassId(id);
-            updateRegCount(); renderRegistry(); closeConfirm();
-            showToast(`Pass ${pass.srNo} deleted.`, 'success');
-        };
-        document.getElementById('confirmModal').classList.add('show');
-    }
-
-    function duplicatePass(id) {
-        const pass = getPassList().find(p => p.id === id);
-        if (!pass) return;
-        const newPass = { ...pass, id: Date.now().toString(36) + Math.random().toString(36).slice(2, 6), srNo: getNextSerial(), items: (pass.items || []).map(i => ({...i})), createdAt: new Date().toISOString() };
-        const list = getPassList(); list.unshift(newPass); localStorage.setItem(STORAGE_KEY, JSON.stringify(list));
-        updateRegCount(); renderRegistry(); showToast(`Duplicated as ${newPass.srNo}`, 'success');
+            const newList = list.filter(x => x.id !== id);
+            localStorage.setItem(STORAGE_KEY, JSON.stringify(newList));
+            renderRegistry();
+            showToast('Gate pass deleted.');
+        });
     }
 
     // ============================
-    // EDIT MODAL
-    // ============================
-    function openEditModal(id) {
-        const pass = getPassList().find(p => p.id === id);
-        if (!pass) { showToast('Pass not found.', 'error'); return; }
-        document.getElementById('editPassId').value = id;
-        document.getElementById('editSrNo').value = pass.srNo || '';
-        document.getElementById('editDate').value = pass.date || '';
-        document.getElementById('editClient').value = pass.client || '';
-        document.getElementById('editCarriedBy').value = pass.carriedBy || '';
-        document.getElementById('editAddress').value = pass.address || '';
-        document.getElementById('editMobile').value = pass.mobile || '';
-        document.getElementById('editPurpose').value = pass.purpose || '';
-        document.getElementById('editNote').value = pass.note || '';
-        document.querySelectorAll('input[name="editPassType"]').forEach(r => r.checked = r.value === (pass.type || 'Returnable'));
-        editItems = []; editItemIdCounter = 0; document.getElementById('editItemsContainer').innerHTML = '';
-        (pass.items || []).forEach(item => addEditItemRow(item.desc || '', item.unit || '', item.qty || '', item.remarks || ''));
-        if (!editItems.length) addEditItemRow();
-        document.getElementById('editModalSubtitle').textContent = `${pass.srNo} | ${pass.type}`;
-        updateEditPreview(); document.getElementById('editModal').classList.add('show');
-    }
-    function closeEditModal() { document.getElementById('editModal').classList.remove('show'); }
-
-    function addEditItemRow(desc, unit, qty, remarks) {
-        editItemIdCounter++;
-        const id = editItemIdCounter;
-        editItems.push({ id, desc: desc || '', unit: unit || '', qty: qty || '', remarks: remarks || '' });
-        const row = document.createElement('div'); row.id = `edit-item-${id}`; row.className = 'edit-items-row';
-        row.innerHTML = `<input type="text" class="form-input" style="font-size:12px;padding:7px 10px;" placeholder="Item description" value="${esc(desc||'')}" oninput="updateEditItem(${id},'desc',this.value)"><input type="text" class="form-input" style="font-size:12px;padding:7px 10px;text-align:center;" placeholder="PCS" value="${esc(unit||'')}" oninput="updateEditItem(${id},'unit',this.value)"><input type="text" class="form-input" style="font-size:12px;padding:7px 10px;text-align:center;" placeholder="0" value="${esc(qty||'')}" oninput="updateEditItem(${id},'qty',this.value)"><input type="text" class="form-input" style="font-size:12px;padding:7px 10px;" placeholder="Remarks" value="${esc(remarks||'')}" oninput="updateEditItem(${id},'remarks',this.value)"><button class="btn-remove-row" onclick="removeEditItemRow(${id})" title="Remove"><i class="fas fa-xmark"></i></button>`;
-        document.getElementById('editItemsContainer').appendChild(row);
-    }
-    function updateEditItem(id, field, value) { const item = editItems.find(i => i.id === id); if (item) item[field] = value; updateEditPreview(); }
-    function removeEditItemRow(id) { editItems = editItems.filter(i => i.id !== id); const el = document.getElementById(`edit-item-${id}`); if (el) el.remove(); if (!editItems.length) addEditItemRow(); updateEditPreview(); }
-    function updateEditPreview() { document.getElementById('editPreviewWrap').innerHTML = buildPassHTML(getEditFormData()); }
-    function getEditFormData() {
-        return { srNo: document.getElementById('editSrNo').value, date: document.getElementById('editDate').value, type: document.querySelector('input[name="editPassType"]:checked').value, client: document.getElementById('editClient').value.trim(), carriedBy: document.getElementById('editCarriedBy').value.trim(), address: document.getElementById('editAddress').value.trim(), mobile: document.getElementById('editMobile').value.trim(), purpose: document.getElementById('editPurpose').value.trim(), note: document.getElementById('editNote').value.trim(), items: editItems.filter(i => i.desc.trim()).map(i => ({ desc: i.desc.trim(), unit: i.unit.trim(), qty: i.qty.trim(), remarks: i.remarks.trim() })) };
-    }
-    function saveEditedPass() {
-        const id = document.getElementById('editPassId').value; const data = getEditFormData();
-        if (!data.client) { showToast('Client name is required.', 'warning'); return; }
-        if (!data.carriedBy) { showToast('Carried by is required.', 'warning'); return; }
-        if (!data.items.length) { showToast('Add at least one item.', 'warning'); return; }
-        const list = getPassList(); const idx = list.findIndex(p => p.id === id);
-        if (idx === -1) { showToast('Pass not found.', 'error'); return; }
-        list[idx] = { ...list[idx], ...data, updatedAt: new Date().toISOString() };
-        localStorage.setItem(STORAGE_KEY, JSON.stringify(list)); updateRegCount(); renderRegistry(); closeEditModal(); showToast(`Pass ${data.srNo} updated!`, 'success');
-    }
-    function downloadEditedPass() {
-        const data = getEditFormData();
-        if (!data.items.length) { showToast('Add at least one item.', 'warning'); return; }
-        showToast(`Generating PDF for ${data.srNo}...`, 'info');
-        const tempDiv = document.createElement('div'); tempDiv.innerHTML = buildPassHTML(data); const element = tempDiv.firstElementChild; document.body.appendChild(element);
-        const opt = { margin: [4,2,4,2], filename: `GatePass_${data.srNo}_edited.pdf`, image: { type: 'jpeg', quality: 0.98 }, html2canvas: { scale: 2, useCORS: true, backgroundColor: '#ffffff' }, jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' } };
-        html2pdf().set(opt).from(element).save().then(() => { document.body.removeChild(element); showToast(`Downloaded ${data.srNo}`, 'success'); }).catch(() => { document.body.removeChild(element); showToast('PDF generation failed.', 'error'); });
-    }
-
-    // ============================
-    // UPLOAD MODAL (All file types - JPG, PNG, PDF, etc.)
+    // Upload Files
     // ============================
     function openUploadModal() {
-        pendingUploadFiles = [];
-        document.getElementById('uploadFileInput').value = '';
-        document.getElementById('uploadResult').style.display = 'none';
-        document.getElementById('uploadFileList').innerHTML = '';
-        document.getElementById('uploadSaveBtn').style.display = 'none';
-        document.getElementById('uploadZone').classList.remove('drag-over');
-        // Populate pass select
         const list = getPassList();
-        const sel = document.getElementById('uploadPassSelect');
-        sel.innerHTML = '<option value="">-- No link (standalone upload) --</option>';
-        list.forEach(p => { sel.innerHTML += `<option value="${p.id}">${p.srNo} - ${esc(p.client || 'No client')}</option>`; });
+        const select = document.getElementById('uploadPassSelect');
+        select.innerHTML = '<option value="">-- No link (standalone upload) --</option>' + list.map(p => `<option value="${p.id}">${p.srNo} - ${esc(p.client)}</option>`).join('');
+        pendingUploadFiles = [];
+        document.getElementById('uploadFileList').innerHTML = '';
+        document.getElementById('uploadFileList').style.display = 'none';
+        document.getElementById('uploadSaveBtn').style.display = 'none';
+        document.getElementById('uploadResult').style.display = 'none';
+        document.getElementById('uploadFileInput').value = '';
         document.getElementById('uploadModal').classList.add('show');
     }
+
     function closeUploadModal() { document.getElementById('uploadModal').classList.remove('show'); }
 
-    // Drag & drop
-    const uploadZone = document.getElementById('uploadZone');
-    uploadZone.addEventListener('dragover', (e) => { e.preventDefault(); uploadZone.classList.add('drag-over'); });
-    uploadZone.addEventListener('dragleave', () => { uploadZone.classList.remove('drag-over'); });
-    uploadZone.addEventListener('drop', (e) => { e.preventDefault(); uploadZone.classList.remove('drag-over'); addFilesToPending(e.dataTransfer.files); });
-
-    function handleFileSelect(event) { addFilesToPending(event.target.files); }
-
-    function addFilesToPending(fileList) {
-        for (const file of fileList) {
-            // Generate a unique temp ID for this pending file
-            const tempId = 'pending_' + Date.now() + '_' + Math.random().toString(36).slice(2, 6);
-            pendingUploadFiles.push({ tempId, file });
-        }
-        renderPendingFiles();
+    function handleFileSelect(e) {
+        const files = Array.from(e.target.files || []);
+        if (files.length === 0) return;
+        pendingUploadFiles = pendingUploadFiles.concat(files);
+        renderUploadFileList();
+        e.target.value = '';
     }
 
-    function removePendingFile(tempId) {
-        pendingUploadFiles = pendingUploadFiles.filter(f => f.tempId !== tempId);
-        renderPendingFiles();
+    function removePendingFile(idx) {
+        pendingUploadFiles.splice(idx, 1);
+        renderUploadFileList();
     }
 
-    function renderPendingFiles() {
+    function renderUploadFileList() {
         const container = document.getElementById('uploadFileList');
-        const saveBtn = document.getElementById('uploadSaveBtn');
-
-        if (!pendingUploadFiles.length) {
-            container.innerHTML = '';
-            saveBtn.style.display = 'none';
+        if (pendingUploadFiles.length === 0) {
+            container.style.display = 'none';
+            document.getElementById('uploadSaveBtn').style.display = 'none';
             return;
         }
+        container.style.display = 'flex';
+        document.getElementById('uploadSaveBtn').style.display = 'inline-flex';
 
-        saveBtn.style.display = 'inline-flex';
-        container.innerHTML = pendingUploadFiles.map(f => {
-            const iconClass = getFileIconClass(f.file.type);
-            const iconName = getFileIconName(f.file.type);
+        container.innerHTML = pendingUploadFiles.map((f, i) => {
+            const isImg = f.type.startsWith('image/');
+            const isPdf = f.type === 'application/pdf';
+            const iconClass = isImg ? 'img' : isPdf ? 'pdf' : 'other';
+            const iconFA = isImg ? 'fa-image' : isPdf ? 'fa-file-pdf' : 'fa-file';
             return `<div class="file-chip">
-                <div class="file-chip-icon ${iconClass}"><i class="fas ${iconName}"></i></div>
-                <div class="file-chip-info">
-                    <div class="file-chip-name" title="${esc(f.file.name)}">${esc(f.file.name)}</div>
-                    <div class="file-chip-size">${formatFileSize(f.file.size)} &middot; ${esc(f.file.type || 'unknown type')}</div>
-                </div>
-                <button class="btn-remove-row" onclick="removePendingFile('${f.tempId}')" title="Remove"><i class="fas fa-xmark"></i></button>
+                <div class="file-chip-icon ${iconClass}"><i class="fas ${iconFA}"></i></div>
+                <div class="file-chip-info"><div class="file-chip-name">${esc(f.name)}</div><div class="file-chip-size">${formatFileSize(f.size)}</div></div>
+                <button class="btn-icon danger" onclick="removePendingFile(${i})" title="Remove"><i class="fas fa-xmark"></i></button>
             </div>`;
         }).join('');
     }
 
     async function uploadSelectedFiles() {
-        if (!pendingUploadFiles.length) { showToast('No files selected.', 'warning'); return; }
-
+        if (pendingUploadFiles.length === 0) return;
         const passId = document.getElementById('uploadPassSelect').value || null;
-        const saveBtn = document.getElementById('uploadSaveBtn');
-        saveBtn.innerHTML = '<i class="fas fa-spinner" style="animation:spin 1s linear infinite;"></i> Uploading...';
-        saveBtn.style.pointerEvents = 'none';
+        const resultDiv = document.getElementById('uploadResult');
+        resultDiv.style.display = 'block';
+        resultDiv.innerHTML = '<div style="text-align:center;color:var(--muted);"><i class="fas fa-spinner fa-spin" style="margin-right:8px;"></i>Uploading...</div>';
 
-        let uploaded = 0, failed = 0;
+        let uploaded = 0;
+        let failed = 0;
 
-        for (const pf of pendingUploadFiles) {
+        for (const file of pendingUploadFiles) {
             try {
-                const arrayBuffer = await pf.file.arrayBuffer();
-                const record = {
-                    id: 'file_' + Date.now() + '_' + Math.random().toString(36).slice(2, 8),
+                const dataUrl = await readFileAsDataURL(file);
+                const isImg = file.type.startsWith('image/');
+                let thumbnail = null;
+                if (isImg) thumbnail = await generateThumbnail(file, 200);
+
+                await dbAdd({
+                    id: 'file_' + Date.now() + '_' + Math.random().toString(36).substr(2, 6),
                     passId: passId,
-                    fileName: pf.file.name,
-                    fileType: pf.file.type,
-                    fileSize: pf.file.size,
-                    fileData: arrayBuffer,
+                    name: file.name,
+                    type: file.type,
+                    size: file.size,
+                    data: dataUrl,
+                    thumbnail: thumbnail,
+                    isImage: isImg,
                     uploadedAt: new Date().toISOString()
-                };
-                await dbAdd(record);
+                });
                 uploaded++;
             } catch (err) {
-                console.error('Upload failed for', pf.file.name, err);
+                console.error('Upload error:', err);
                 failed++;
             }
         }
 
-        saveBtn.innerHTML = '<i class="fas fa-check"></i> Upload Files';
-        saveBtn.style.pointerEvents = 'auto';
-
+        resultDiv.innerHTML = `<div style="display:flex;align-items:center;gap:8px;"><i class="fas ${failed===0?'fa-check-circle':'fa-exclamation-circle'}" style="color:${failed===0?'#2ecc71':'var(--accent)'};font-size:16px;"></i><span style="font-size:13px;">${uploaded} file(s) uploaded successfully${failed>0?`, ${failed} failed`:''}</span></div>`;
         pendingUploadFiles = [];
-        renderPendingFiles();
-
-        let msg = `<strong>${uploaded}</strong> file${uploaded !== 1 ? 's' : ''} uploaded successfully.`;
-        if (failed > 0) msg += `<br><span style="color:var(--red-accent);">${failed} file${failed !== 1 ? 's' : ''} failed.</span>`;
-        if (passId) {
-            const pass = getPassList().find(p => p.id === passId);
-            msg += `<br><span style="color:var(--muted);">Linked to: ${pass ? pass.srNo : 'Unknown'}</span>`;
-        }
-        showUploadResult('success', msg);
-        updateRegCount();
+        document.getElementById('uploadFileList').innerHTML = '';
+        document.getElementById('uploadFileList').style.display = 'none';
+        document.getElementById('uploadSaveBtn').style.display = 'none';
         renderRegistry();
+        updateTotalFileCount();
+        showToast(`${uploaded} file(s) uploaded!`);
     }
 
-    function showUploadResult(type, message) {
-        const el = document.getElementById('uploadResult'); el.style.display = 'block';
-        if (type === 'success') {
-            el.style.borderColor = 'var(--emerald)'; el.style.background = 'rgba(42,107,66,0.1)';
-            el.innerHTML = `<div style="display:flex;align-items:flex-start;gap:10px;"><i class="fas fa-check-circle" style="color:#6ddb98;font-size:18px;margin-top:2px;"></i><div style="font-size:13px;line-height:1.5;">${message}</div></div>`;
-        } else {
-            el.style.borderColor = 'var(--red-accent)'; el.style.background = 'rgba(192,57,43,0.1)';
-            el.innerHTML = `<div style="display:flex;align-items:flex-start;gap:10px;"><i class="fas fa-exclamation-circle" style="color:var(--red-accent);font-size:18px;margin-top:2px;"></i><div style="font-size:13px;line-height:1.5;">${message}</div></div>`;
-        }
+    function readFileAsDataURL(file) {
+        return new Promise((resolve, reject) => {
+            const reader = new FileReader();
+            reader.onload = () => resolve(reader.result);
+            reader.onerror = reject;
+            reader.readAsDataURL(file);
+        });
+    }
+
+    function generateThumbnail(file, maxSize) {
+        return new Promise((resolve) => {
+            const reader = new FileReader();
+            reader.onload = (e) => {
+                const img = new Image();
+                img.onload = () => {
+                    const canvas = document.createElement('canvas');
+                    let w = img.width, h = img.height;
+                    if (w > h) { if (w > maxSize) { h = h * maxSize / w; w = maxSize; } }
+                    else { if (h > maxSize) { w = w * maxSize / h; h = maxSize; } }
+                    canvas.width = w; canvas.height = h;
+                    canvas.getContext('2d').drawImage(img, 0, 0, w, h);
+                    resolve(canvas.toDataURL('image/jpeg', 0.7));
+                };
+                img.src = e.target.result;
+            };
+            reader.readAsDataURL(file);
+        });
     }
 
     // ============================
-    // ATTACHMENTS VIEWER
+    // Attachments Modal
     // ============================
-    async function openAttachViewer(passId) {
+    async function openAttachModal(passId) {
         viewingAttachPassId = passId;
-        const pass = getPassList().find(p => p.id === passId);
+        const list = getPassList();
+        const p = list.find(x => x.id === passId);
+        if (!p) return;
+        document.getElementById('attachModalSubtitle').textContent = `${p.srNo} - ${esc(p.client)}`;
+
         const files = await dbGetByPassId(passId);
-        document.getElementById('attachModalSubtitle').textContent = pass ? `${pass.srNo} - ${pass.client || 'No client'}` : 'All files';
         const grid = document.getElementById('attachGrid');
 
-        if (!files.length) {
-            grid.innerHTML = `<div class="empty-state" style="padding:40px 20px;"><i class="fas fa-paperclip" style="font-size:36px;"></i><p>No files uploaded yet for this gate pass.</p><p style="font-size:12px;margin-top:6px;">Click the + button above to upload JPG, PNG, PDF or any file.</p></div>`;
+        if (files.length === 0) {
+            grid.innerHTML = '<div class="empty-state"><i class="fas fa-paperclip"></i><p>No files attached to this gate pass.</p></div>';
         } else {
-            grid.innerHTML = `<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:14px;">` +
+            grid.innerHTML = '<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:12px;">' +
                 files.map(f => {
-                    const iconClass = getFileIconClass(f.fileType);
-                    const iconName = getFileIconName(f.fileType);
-                    const isImage = f.fileType && f.fileType.startsWith('image/');
-                    const thumbHtml = isImage
-                        ? `<img class="attach-thumb" id="thumb-${f.id}" src="" alt="${esc(f.fileName)}" onclick="previewImage('${f.id}')" style="background:var(--border);">`
-                        : `<div style="width:100%;aspect-ratio:4/3;display:flex;align-items:center;justify-content:center;background:var(--input-bg);border:1px solid var(--border);border-radius:8px;"><i class="fas ${iconName}" style="font-size:36px;opacity:0.3;"></i></div>`;
-                    const dateStr = f.uploadedAt ? new Date(f.uploadedAt).toLocaleDateString('en-IN', { day: '2-digit', month: 'short', year: 'numeric' }) : '';
+                    const thumbHTML = f.isImage && f.thumbnail
+                        ? `<img src="${f.thumbnail}" class="attach-thumb" onclick="previewImageFromDB('${f.id}')" alt="${esc(f.name)}">`
+                        : `<div class="attach-thumb" style="display:flex;align-items:center;justify-content:center;background:#1a1d1a;"><i class="fas ${f.type==='application/pdf'?'fa-file-pdf':'fa-file'}" style="font-size:32px;color:var(--muted);opacity:0.4;"></i></div>`;
                     return `<div class="attach-card">
-                        ${thumbHtml}
+                        ${thumbHTML}
                         <div class="attach-card-body">
-                            <div class="attach-card-name" title="${esc(f.fileName)}">${esc(f.fileName)}</div>
-                            <div class="attach-card-meta">${formatFileSize(f.fileSize)} &middot; ${dateStr}</div>
+                            <div class="attach-card-name" title="${esc(f.name)}">${esc(f.name)}</div>
+                            <div class="attach-card-meta">${formatFileSize(f.size)} | ${new Date(f.uploadedAt).toLocaleDateString()}</div>
                             <div class="attach-card-actions">
-                                <button class="btn-icon download" onclick="downloadAttachment('${f.id}')" title="Download" style="width:28px;height:28px;font-size:11px;"><i class="fas fa-download"></i></button>
-                                <button class="btn-icon danger" onclick="deleteAttachment('${f.id}','${passId}')" title="Delete" style="width:28px;height:28px;font-size:11px;"><i class="fas fa-trash"></i></button>
+                                <button class="btn-icon download" onclick="downloadFileFromDB('${f.id}')" title="Download"><i class="fas fa-download"></i></button>
+                                <button class="btn-icon danger" onclick="deleteFileFromDB('${f.id}','${passId}')" title="Delete"><i class="fas fa-trash"></i></button>
                             </div>
                         </div>
                     </div>`;
-                }).join('') + `</div>`;
-
-            // Load image thumbnails
-            files.filter(f => f.fileType && f.fileType.startsWith('image/')).forEach(async (f) => {
-                try {
-                    const record = await dbGet(f.id);
-                    if (record && record.fileData) {
-                        const blob = new Blob([record.fileData], { type: record.fileType });
-                        const url = URL.createObjectURL(blob);
-                        const img = document.getElementById(`thumb-${f.id}`);
-                        if (img) img.src = url;
-                    }
-                } catch (e) { console.error('Thumb load error', e); }
-            });
+                }).join('') + '</div>';
         }
         document.getElementById('attachModal').classList.add('show');
     }
 
-    function closeAttachModal() { document.getElementById('attachModal').classList.remove('show'); viewingAttachPassId = null; }
+    function closeAttachModal() { document.getElementById('attachModal').classList.remove('show'); }
 
     function addMoreFilesToPass() {
         closeAttachModal();
-        openUploadModal();
-        // Pre-select the pass
         setTimeout(() => {
-            const sel = document.getElementById('uploadPassSelect');
-            if (viewingAttachPassId) sel.value = viewingAttachPassId;
-        }, 100);
+            openUploadModal();
+            if (viewingAttachPassId) {
+                document.getElementById('uploadPassSelect').value = viewingAttachPassId;
+            }
+        }, 200);
     }
 
-    async function downloadAttachment(fileId) {
-        try {
-            const record = await dbGet(fileId);
-            if (!record) { showToast('File not found.', 'error'); return; }
-            const blob = new Blob([record.fileData], { type: record.fileType });
-            const url = URL.createObjectURL(blob);
-            const a = document.createElement('a'); a.href = url; a.download = record.fileName;
-            document.body.appendChild(a); a.click(); document.body.removeChild(a);
-            URL.revokeObjectURL(url);
-            showToast(`Downloaded ${record.fileName}`, 'success');
-        } catch (e) { showToast('Download failed.', 'error'); console.error(e); }
-    }
-
-    async function deleteAttachment(fileId, passId) {
-        document.getElementById('confirmTitle').textContent = 'Delete File?';
-        document.getElementById('confirmMsg').textContent = 'This file will be permanently deleted.';
-        document.getElementById('confirmAction').onclick = async () => {
-            await dbDelete(fileId);
-            closeConfirm();
-            if (passId) openAttachViewer(passId);
-            renderRegistry();
-            showToast('File deleted.', 'success');
-        };
-        document.getElementById('confirmModal').classList.add('show');
-    }
-
-    // ============================
-    // Image Preview Overlay
-    // ============================
-    async function previewImage(fileId) {
-        try {
-            const record = await dbGet(fileId);
-            if (!record) return;
-            const blob = new Blob([record.fileData], { type: record.fileType });
-            const url = URL.createObjectURL(blob);
-            document.getElementById('imagePreviewImg').src = url;
+    async function previewImageFromDB(fileId) {
+        const f = await dbGet(fileId);
+        if (f && f.isImage && f.data) {
+            document.getElementById('imagePreviewImg').src = f.data;
             document.getElementById('imagePreview').classList.add('show');
-        } catch (e) { console.error(e); }
+        }
     }
-    function closeImagePreview() {
-        document.getElementById('imagePreview').classList.remove('show');
-        const img = document.getElementById('imagePreviewImg');
-        if (img.src) URL.revokeObjectURL(img.src);
-        img.src = '';
+
+    function closeImagePreview() { document.getElementById('imagePreview').classList.remove('show'); }
+
+    async function downloadFileFromDB(fileId) {
+        const f = await dbGet(fileId);
+        if (!f || !f.data) { showToast('File not found', 'error'); return; }
+        const a = document.createElement('a');
+        a.href = f.data;
+        a.download = f.name;
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        showToast('File downloaded!');
+    }
+
+    async function deleteFileFromDB(fileId, passId) {
+        showConfirm('Delete File?', 'This file will be permanently deleted.', async () => {
+            await dbDelete(fileId);
+            if (passId) {
+                openAttachModal(passId);
+            }
+            renderRegistry();
+            updateTotalFileCount();
+            showToast('File deleted.');
+        });
     }
 
     // ============================
-    // Import JSON Data (separate from file upload)
+    // ALL FILES MODAL (NEW FEATURE)
     // ============================
-    function importFromJSON() {
-        const input = document.createElement('input');
-        input.type = 'file'; input.accept = '.json';
-        input.onchange = (e) => {
-            const file = e.target.files[0]; if (!file) return;
-            const reader = new FileReader();
-            reader.onload = (ev) => {
-                try {
-                    const data = JSON.parse(ev.target.result);
-                    let passes = Array.isArray(data) ? data : (data && data.srNo ? [data] : (data && data.passes ? data.passes : []));
-                    const validPasses = passes.filter(p => p.srNo).map(p => ({ id: p.id || Date.now().toString(36) + Math.random().toString(36).slice(2,6), srNo: p.srNo, date: p.date || '', type: p.type || 'Returnable', client: p.client || '', carriedBy: p.carriedBy || '', address: p.address || '', mobile: p.mobile || '', purpose: p.purpose || '', note: p.note || '', items: (p.items||[]).map(i => ({desc:i.desc||'',unit:i.unit||'',qty:i.qty||'',remarks:i.remarks||''})), createdAt: p.createdAt || new Date().toISOString() }));
-                    if (!validPasses.length) { showToast('No valid passes found.', 'error'); return; }
-                    const existing = getPassList(); const srNos = new Set(existing.map(p => p.srNo));
-                    let added = 0, skipped = 0;
-                    validPasses.forEach(p => { if (srNos.has(p.srNo)) { skipped++; } else { existing.push(p); srNos.add(p.srNo); added++; } });
-                    localStorage.setItem(STORAGE_KEY, JSON.stringify(existing)); updateRegCount(); renderRegistry();
-                    showToast(`Imported ${added} passes. ${skipped} duplicates skipped.`, 'success');
-                } catch (err) { showToast('Invalid JSON file.', 'error'); }
-            };
-            reader.readAsText(file);
-        };
-        input.click();
+    async function openAllFilesModal() {
+        document.getElementById('allFilesModal').classList.add('show');
+        await renderAllFilesContent();
+    }
+
+    function closeAllFilesModal() { document.getElementById('allFilesModal').classList.remove('show'); }
+
+    async function renderAllFilesContent() {
+        const content = document.getElementById('allFilesContent');
+        const list = getPassList();
+        const allFiles = await dbGetAll();
+
+        const linkedFiles = allFiles.filter(f => f.passId);
+        const standaloneFiles = allFiles.filter(f => !f.passId);
+
+        document.getElementById('allFilesSubtitle').textContent = `${list.length} gate passes, ${allFiles.length} files total`;
+        document.getElementById('deleteAllFilesBtn').style.display = allFiles.length > 0 ? 'inline-flex' : 'none';
+
+        let html = '';
+
+        if (list.length === 0 && allFiles.length === 0) {
+            html = `<div class="empty-state"><i class="fas fa-folder-open"></i><p>No gate passes or files yet. Create your first gate pass!</p></div>`;
+            content.innerHTML = html;
+            return;
+        }
+
+        // Group by pass
+        for (const pass of list) {
+            const files = linkedFiles.filter(f => f.passId === pass.id);
+            const typeClass = pass.type === 'Returnable' ? 'type-returnable' : 'type-non-returnable';
+
+            html += `<div class="all-files-pass-group">
+                <div class="all-files-pass-header" onclick="togglePassGroup(this)">
+                    <div class="all-files-pass-header-left">
+                        <span class="all-files-pass-sr">${esc(pass.srNo)}</span>
+                        <div class="all-files-pass-info">
+                            ${esc(pass.client)} <small>| ${esc(pass.carriedBy)} | ${formatDate(pass.date)}</small>
+                            <br><span class="type-badge ${typeClass}" style="margin-top:3px;">${esc(pass.type)}</span>
+                        </div>
+                    </div>
+                    <div style="display:flex;align-items:center;gap:10px;">
+                        <span class="all-files-pass-file-count">${files.length} file${files.length!==1?'s':''}</span>
+                        <i class="fas fa-chevron-down all-files-pass-toggle"></i>
+                    </div>
+                </div>
+                <div class="all-files-pass-body">`;
+
+            if (files.length === 0) {
+                html += `<div style="grid-column:1/-1;text-align:center;padding:24px;color:var(--muted);font-size:13px;">
+                    <i class="fas fa-file-circle-xmark" style="font-size:24px;opacity:0.3;display:block;margin-bottom:8px;"></i>
+                    No files uploaded for this pass
+                </div>`;
+            } else {
+                for (const f of files) {
+                    html += buildFileCardHTML(f);
+                }
+            }
+
+            html += `</div></div>`;
+        }
+
+        // Standalone files section
+        if (standaloneFiles.length > 0) {
+            html += `<div class="standalone-section" style="margin-top:8px;">
+                <div class="standalone-header" onclick="toggleStandaloneGroup(this)">
+                    <div class="standalone-header-left">
+                        <i class="fas fa-paperclip"></i>
+                        <span>Standalone Files (not linked to any pass)</span>
+                    </div>
+                    <div style="display:flex;align-items:center;gap:10px;">
+                        <span class="all-files-pass-file-count" style="background:#9b59b6;">${standaloneFiles.length}</span>
+                        <i class="fas fa-chevron-down all-files-pass-toggle" style="color:#bb8fce;"></i>
+                    </div>
+                </div>
+                <div class="standalone-body">`;
+
+            for (const f of standaloneFiles) {
+                html += buildFileCardHTML(f);
+            }
+
+            html += `</div></div>`;
+        }
+
+        // Passes with no entry in the list but have orphan files
+        const orphanFiles = linkedFiles.filter(f => !list.find(p => p.id === f.passId));
+        if (orphanFiles.length > 0) {
+            html += `<div class="standalone-section" style="margin-top:8px;">
+                <div class="standalone-header" onclick="toggleStandaloneGroup(this)" style="border-color:rgba(231,76,60,0.3);background:rgba(231,76,60,0.1);">
+                    <div class="standalone-header-left">
+                        <i class="fas fa-link-slash" style="color:#e88;"></i>
+                        <span style="color:#e88;">Orphan Files (linked pass was deleted)</span>
+                    </div>
+                    <div style="display:flex;align-items:center;gap:10px;">
+                        <span class="all-files-pass-file-count" style="background:var(--red-accent);">${orphanFiles.length}</span>
+                        <i class="fas fa-chevron-down all-files-pass-toggle" style="color:#e88;"></i>
+                    </div>
+                </div>
+                <div class="standalone-body">`;
+
+            for (const f of orphanFiles) {
+                html += buildFileCardHTML(f);
+            }
+
+            html += `</div></div>`;
+        }
+
+        content.innerHTML = html;
+    }
+
+    function buildFileCardHTML(f) {
+        const isImg = f.isImage;
+        const isPdf = f.type === 'application/pdf';
+        let thumbContent = '';
+        if (isImg && f.thumbnail) {
+            thumbContent = `<img src="${f.thumbnail}" onclick="previewImageFromDB('${f.id}')" style="width:100%;height:100%;object-fit:cover;cursor:pointer;" alt="${esc(f.name)}">`;
+        } else if (isImg && f.data) {
+            thumbContent = `<img src="${f.data}" onclick="previewImageFromDB('${f.id}')" style="width:100%;height:100%;object-fit:cover;cursor:pointer;" alt="${esc(f.name)}">`;
+        } else {
+            const iconFA = isPdf ? 'fa-file-pdf' : 'fa-file';
+            const iconColor = isPdf ? '#e74c3c' : 'var(--muted)';
+            thumbContent = `<div style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;background:#1a1d1a;"><i class="fas ${iconFA}" class="file-icon-big" style="font-size:40px;color:${iconColor};opacity:0.5;"></i></div>`;
+        }
+
+        return `<div class="all-file-card" id="fileCard_${f.id}">
+            <div class="all-file-card-thumb">${thumbContent}</div>
+            <div class="all-file-card-body">
+                <div class="all-file-card-name" title="${esc(f.name)}">${esc(f.name)}</div>
+                <div class="all-file-card-meta">
+                    <span>${formatFileSize(f.size)}</span>
+                    <span>${new Date(f.uploadedAt).toLocaleDateString()}</span>
+                </div>
+                <div class="all-file-card-actions">
+                    <button class="btn-icon download" onclick="downloadFileFromDB('${f.id}')" title="Download"><i class="fas fa-download"></i></button>
+                    <button class="btn-icon danger" onclick="showFileDeleteConfirm('${f.id}', this)" title="Delete"><i class="fas fa-trash"></i></button>
+                </div>
+            </div>
+        </div>`;
+    }
+
+    function togglePassGroup(header) {
+        const body = header.nextElementSibling;
+        const toggle = header.querySelector('.all-files-pass-toggle');
+        body.classList.toggle('collapsed');
+        toggle.classList.toggle('collapsed');
+    }
+
+    function toggleStandaloneGroup(header) {
+        const body = header.nextElementSibling;
+        const toggle = header.querySelector('.all-files-pass-toggle');
+        body.classList.toggle('collapsed');
+        toggle.classList.toggle('collapsed');
+    }
+
+    function showFileDeleteConfirm(fileId, btnEl) {
+        const card = document.getElementById('fileCard_' + fileId);
+        if (!card || card.querySelector('.all-file-card-delete-confirm')) return;
+
+        const overlay = document.createElement('div');
+        overlay.className = 'all-file-card-delete-confirm';
+        overlay.innerHTML = `
+            <i class="fas fa-trash" style="font-size:24px;color:var(--red-accent);"></i>
+            <p>Delete this file?</p>
+            <div class="confirm-btns">
+                <button class="btn-sm no" onclick="this.closest('.all-file-card-delete-confirm').remove()">Cancel</button>
+                <button class="btn-sm yes" onclick="confirmDeleteFile('${fileId}')">Delete</button>
+            </div>
+        `;
+        card.appendChild(overlay);
+    }
+
+    async function confirmDeleteFile(fileId) {
+        await dbDelete(fileId);
+        const card = document.getElementById('fileCard_' + fileId);
+        if (card) {
+            card.style.transition = 'all 0.3s ease';
+            card.style.opacity = '0';
+            card.style.transform = 'scale(0.8)';
+            setTimeout(() => {
+                card.remove();
+                // Check if section is now empty and update
+                checkEmptySections();
+            }, 300);
+        }
+        renderRegistry();
+        updateTotalFileCount();
+        showToast('File deleted.');
+    }
+
+    function checkEmptySections() {
+        // Re-render subtitle counts
+        const content = document.getElementById('allFilesContent');
+        const bodies = content.querySelectorAll('.all-files-pass-body, .standalone-body');
+        let totalVisible = 0;
+        bodies.forEach(body => {
+            if (!body.classList.contains('collapsed')) {
+                const cards = body.querySelectorAll('.all-file-card');
+                totalVisible += cards.length;
+            }
+        });
+
+        // Update file count dots
+        const passBodies = content.querySelectorAll('.all-files-pass-body');
+        const passHeaders = content.querySelectorAll('.all-files-pass-header');
+        passHeaders.forEach((header, i) => {
+            if (passBodies[i]) {
+                const count = passBodies[i].querySelectorAll('.all-file-card').length;
+                const badge = header.querySelector('.all-files-pass-file-count');
+                if (badge) badge.textContent = count + ' file' + (count !== 1 ? 's' : '');
+            }
+        });
+    }
+
+    function deleteAllFilesConfirm() {
+        showConfirm('Delete ALL Files?', 'This will permanently delete all uploaded files from every gate pass and standalone uploads. This cannot be undone.', async () => {
+            await dbClear();
+            await renderAllFilesContent();
+            renderRegistry();
+            updateTotalFileCount();
+            showToast('All files deleted.');
+        });
+    }
+
+    async function updateTotalFileCount() {
+        try {
+            const allFiles = await dbGetAll();
+            document.getElementById('totalFileCountDot').textContent = allFiles.length;
+        } catch {
+            document.getElementById('totalFileCountDot').textContent = '0';
+        }
     }
 
     // ============================
-    // Export Functions
+    // Export / Import
     // ============================
     function exportAllCSV() {
         const list = getPassList();
-        if (!list.length) { showToast('No passes to export.', 'warning'); return; }
-        let csv = 'SR No,Date,Type,Client,Carried By,Address,Mobile,Purpose,Note,Items Count,Item Details\n';
-        list.forEach(p => { const det = (p.items||[]).map((i,idx) => `${idx+1}. ${i.desc} (${i.qty} ${i.unit})`).join(' | '); csv += `"${p.srNo}","${p.date||''}","${p.type||''}","${p.client||''}","${p.carriedBy||''}","${p.address||''}","${p.mobile||''}","${p.purpose||''}","${p.note||''}","${(p.items||[]).length}","${det}"\n`; });
-        downloadBlob(csv, 'GatePasses_Registry.csv', 'text/csv'); showToast(`Exported ${list.length} passes as CSV`, 'success');
+        if (list.length === 0) { showToast('No data to export', 'warning'); return; }
+        const headers = ['SR No','Date','Type','Client','Carried By','Address','Mobile','Purpose','Note','Items Count','Created At'];
+        const rows = list.map(p => [
+            p.srNo, p.date, p.type, p.client, p.carriedBy, p.address, p.mobile, p.purpose, p.note,
+            (p.items||[]).filter(i=>i.desc.trim()).length, p.createdAt
+        ].map(v => `"${String(v||'').replace(/"/g,'""')}"`).join(','));
+        const csv = [headers.join(','), ...rows].join('\n');
+        downloadBlob(csv, 'GatePasses_Export.csv', 'text/csv');
+        showToast('CSV exported!');
     }
+
     function exportAllJSON() {
         const list = getPassList();
-        if (!list.length) { showToast('No passes to export.', 'warning'); return; }
-        downloadBlob(JSON.stringify({ exportedAt: new Date().toISOString(), totalPasses: list.length, passes: list }, null, 2), 'GatePasses_Registry.json', 'application/json');
-        showToast(`Exported ${list.length} passes as JSON`, 'success');
+        if (list.length === 0) { showToast('No data to export', 'warning'); return; }
+        downloadBlob(JSON.stringify(list, null, 2), 'GatePasses_Export.json', 'application/json');
+        showToast('JSON exported!');
     }
-    function downloadBlob(content, filename, mimeType) { const blob = new Blob([content], { type: mimeType }); const url = URL.createObjectURL(blob); const a = document.createElement('a'); a.href = url; a.download = filename; document.body.appendChild(a); a.click(); document.body.removeChild(a); URL.revokeObjectURL(url); }
+
+    function importFromJSON() {
+        document.getElementById('importFileInput').click();
+    }
+
+    async function handleImportFile(e) {
+        const file = e.target.files[0];
+        if (!file) return;
+        try {
+            const text = await file.text();
+            const data = JSON.parse(text);
+            if (!Array.isArray(data)) throw new Error('Invalid format');
+            const existing = getPassList();
+            let added = 0;
+            for (const item of data) {
+                if (item.srNo && item.client && !existing.find(x => x.srNo === item.srNo)) {
+                    existing.unshift(item);
+                    added++;
+                }
+            }
+            localStorage.setItem(STORAGE_KEY, JSON.stringify(existing));
+            renderRegistry();
+            showToast(`Imported ${added} new gate pass(es)!`);
+        } catch (err) {
+            showToast('Import failed: ' + err.message, 'error');
+        }
+        e.target.value = '';
+    }
+
+    function clearAllData() {
+        showConfirm('Clear All Data?', 'This will delete ALL gate passes and ALL uploaded files. This cannot be undone.', async () => {
+            localStorage.removeItem(STORAGE_KEY);
+            localStorage.removeItem(COUNTER_KEY);
+            await dbClear();
+            renderRegistry();
+            updateTotalFileCount();
+            showToast('All data cleared.');
+        });
+    }
 
     // ============================
-    // Clear All Data
+    // Dropdown
     // ============================
-    function clearAllData() {
-        const list = getPassList();
-        if (!list.length) { showToast('No data to clear.', 'warning'); return; }
-        document.getElementById('confirmTitle').textContent = 'Clear All Data?';
-        document.getElementById('confirmMsg').textContent = `This will permanently delete all ${list.length} gate passes AND all uploaded files.`;
-        document.getElementById('confirmAction').onclick = async () => {
-            localStorage.setItem(STORAGE_KEY, '[]'); localStorage.setItem(COUNTER_KEY, '0');
-            await dbClear(); updateRegCount(); renderRegistry(); closeConfirm(); showToast('All data cleared.', 'success');
+    function toggleDropdown(id) {
+        const menu = document.getElementById(id);
+        const isOpen = menu.classList.contains('open');
+        closeAllDropdowns();
+        if (!isOpen) menu.classList.add('open');
+    }
+
+    function closeAllDropdowns() {
+        document.querySelectorAll('.dropdown-menu.open').forEach(d => d.classList.remove('open'));
+    }
+
+    // ============================
+    // Confirm Modal
+    // ============================
+    let confirmCallback = null;
+
+    function showConfirm(title, msg, callback) {
+        document.getElementById('confirmTitle').textContent = title;
+        document.getElementById('confirmMsg').textContent = msg;
+        confirmCallback = callback;
+        document.getElementById('confirmAction').onclick = () => {
+            closeConfirm();
+            if (confirmCallback) confirmCallback();
+            confirmCallback = null;
         };
         document.getElementById('confirmModal').classList.add('show');
     }
 
-    // ============================
-    // Confirm Modal / Toast
-    // ============================
     function closeConfirm() { document.getElementById('confirmModal').classList.remove('show'); }
+
+    // ============================
+    // Toast
+    // ============================
     let toastTimer = null;
-    function showToast(message, type) {
-        const toast = document.getElementById('toast'); const icon = toast.querySelector('i');
-        document.getElementById('toastMsg').textContent = message;
+    function showToast(msg, type) {
+        const toast = document.getElementById('toast');
+        const icon = toast.querySelector('i');
+        document.getElementById('toastMsg').textContent = msg;
         if (type === 'warning') { icon.className = 'fas fa-exclamation-triangle'; icon.style.color = '#e67e22'; toast.style.borderColor = '#e67e22'; }
-        else if (type === 'error') { icon.className = 'fas fa-times-circle'; icon.style.color = 'var(--red-accent)'; toast.style.borderColor = 'var(--red-accent)'; }
-        else if (type === 'info') { icon.className = 'fas fa-info-circle'; icon.style.color = '#3498db'; toast.style.borderColor = '#3498db'; }
+        else if (type === 'error') { icon.className = 'fas fa-times-circle'; icon.style.color = '#e74c3c'; toast.style.borderColor = '#e74c3c'; }
         else { icon.className = 'fas fa-check-circle'; icon.style.color = 'var(--accent)'; toast.style.borderColor = 'var(--emerald)'; }
-        toast.classList.add('show'); clearTimeout(toastTimer); toastTimer = setTimeout(() => toast.classList.remove('show'), 3500);
+        toast.classList.add('show');
+        clearTimeout(toastTimer);
+        toastTimer = setTimeout(() => toast.classList.remove('show'), 3500);
     }
 
     // ============================
-    // Keyboard & Overlay close
+    // Utilities
     // ============================
-    document.addEventListener('keydown', (e) => { if (e.key === 'Escape') { closeModal(); closeEditModal(); closeUploadModal(); closeAttachModal(); closeConfirm(); closeImagePreview(); closeAllDropdowns(); } });
-    ['viewModal','editModal','uploadModal','confirmModal','attachModal'].forEach(id => {
-        document.getElementById(id).addEventListener('click', (e) => {
-            if (e.target === e.currentTarget) {
-                if (id === 'viewModal') closeModal();
-                else if (id === 'editModal') closeEditModal();
-                else if (id === 'uploadModal') closeUploadModal();
-                else if (id === 'confirmModal') closeConfirm();
-                else if (id === 'attachModal') closeAttachModal();
-            }
-        });
-    });
+    function esc(str) {
+        if (!str) return '';
+        const d = document.createElement('div');
+        d.textContent = str;
+        return d.innerHTML;
+    }
+
+    function formatDate(dateStr) {
+        if (!dateStr) return '--';
+        try {
+            const d = new Date(dateStr + 'T00:00:00');
+            return d.toLocaleDateString('en-IN', { day: '2-digit', month: 'short', year: 'numeric' });
+        } catch { return dateStr; }
+    }
+
+    function formatFileSize(bytes) {
+        if (!bytes) return '0 B';
+        if (bytes < 1024) return bytes + ' B';
+        if (bytes < 1048576) return (bytes / 1024).toFixed(1) + ' KB';
+        return (bytes / 1048576).toFixed(1) + ' MB';
+    }
+
+    function downloadBlob(content, filename, type) {
+        const blob = new Blob([content], { type });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url; a.download = filename;
+        document.body.appendChild(a); a.click();
+        document.body.removeChild(a);
+        URL.revokeObjectURL(url);
+    }
+
+    // ============================
+    // Start
+    // ============================
+    init();
 </script>
 </body>
 </html>
