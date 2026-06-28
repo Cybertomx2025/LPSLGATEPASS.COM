@@ -26,6 +26,7 @@
         body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--fg); min-height: 100vh; overflow-x: hidden; }
         .bg-atmo { position: fixed; inset: 0; z-index: 0; pointer-events: none; background: radial-gradient(ellipse 700px 500px at 10% 15%, rgba(42,107,66,0.1), transparent), radial-gradient(ellipse 500px 500px at 90% 85%, rgba(212,168,67,0.05), transparent); }
         .bg-grid { position: fixed; inset: 0; z-index: 0; pointer-events: none; background-image: linear-gradient(rgba(212,168,67,0.02) 1px, transparent 1px), linear-gradient(90deg, rgba(212,168,67,0.02) 1px, transparent 1px); background-size: 50px 50px; }
+
         .form-input { background: var(--input-bg); border: 1px solid var(--border); color: var(--fg); padding: 9px 13px; border-radius: 6px; font-size: 13px; font-family: 'Inter', sans-serif; width: 100%; transition: all 0.25s; outline: none; }
         .form-input:focus { border-color: var(--accent); box-shadow: 0 0 0 3px var(--accent-glow); }
         .form-input::placeholder { color: var(--muted); opacity: 0.5; }
@@ -33,13 +34,14 @@
         .form-scroll::-webkit-scrollbar { width: 4px; }
         .form-scroll::-webkit-scrollbar-track { background: transparent; }
         .form-scroll::-webkit-scrollbar-thumb { background: var(--border); border-radius: 4px; }
-        .tab-btn { padding: 10px 20px; font-size: 12px; font-weight: 700; font-family: 'Inter', sans-serif; border: 1px solid var(--border); background: transparent; color: var(--muted); cursor: pointer; transition: all 0.25s; display: inline-flex; align-items: center; gap: 7px; }
+
+        .tab-btn { padding: 10px 22px; font-size: 13px; font-weight: 700; font-family: 'Inter', sans-serif; border: 1px solid var(--border); background: transparent; color: var(--muted); cursor: pointer; transition: all 0.25s; display: inline-flex; align-items: center; gap: 8px; }
         .tab-btn:first-child { border-radius: 8px 0 0 8px; }
         .tab-btn:last-child { border-radius: 0 8px 8px 0; }
         .tab-btn.active { background: var(--emerald-deep); border-color: var(--emerald); color: #a8e6c1; }
         .tab-btn:hover:not(.active) { border-color: var(--accent); color: var(--accent); }
         .tab-badge { background: var(--accent); color: #1a1a1a; font-size: 10px; font-weight: 800; padding: 1px 7px; border-radius: 10px; min-width: 20px; text-align: center; }
-        .tab-badge.purple { background: #9b59b6; color: #fff; }
+
         .reg-table { width: 100%; border-collapse: collapse; font-size: 12.5px; }
         .reg-table thead th { background: var(--emerald-deep); color: #a8e6c1; font-size: 10.5px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; padding: 10px 12px; text-align: left; border-bottom: 2px solid var(--emerald); position: sticky; top: 0; z-index: 2; }
         .reg-table tbody tr { border-bottom: 1px solid var(--border); transition: background 0.2s; }
@@ -49,13 +51,14 @@
         .reg-table .type-badge { display: inline-block; padding: 2px 8px; border-radius: 4px; font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em; }
         .type-returnable { background: rgba(42,107,66,0.15); color: #6ddb98; border: 1px solid rgba(42,107,66,0.3); }
         .type-non-returnable { background: rgba(192,57,43,0.12); color: #e88; border: 1px solid rgba(192,57,43,0.25); }
+
         .btn-icon { width: 32px; height: 32px; border: 1px solid var(--border); background: transparent; color: var(--muted); border-radius: 6px; cursor: pointer; display: inline-flex; align-items: center; justify-content: center; transition: all 0.2s; font-size: 13px; }
         .btn-icon:hover { border-color: var(--accent); color: var(--accent); background: var(--accent-glow); }
         .btn-icon.danger:hover { border-color: var(--red-accent); color: var(--red-accent); background: rgba(192,57,43,0.1); }
         .btn-icon.download:hover { border-color: #3498db; color: #3498db; background: rgba(52,152,219,0.1); }
         .btn-icon.edit:hover { border-color: var(--accent); color: var(--accent); background: var(--accent-glow); }
         .btn-icon.attach:hover { border-color: #9b59b6; color: #9b59b6; background: rgba(155,89,182,0.1); }
-        .btn-icon.view:hover { border-color: #2ecc71; color: #2ecc71; background: rgba(46,204,113,0.1); }
+
         .gate-pass { width: 760px; background: #fff; color: #000; font-family: 'Inter', sans-serif; font-size: 12px; border: 2px solid #000; position: relative; }
         .gp-header { display: flex; align-items: center; justify-content: space-between; padding: 12px 18px; border-bottom: 2px solid #000; }
         .gp-header-left { display: flex; align-items: center; gap: 12px; }
@@ -88,6 +91,7 @@
         .gp-sig-line { border-top: 1px solid #000; padding-top: 5px; font-size: 9.5px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: #222; margin-top: auto; }
         .gp-note-box { position: absolute; right: 18px; bottom: 90px; border: 2px solid #c0392b; padding: 5px 12px; font-size: 10px; font-weight: 800; color: #c0392b; text-transform: uppercase; letter-spacing: 0.08em; transform: rotate(-5deg); background: rgba(255,255,255,0.92); display: none; }
         .gp-note-box.show { display: block; }
+
         .btn-download { background: linear-gradient(135deg, var(--accent), #e8c35a); color: #1a1a1a; font-weight: 700; font-size: 14px; padding: 12px 28px; border: none; border-radius: 8px; cursor: pointer; display: inline-flex; align-items: center; gap: 9px; transition: all 0.3s; font-family: 'Inter', sans-serif; }
         .btn-download:hover { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(212,168,67,0.3); }
         .btn-download:active { transform: scale(0.97); }
@@ -97,24 +101,29 @@
         .btn-add-row:hover { background: var(--emerald); color: #fff; }
         .btn-remove-row { background: none; border: none; color: #c0392b; cursor: pointer; font-size: 14px; padding: 2px 5px; border-radius: 3px; transition: background 0.2s; }
         .btn-remove-row:hover { background: rgba(192,57,43,0.1); }
+
         .section-divider { display: flex; align-items: center; gap: 8px; margin: 16px 0 10px; }
         .section-divider::after { content: ''; flex: 1; height: 1px; background: var(--border); }
         .section-divider span { font-size: 11px; font-weight: 700; color: var(--accent); text-transform: uppercase; letter-spacing: 0.1em; white-space: nowrap; }
+
         .modal-overlay { position: fixed; inset: 0; z-index: 1000; background: rgba(0,0,0,0.85); backdrop-filter: blur(8px); display: none; align-items: flex-start; justify-content: center; padding: 30px 20px; overflow-y: auto; }
         .modal-overlay.show { display: flex; }
         .modal-box { background: var(--bg-card); border: 1px solid var(--border); border-radius: 16px; padding: 28px; max-width: 820px; width: 100%; position: relative; }
         .modal-close { position: absolute; top: 14px; right: 14px; width: 36px; height: 36px; border: 1px solid var(--border); background: transparent; color: var(--muted); border-radius: 8px; cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 16px; transition: all 0.2s; z-index: 10; }
         .modal-close:hover { border-color: var(--red-accent); color: var(--red-accent); }
+
         .toast { position: fixed; bottom: 30px; right: 30px; background: var(--emerald-deep); border: 1px solid var(--emerald); color: var(--fg); padding: 13px 20px; border-radius: 8px; font-size: 13px; font-weight: 500; display: flex; align-items: center; gap: 9px; transform: translateY(100px); opacity: 0; transition: all 0.4s cubic-bezier(0.22,1,0.36,1); z-index: 9999; box-shadow: 0 10px 40px rgba(0,0,0,0.4); }
         .toast.show { transform: translateY(0); opacity: 1; }
         .toast i { color: var(--accent); font-size: 15px; }
+
         .search-box { background: var(--input-bg); border: 1px solid var(--border); color: var(--fg); padding: 9px 13px 9px 36px; border-radius: 8px; font-size: 13px; font-family: 'Inter', sans-serif; width: 280px; outline: none; transition: all 0.25s; }
         .search-box:focus { border-color: var(--accent); box-shadow: 0 0 0 3px var(--accent-glow); }
         .search-box::placeholder { color: var(--muted); opacity: 0.5; }
+
         .empty-state { text-align: center; padding: 60px 20px; color: var(--muted); }
         .empty-state i { font-size: 48px; margin-bottom: 16px; opacity: 0.3; display: block; }
         .empty-state p { font-size: 14px; }
-        .empty-state .sub { font-size: 12px; margin-top: 6px; opacity: 0.7; }
+
         .dropdown-wrap { position: relative; display: inline-block; }
         .dropdown-menu { position: absolute; top: calc(100% + 6px); left: 0; min-width: 210px; background: var(--bg-card); border: 1px solid var(--border); border-radius: 10px; padding: 6px; z-index: 100; display: none; box-shadow: 0 12px 40px rgba(0,0,0,0.5); animation: fadeSlideDown 0.2s ease; }
         .dropdown-menu.open { display: block; }
@@ -122,15 +131,19 @@
         .dropdown-item:hover { background: var(--accent-glow); color: var(--accent); }
         .dropdown-item i { width: 18px; text-align: center; font-size: 14px; }
         .dropdown-divider { height: 1px; background: var(--border); margin: 4px 8px; }
+
         .row-dropdown { position: absolute; top: calc(100% + 4px); right: 0; min-width: 170px; background: var(--bg-card); border: 1px solid var(--border); border-radius: 10px; padding: 6px; z-index: 50; display: none; box-shadow: 0 12px 40px rgba(0,0,0,0.5); animation: fadeSlideDown 0.2s ease; }
         .row-dropdown.open { display: block; }
+
         .edit-modal-box { max-width: 860px; width: 100%; }
         .edit-items-row { display: grid; grid-template-columns: 1fr 80px 65px 110px 34px; gap: 6px; align-items: center; padding: 8px 10px; background: var(--input-bg); border: 1px solid var(--border); border-radius: 6px; animation: fadeIn 0.25s ease; }
         .edit-preview-wrap { overflow-x: auto; background: #f0f0ec; border-radius: 8px; padding: 16px; display: flex; justify-content: center; }
+
         .upload-zone { border: 2px dashed var(--border); border-radius: 12px; padding: 40px 20px; text-align: center; transition: all 0.3s; cursor: pointer; }
         .upload-zone:hover, .upload-zone.drag-over { border-color: var(--accent); background: var(--accent-glow); }
-        .upload-zone i { font-size: 36px; color: var(--muted); margin-bottom: 12px; transition: color 0.3s; display: block; }
+        .upload-zone i { font-size: 36px; color: var(--muted); margin-bottom: 12px; transition: color 0.3s; }
         .upload-zone:hover i, .upload-zone.drag-over i { color: var(--accent); }
+
         .file-chip { display: flex; align-items: center; gap: 10px; padding: 10px 14px; background: var(--input-bg); border: 1px solid var(--border); border-radius: 8px; animation: fadeIn 0.3s ease; }
         .file-chip-icon { width: 38px; height: 38px; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 16px; flex-shrink: 0; }
         .file-chip-icon.img { background: rgba(46,204,113,0.12); color: #2ecc71; }
@@ -139,113 +152,142 @@
         .file-chip-info { flex: 1; min-width: 0; }
         .file-chip-name { font-size: 13px; font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
         .file-chip-size { font-size: 11px; color: var(--muted); }
-        .file-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px; overflow: hidden; transition: all 0.25s; position: relative; }
-        .file-card:hover { border-color: var(--accent); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,0.3); }
-        .file-card-thumb { width: 100%; aspect-ratio: 4/3; object-fit: cover; cursor: pointer; display: block; }
-        .file-card-thumb-placeholder { width: 100%; aspect-ratio: 4/3; display: flex; align-items: center; justify-content: center; background: var(--input-bg); cursor: pointer; }
-        .file-card-thumb-placeholder i { font-size: 40px; opacity: 0.25; transition: all 0.3s; }
-        .file-card:hover .file-card-thumb-placeholder i { opacity: 0.5; color: var(--accent); }
-        .file-card-body { padding: 12px 14px; }
-        .file-card-name { font-size: 13px; font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-        .file-card-meta { font-size: 11px; color: var(--muted); margin-top: 3px; display: flex; flex-direction: column; gap: 2px; }
-        .file-card-link { color: var(--accent); font-weight: 600; cursor: pointer; }
-        .file-card-link:hover { text-decoration: underline; }
-        .file-card-actions { display: flex; gap: 6px; margin-top: 10px; }
-        .file-card-actions .btn-icon { width: 30px; height: 30px; font-size: 12px; }
-        .file-card-overlay { position: absolute; inset: 0; top: 0; background: rgba(0,0,0,0.5); display: flex; align-items: center; justify-content: center; opacity: 0; transition: opacity 0.2s; cursor: pointer; }
-        .file-card:hover .file-card-overlay { opacity: 1; }
-        .file-card-overlay i { font-size: 28px; color: #fff; }
+
+        .attach-thumb { width: 100%; aspect-ratio: 4/3; object-fit: cover; border-radius: 8px; border: 1px solid var(--border); cursor: pointer; transition: all 0.2s; }
+        .attach-thumb:hover { border-color: var(--accent); transform: scale(1.02); }
+        .attach-card { background: var(--input-bg); border: 1px solid var(--border); border-radius: 10px; overflow: hidden; transition: all 0.2s; }
+        .attach-card:hover { border-color: var(--accent); }
+        .attach-card-body { padding: 10px 12px; }
+        .attach-card-name { font-size: 12px; font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+        .attach-card-meta { font-size: 10px; color: var(--muted); margin-top: 2px; }
+        .attach-card-actions { display: flex; gap: 4px; margin-top: 8px; }
+
         .attach-count-badge { display: inline-flex; align-items: center; gap: 4px; background: rgba(155,89,182,0.12); color: #bb8fce; border: 1px solid rgba(155,89,182,0.25); padding: 2px 8px; border-radius: 10px; font-size: 11px; font-weight: 700; cursor: pointer; transition: all 0.2s; }
         .attach-count-badge:hover { background: rgba(155,89,182,0.2); border-color: rgba(155,89,182,0.4); }
-        .filter-chip { padding: 7px 16px; border: 1px solid var(--border); background: transparent; color: var(--muted); border-radius: 20px; font-size: 12px; font-weight: 600; cursor: pointer; font-family: 'Inter', sans-serif; transition: all 0.2s; display: inline-flex; align-items: center; gap: 5px; }
-        .filter-chip:hover { border-color: var(--accent); color: var(--accent); }
-        .filter-chip.active { background: var(--accent-glow); border-color: var(--accent); color: var(--accent); }
+
         .preview-overlay { position: fixed; inset: 0; z-index: 2000; background: rgba(0,0,0,0.92); display: none; align-items: center; justify-content: center; padding: 20px; cursor: zoom-out; }
         .preview-overlay.show { display: flex; }
         .preview-overlay img { max-width: 95vw; max-height: 90vh; border-radius: 8px; box-shadow: 0 20px 60px rgba(0,0,0,0.5); }
         .preview-overlay-close { position: absolute; top: 20px; right: 20px; width: 44px; height: 44px; border: 1px solid rgba(255,255,255,0.2); background: rgba(0,0,0,0.6); color: #fff; border-radius: 50%; cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 18px; transition: all 0.2s; z-index: 2001; }
         .preview-overlay-close:hover { background: var(--red-accent); border-color: var(--red-accent); }
-        .preview-overlay-nav { position: absolute; top: 50%; transform: translateY(-50%); width: 48px; height: 48px; border: 1px solid rgba(255,255,255,0.2); background: rgba(0,0,0,0.5); color: #fff; border-radius: 50%; cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 18px; transition: all 0.2s; z-index: 2001; }
-        .preview-overlay-nav:hover { background: var(--accent); border-color: var(--accent); color: #000; }
-        .preview-overlay-nav.prev { left: 20px; }
-        .preview-overlay-nav.next { right: 20px; }
-        .preview-overlay-info { position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%); background: rgba(0,0,0,0.7); border: 1px solid rgba(255,255,255,0.1); border-radius: 10px; padding: 10px 20px; display: flex; align-items: center; gap: 16px; z-index: 2001; }
-        .preview-overlay-info span { font-size: 12px; color: #ccc; }
-        .preview-overlay-info .fname { font-weight: 600; color: #fff; max-width: 300px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
-        .select-all-check { width: 18px; height: 18px; accent-color: var(--accent); cursor: pointer; }
-        .bulk-bar { position: sticky; bottom: 0; background: var(--bg-card); border-top: 1px solid var(--border); border-radius: 0 0 12px 12px; padding: 12px 20px; display: none; align-items: center; justify-content: space-between; z-index: 5; animation: fadeIn 0.2s ease; }
-        .bulk-bar.show { display: flex; }
+
         @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.3} }
         @keyframes fadeIn { from { opacity:0; transform:translateY(10px); } to { opacity:1; transform:translateY(0); } }
         @keyframes fadeSlideDown { from { opacity:0; transform:translateY(-8px); } to { opacity:1; transform:translateY(0); } }
         @keyframes spin { to { transform: rotate(360deg); } }
-        @media (max-width: 1200px) { .create-layout { flex-direction: column !important; align-items: center !important; } .gate-pass { width: 100% !important; max-width: 760px; } .preview-col { position: static !important; } }
-        @media (max-width: 800px) { .gate-pass { font-size: 10px; } .gp-title { font-size: 16px; } .gp-company-name { font-size: 13px; } .gp-footer { grid-template-columns: 1fr 1fr; } .reg-table { font-size: 11px; } .reg-table thead th, .reg-table tbody td { padding: 8px 6px; } .search-box { width: 100%; } .edit-items-row { grid-template-columns: 1fr 60px 50px 80px 30px; font-size: 11px; } .tab-btn { padding: 8px 12px; font-size: 11px; } }
+
+        @media (max-width: 1200px) {
+            .create-layout { flex-direction: column !important; align-items: center !important; }
+            .gate-pass { width: 100% !important; max-width: 760px; }
+            .preview-col { position: static !important; }
+        }
+        @media (max-width: 800px) {
+            .gate-pass { font-size: 10px; }
+            .gp-title { font-size: 16px; }
+            .gp-company-name { font-size: 13px; }
+            .gp-footer { grid-template-columns: 1fr 1fr; }
+            .reg-table { font-size: 11px; }
+            .reg-table thead th, .reg-table tbody td { padding: 8px 6px; }
+            .search-box { width: 100%; }
+            .edit-items-row { grid-template-columns: 1fr 60px 50px 80px 30px; font-size: 11px; }
+        }
         @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; } }
     </style>
 </head>
 <body>
+
 <div class="bg-atmo"></div>
 <div class="bg-grid"></div>
 
-<header style="position:relative;z-index:10;border-bottom:1px solid var(--border);background:rgba(12,14,12,0.85);backdrop-filter:blur(20px);">
-    <div style="max-width:1440px;margin:0 auto;padding:14px 24px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;">
-        <div style="display:flex;align-items:center;gap:11px;">
-            <div style="width:36px;height:36px;background:linear-gradient(135deg,var(--emerald),var(--accent));border-radius:7px;display:flex;align-items:center;justify-content:center;"><i class="fas fa-file-invoice" style="color:#fff;font-size:15px;"></i></div>
-            <div><div style="font-size:16px;font-weight:800;color:var(--fg);line-height:1;">Gate Pass System</div><div style="font-size:9px;color:var(--muted);text-transform:uppercase;letter-spacing:0.15em;">Limburg Power Solutions Ltd</div></div>
+<!-- Header -->
+<header style="position: relative; z-index: 10; border-bottom: 1px solid var(--border); background: rgba(12,14,12,0.85); backdrop-filter: blur(20px);">
+    <div style="max-width: 1440px; margin: 0 auto; padding: 14px 24px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px;">
+        <div style="display: flex; align-items: center; gap: 11px;">
+            <div style="width: 36px; height: 36px; background: linear-gradient(135deg, var(--emerald), var(--accent)); border-radius: 7px; display: flex; align-items: center; justify-content: center;">
+                <i class="fas fa-file-invoice" style="color: #fff; font-size: 15px;"></i>
+            </div>
+            <div>
+                <div style="font-size: 16px; font-weight: 800; color: var(--fg); line-height: 1;">Gate Pass System</div>
+                <div style="font-size: 9px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.15em;">Limburg Power Solutions Ltd</div>
+            </div>
         </div>
-        <div style="display:flex;">
-            <button class="tab-btn active" id="tabCreate" onclick="switchTab('create')"><i class="fas fa-plus-circle"></i> Create</button>
-            <button class="tab-btn" id="tabRegistry" onclick="switchTab('registry')"><i class="fas fa-list-ul"></i> All Passes <span class="tab-badge" id="regCount">0</span></button>
-            <button class="tab-btn" id="tabFiles" onclick="switchTab('files')"><i class="fas fa-folder-open"></i> All Files <span class="tab-badge purple" id="fileCount">0</span></button>
+        <div style="display: flex;">
+            <button class="tab-btn active" id="tabCreate" onclick="switchTab('create')">
+                <i class="fas fa-plus-circle"></i> Create Pass
+            </button>
+            <button class="tab-btn" id="tabRegistry" onclick="switchTab('registry')">
+                <i class="fas fa-list-ul"></i> All Passes
+                <span class="tab-badge" id="regCount">0</span>
+            </button>
         </div>
     </div>
 </header>
 
-<!-- CREATE TAB -->
-<div id="createPanel" style="position:relative;z-index:10;max-width:1440px;margin:0 auto;padding:32px 24px 60px;">
-    <div style="text-align:center;margin-bottom:32px;">
-        <h1 style="font-family:'Playfair Display',serif;font-size:clamp(26px,4vw,40px);font-weight:900;line-height:1.1;margin-bottom:6px;">Create <span style="color:var(--accent);">Gate Pass</span></h1>
-        <p style="font-size:13px;color:var(--muted);">Serial No. will be auto-generated. All passes are saved to the registry.</p>
+<!-- ======================== CREATE TAB ======================== -->
+<div id="createPanel" style="position: relative; z-index: 10; max-width: 1440px; margin: 0 auto; padding: 32px 24px 60px;">
+    <div style="text-align: center; margin-bottom: 32px;">
+        <h1 style="font-family: 'Playfair Display', serif; font-size: clamp(26px, 4vw, 40px); font-weight: 900; line-height: 1.1; margin-bottom: 6px;">
+            Create <span style="color: var(--accent);">Gate Pass</span>
+        </h1>
+        <p style="font-size: 13px; color: var(--muted);">Serial No. will be auto-generated. All passes are saved to the registry.</p>
     </div>
-    <div class="create-layout" style="display:flex;gap:32px;align-items:flex-start;">
-        <div style="flex:1;min-width:0;">
-            <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:12px;padding:22px;position:relative;overflow:hidden;">
-                <div style="position:absolute;top:0;right:0;width:80px;height:80px;background:linear-gradient(225deg,var(--accent-glow),transparent);pointer-events:none;"></div>
-                <div class="form-scroll" style="max-height:660px;overflow-y:auto;padding-right:6px;">
-                    <div class="section-divider"><span><i class="fas fa-tag" style="margin-right:5px;"></i> Pass Type</span></div>
-                    <div style="display:flex;gap:20px;margin-bottom:4px;">
-                        <label class="gp-cb" style="color:var(--fg);font-size:13px;font-weight:500;cursor:pointer;"><input type="radio" name="passType" value="Returnable" checked onchange="updatePreview()" style="accent-color:#000;width:14px;height:14px;cursor:pointer;"> Returnable</label>
-                        <label class="gp-cb" style="color:var(--fg);font-size:13px;font-weight:500;cursor:pointer;"><input type="radio" name="passType" value="Non Returnable" onchange="updatePreview()" style="accent-color:#000;width:14px;height:14px;cursor:pointer;"> Non Returnable</label>
+    <div class="create-layout" style="display: flex; gap: 32px; align-items: flex-start;">
+        <div style="flex: 1; min-width: 0;">
+            <div style="background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px; padding: 22px; position: relative; overflow: hidden;">
+                <div style="position: absolute; top: 0; right: 0; width: 80px; height: 80px; background: linear-gradient(225deg, var(--accent-glow), transparent); pointer-events: none;"></div>
+                <div class="form-scroll" style="max-height: 660px; overflow-y: auto; padding-right: 6px;">
+                    <div class="section-divider"><span><i class="fas fa-tag" style="margin-right: 5px;"></i> Pass Type</span></div>
+                    <div style="display: flex; gap: 20px; margin-bottom: 4px;">
+                        <label class="gp-cb" style="color: var(--fg); font-size: 13px; font-weight: 500; cursor: pointer;">
+                            <input type="radio" name="passType" value="Returnable" checked onchange="updatePreview()" style="accent-color: #000; width: 14px; height: 14px; cursor: pointer;"> Returnable
+                        </label>
+                        <label class="gp-cb" style="color: var(--fg); font-size: 13px; font-weight: 500; cursor: pointer;">
+                            <input type="radio" name="passType" value="Non Returnable" onchange="updatePreview()" style="accent-color: #000; width: 14px; height: 14px; cursor: pointer;"> Non Returnable
+                        </label>
                     </div>
-                    <div class="section-divider"><span><i class="fas fa-calendar" style="margin-right:5px;"></i> Basic Info</span></div>
-                    <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
-                        <div><label class="form-label" for="gpDate">Date</label><input type="date" id="gpDate" class="form-input" style="cursor:pointer;"></div>
+                    <div class="section-divider"><span><i class="fas fa-calendar" style="margin-right: 5px;"></i> Basic Info</span></div>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
+                        <div><label class="form-label" for="gpDate">Date</label><input type="date" id="gpDate" class="form-input" style="cursor: pointer;"></div>
                         <div><label class="form-label">Serial Number</label><input type="text" id="gpSrNo" class="form-input" readonly style="opacity:0.7;cursor:default;font-weight:700;color:var(--accent);"></div>
                     </div>
-                    <div class="section-divider"><span><i class="fas fa-user-tie" style="margin-right:5px;"></i> Party Details</span></div>
-                    <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
+                    <div class="section-divider"><span><i class="fas fa-user-tie" style="margin-right: 5px;"></i> Party Details</span></div>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
                         <div><label class="form-label" for="gpClient">Client Name *</label><input type="text" id="gpClient" class="form-input" placeholder="Client / Company name"></div>
                         <div><label class="form-label" for="gpCarriedBy">Carried By *</label><input type="text" id="gpCarriedBy" class="form-input" placeholder="Person name"></div>
                         <div style="grid-column:1/-1;"><label class="form-label" for="gpAddress">Address</label><input type="text" id="gpAddress" class="form-input" placeholder="Full address"></div>
                         <div><label class="form-label" for="gpMobile">Mobile No.</label><input type="tel" id="gpMobile" class="form-input" placeholder="+91 98765 43210"></div>
                         <div><label class="form-label" for="gpPurpose">Purpose</label><input type="text" id="gpPurpose" class="form-input" placeholder="Testing / Repair / Delivery"></div>
                     </div>
-                    <div class="section-divider"><span><i class="fas fa-boxes-stacked" style="margin-right:5px;"></i> Items</span></div>
+                    <div class="section-divider"><span><i class="fas fa-boxes-stacked" style="margin-right: 5px;"></i> Items</span></div>
                     <div style="margin-bottom:8px;"><button class="btn-add-row" onclick="addItemRow()"><i class="fas fa-plus"></i> Add Item</button></div>
                     <div id="itemsFormContainer" style="display:flex;flex-direction:column;gap:8px;"></div>
-                    <div class="section-divider"><span><i class="fas fa-sticky-note" style="margin-right:5px;"></i> Note</span></div>
+                    <div class="section-divider"><span><i class="fas fa-sticky-note" style="margin-right: 5px;"></i> Note</span></div>
                     <div><label class="form-label" for="gpNote">Red Stamp Note (optional)</label><input type="text" id="gpNote" class="form-input" placeholder="e.g. TESTING PURPOSE RETURNABLE" oninput="updatePreview()"></div>
                 </div>
             </div>
         </div>
         <div class="preview-col" style="flex-shrink:0;display:flex;flex-direction:column;align-items:center;gap:18px;position:sticky;top:20px;">
-            <div style="display:flex;align-items:center;gap:8px;align-self:flex-start;"><i class="fas fa-eye" style="color:var(--accent);font-size:12px;"></i><span style="font-size:11px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:0.1em;">Live Preview</span><div style="width:6px;height:6px;background:#4ade80;border-radius:50%;animation:blink 2s infinite;"></div></div>
+            <div style="display:flex;align-items:center;gap:8px;align-self:flex-start;">
+                <i class="fas fa-eye" style="color:var(--accent);font-size:12px;"></i>
+                <span style="font-size:11px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:0.1em;">Live Preview</span>
+                <div style="width:6px;height:6px;background:#4ade80;border-radius:50%;animation:blink 2s infinite;"></div>
+            </div>
             <div style="overflow-x:auto;max-width:100%;">
                 <div class="gate-pass" id="gatePass">
-                    <div class="gp-header"><div class="gp-header-left"><img src="https://z-cdn-media.chatglm.cn/files/d5e1f8e4-de6c-4aa3-baca-c8e3ac756f23.png?auth_key=1882562728-186c577ea1c042abb2bd5beb48c61184-0-1daa0eb13aa71be2ae2e9cd4a3159ce5" alt="Logo" class="gp-logo"><div><div class="gp-company-name">Limburg Power Solutions Ltd</div><div class="gp-company-sub">Plot No. 45-48, Industrial Area Phase-II,<br>Chandigarh - 160002, India</div></div></div><div class="gp-header-right"><div><strong>Ph:</strong> +91-172-4001234</div><div><strong>Email:</strong> info@limburgpower.com</div><div><strong>Web:</strong> www.limburgpower.com</div><div style="margin-top:4px;font-weight:800;color:#000;font-size:10px;">GSTIN: 04AABCL1234A1Z5</div></div></div>
+                    <div class="gp-header">
+                        <div class="gp-header-left">
+                            <img src="https://z-cdn-media.chatglm.cn/files/d5e1f8e4-de6c-4aa3-baca-c8e3ac756f23.png?auth_key=1882562728-186c577ea1c042abb2bd5beb48c61184-0-1daa0eb13aa71be2ae2e9cd4a3159ce5" alt="Logo" class="gp-logo">
+                            <div><div class="gp-company-name">Limburg Power Solutions Ltd</div><div class="gp-company-sub">Plot No. 45-48, Industrial Area Phase-II,<br>Chandigarh - 160002, India</div></div>
+                        </div>
+                        <div class="gp-header-right"><div><strong>Ph:</strong> +91-172-4001234</div><div><strong>Email:</strong> info@limburgpower.com</div><div><strong>Web:</strong> www.limburgpower.com</div><div style="margin-top:4px;font-weight:800;color:#000;font-size:10px;">GSTIN: 04AABCL1234A1Z5</div></div>
+                    </div>
                     <div class="gp-title-row"><div class="gp-title">Gate Pass</div></div>
-                    <div class="gp-checkbox-row"><label class="gp-cb"><input type="radio" name="passTypePreview" value="Returnable" checked disabled style="accent-color:#000;width:14px;height:14px;"><span>Returnable</span></label><label class="gp-cb"><input type="radio" name="passTypePreview" value="Non Returnable" disabled style="accent-color:#000;width:14px;height:14px;"><span>Non Returnable</span></label><div style="margin-left:auto;display:flex;align-items:center;gap:6px;"><span style="font-weight:700;">Date:</span><span id="pDate" style="font-weight:500;">--</span></div><div style="display:flex;align-items:center;gap:6px;"><span style="font-weight:700;">SR No:</span><span id="pSrNo" style="font-weight:600;"></span></div></div>
+                    <div class="gp-checkbox-row">
+                        <label class="gp-cb"><input type="radio" name="passTypePreview" value="Returnable" checked disabled style="accent-color:#000;width:14px;height:14px;"><span>Returnable</span></label>
+                        <label class="gp-cb"><input type="radio" name="passTypePreview" value="Non Returnable" disabled style="accent-color:#000;width:14px;height:14px;"><span>Non Returnable</span></label>
+                        <div style="margin-left:auto;display:flex;align-items:center;gap:6px;"><span style="font-weight:700;">Date:</span><span id="pDate" style="font-weight:500;">--</span></div>
+                        <div style="display:flex;align-items:center;gap:6px;"><span style="font-weight:700;">SR No:</span><span id="pSrNo" style="font-weight:600;"></span></div>
+                    </div>
                     <div class="gp-fields-row"><div class="gp-field-cell">Client</div><div class="gp-field-cell"><span class="gp-field-val empty" id="pClient">Not provided</span></div><div class="gp-field-cell">Carried By</div><div class="gp-field-cell"><span class="gp-field-val empty" id="pCarriedBy">Not provided</span></div></div>
                     <div class="gp-fields-row"><div class="gp-field-cell">Address</div><div class="gp-field-cell" style="grid-column:span 3;"><span class="gp-field-val empty" id="pAddress">Not provided</span></div></div>
                     <div class="gp-fields-row" style="border-bottom:none;"><div class="gp-field-cell">Mobile No.</div><div class="gp-field-cell"><span class="gp-field-val empty" id="pMobile">Not provided</span></div><div class="gp-field-cell">Purpose</div><div class="gp-field-cell"><span class="gp-field-val empty" id="pPurpose">Not provided</span></div></div>
@@ -255,339 +297,953 @@
                 </div>
             </div>
             <div style="display:flex;gap:10px;flex-wrap:wrap;justify-content:center;">
-                <button class="btn-download" id="downloadBtn" onclick="saveAndDownload()"><i class="fas fa-file-pdf"></i> Save & Download</button>
+                <button class="btn-download" id="downloadBtn" onclick="saveAndDownload()" aria-label="Save and download gate pass"><i class="fas fa-file-pdf"></i> Save & Download</button>
                 <button class="btn-secondary" onclick="resetForm()"><i class="fas fa-rotate-left"></i> Reset</button>
             </div>
         </div>
     </div>
 </div>
 
-<!-- REGISTRY TAB -->
-<div id="registryPanel" style="position:relative;z-index:10;max-width:1440px;margin:0 auto;padding:32px 24px 60px;display:none;">
+<!-- ======================== REGISTRY TAB ======================== -->
+<div id="registryPanel" style="position: relative; z-index: 10; max-width: 1440px; margin: 0 auto; padding: 32px 24px 60px; display: none;">
     <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:14px;margin-bottom:24px;">
         <div style="display:flex;align-items:center;gap:14px;">
-            <div><h2 style="font-family:'Playfair Display',serif;font-size:28px;font-weight:900;">Gate Pass <span style="color:var(--accent);">Registry</span></h2><p style="font-size:13px;color:var(--muted);margin-top:4px;">All saved gate passes</p></div>
-            <div class="dropdown-wrap"><button class="btn-icon" onclick="toggleDropdown('regMenu')" title="More options"><i class="fas fa-ellipsis-vertical"></i></button>
+            <div>
+                <h2 style="font-family:'Playfair Display',serif;font-size:28px;font-weight:900;">Gate Pass <span style="color:var(--accent);">Registry</span></h2>
+                <p style="font-size:13px;color:var(--muted);margin-top:4px;">All saved gate passes with serial numbers</p>
+            </div>
+            <div class="dropdown-wrap">
+                <button class="btn-icon" onclick="toggleDropdown('regMenu')" title="More options" aria-label="More options"><i class="fas fa-ellipsis-vertical"></i></button>
                 <div class="dropdown-menu" id="regMenu">
                     <button class="dropdown-item" onclick="openUploadModal();closeAllDropdowns();"><i class="fas fa-cloud-arrow-up" style="color:var(--accent);"></i> Upload Files (JPG, PDF...)</button>
                     <div class="dropdown-divider"></div>
-                    <button class="dropdown-item" onclick="exportAllCSV();closeAllDropdowns();"><i class="fas fa-file-csv" style="color:#2ecc71;"></i> Export CSV</button>
-                    <button class="dropdown-item" onclick="exportAllJSON();closeAllDropdowns();"><i class="fas fa-file-code" style="color:#3498db;"></i> Export JSON</button>
+                    <button class="dropdown-item" onclick="exportAllCSV();closeAllDropdowns();"><i class="fas fa-file-csv" style="color:#2ecc71;"></i> Export as CSV</button>
+                    <button class="dropdown-item" onclick="exportAllJSON();closeAllDropdowns();"><i class="fas fa-file-code" style="color:#3498db;"></i> Export as JSON</button>
                     <div class="dropdown-divider"></div>
-                    <button class="dropdown-item" onclick="importFromJSON();closeAllDropdowns();"><i class="fas fa-file-import" style="color:#e67e22;"></i> Import JSON</button>
+                    <button class="dropdown-item" onclick="importFromJSON();closeAllDropdowns();"><i class="fas fa-file-import" style="color:#e67e22;"></i> Import JSON Data</button>
                     <div class="dropdown-divider"></div>
                     <button class="dropdown-item" onclick="clearAllData();closeAllDropdowns();" style="color:var(--red-accent);"><i class="fas fa-trash"></i> Clear All Data</button>
                 </div>
             </div>
         </div>
         <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap;">
-            <div style="position:relative;"><i class="fas fa-search" style="position:absolute;left:12px;top:50%;transform:translateY(-50%);color:var(--muted);font-size:12px;"></i><input type="text" class="search-box" id="searchBox" placeholder="Search..." oninput="renderRegistry()"></div>
+            <div style="position:relative;"><i class="fas fa-search" style="position:absolute;left:12px;top:50%;transform:translateY(-50%);color:var(--muted);font-size:12px;"></i><input type="text" class="search-box" id="searchBox" placeholder="Search by SR No, client, name..." oninput="renderRegistry()"></div>
             <select class="form-input" id="filterType" style="width:150px;cursor:pointer;" onchange="renderRegistry()"><option value="all">All Types</option><option value="Returnable">Returnable</option><option value="Non Returnable">Non Returnable</option></select>
         </div>
     </div>
-    <div id="statsRow" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin-bottom:24px;"></div>
+    <div id="statsRow" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px;margin-bottom:24px;"></div>
     <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:12px;overflow:hidden;">
         <div style="overflow-x:auto;max-height:520px;overflow-y:auto;" class="form-scroll">
             <table class="reg-table" id="regTable"><thead><tr><th style="width:50px;">SR No</th><th>Date</th><th>Type</th><th>Client</th><th>Carried By</th><th>Items</th><th>Files</th><th>Purpose</th><th style="width:150px;text-align:center;">Actions</th></tr></thead><tbody id="regTableBody"></tbody></table>
         </div>
-        <div class="empty-state" id="emptyState" style="display:none;"><i class="fas fa-folder-open"></i><p>No gate passes found.</p></div>
+        <div class="empty-state" id="emptyState" style="display:none;"><i class="fas fa-folder-open"></i><p>No gate passes found. Create your first one!</p></div>
     </div>
 </div>
 
-<!-- ======================== ALL FILES TAB ======================== -->
-<div id="filesPanel" style="position:relative;z-index:10;max-width:1440px;margin:0 auto;padding:32px 24px 60px;display:none;">
-    <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:14px;margin-bottom:24px;">
-        <div style="display:flex;align-items:center;gap:14px;">
-            <div><h2 style="font-family:'Playfair Display',serif;font-size:28px;font-weight:900;">Uploaded <span style="color:#bb8fce;">Files</span></h2><p style="font-size:13px;color:var(--muted);margin-top:4px;">View all uploaded gate pass documents</p></div>
+<!-- ======================== VIEW MODAL ======================== -->
+<div class="modal-overlay" id="viewModal">
+    <div class="modal-box" style="padding:0;overflow:hidden;">
+        <div style="padding:16px 20px;border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;">
+            <div><div style="font-weight:700;font-size:15px;" id="modalTitle">Gate Pass</div><div style="font-size:11px;color:var(--muted);margin-top:2px;" id="modalSubtitle"></div></div>
+            <div style="display:flex;gap:8px;">
+                <button class="btn-icon download" onclick="downloadFromModal()" title="Download PDF" id="modalDownloadBtn"><i class="fas fa-file-pdf"></i></button>
+                <button class="modal-close" onclick="closeModal()"><i class="fas fa-xmark"></i></button>
+            </div>
         </div>
-        <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap;">
-            <div style="position:relative;"><i class="fas fa-search" style="position:absolute;left:12px;top:50%;transform:translateY(-50%);color:var(--muted);font-size:12px;"></i><input type="text" class="search-box" id="fileSearchBox" placeholder="Search by filename..." oninput="renderFilesTab()"></div>
-            <button class="btn-download" onclick="openUploadModal()" style="padding:9px 18px;font-size:13px;"><i class="fas fa-cloud-arrow-up"></i> Upload</button>
-            <button class="btn-icon danger" onclick="deleteSelectedFiles()" id="bulkDeleteBtn" title="Delete selected" style="display:none;width:auto;padding:0 12px;gap:5px;font-size:12px;"><i class="fas fa-trash"></i> <span id="bulkDeleteCount">0</span></button>
-        </div>
-    </div>
-    <!-- Filter chips -->
-    <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:20px;" id="fileFilterChips">
-        <button class="filter-chip active" onclick="setFileFilter('all',this)"><i class="fas fa-layer-group"></i> All Files</button>
-        <button class="filter-chip" onclick="setFileFilter('image',this)"><i class="fas fa-file-image"></i> Images</button>
-        <button class="filter-chip" onclick="setFileFilter('pdf',this)"><i class="fas fa-file-pdf"></i> PDFs</button>
-        <button class="filter-chip" onclick="setFileFilter('other',this)"><i class="fas fa-file"></i> Other</button>
-    </div>
-    <!-- File stats -->
-    <div id="fileStatsRow" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin-bottom:24px;"></div>
-    <!-- Files grid -->
-    <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:12px;overflow:hidden;position:relative;">
-        <div style="padding:20px;" id="filesGrid"></div>
-        <div class="empty-state" id="filesEmptyState" style="display:none;"><i class="fas fa-cloud-arrow-up"></i><p>No files uploaded yet</p><p class="sub">Click the Upload button or use the 3-dot menu in All Passes tab</p></div>
+        <div style="padding:20px;overflow-x:auto;display:flex;justify-content:center;background:#f0f0ec;"><div id="modalPassContainer"></div></div>
     </div>
 </div>
 
-<!-- VIEW MODAL -->
-<div class="modal-overlay" id="viewModal"><div class="modal-box" style="padding:0;overflow:hidden;">
-    <div style="padding:16px 20px;border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;">
-        <div><div style="font-weight:700;font-size:15px;" id="modalTitle">Gate Pass</div><div style="font-size:11px;color:var(--muted);margin-top:2px;" id="modalSubtitle"></div></div>
-        <div style="display:flex;gap:8px;"><button class="btn-icon download" onclick="downloadFromModal()" id="modalDownloadBtn"><i class="fas fa-file-pdf"></i></button><button class="modal-close" onclick="closeModal()"><i class="fas fa-xmark"></i></button></div>
-    </div>
-    <div style="padding:20px;overflow-x:auto;display:flex;justify-content:center;background:#f0f0ec;"><div id="modalPassContainer"></div></div>
-</div></div>
-
-<!-- EDIT MODAL -->
-<div class="modal-overlay" id="editModal"><div class="modal-box edit-modal-box" style="padding:0;overflow:hidden;">
-    <div style="padding:16px 20px;border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;background:var(--bg-card);z-index:5;">
-        <div><div style="font-weight:700;font-size:15px;"><i class="fas fa-pen-to-square" style="color:var(--accent);margin-right:6px;"></i>Edit Gate Pass</div><div style="font-size:11px;color:var(--muted);margin-top:2px;" id="editModalSubtitle"></div></div>
-        <div style="display:flex;gap:8px;"><button class="btn-icon download" onclick="downloadEditedPass()"><i class="fas fa-file-pdf"></i></button><button class="modal-close" onclick="closeEditModal()"><i class="fas fa-xmark"></i></button></div>
-    </div>
-    <div style="padding:22px;max-height:80vh;overflow-y:auto;" class="form-scroll"><div style="display:flex;gap:24px;flex-wrap:wrap;">
-        <div style="flex:1;min-width:320px;"><input type="hidden" id="editPassId">
-            <div class="section-divider"><span><i class="fas fa-tag" style="margin-right:5px;"></i> Pass Type</span></div>
-            <div style="display:flex;gap:20px;margin-bottom:4px;"><label class="gp-cb" style="color:var(--fg);font-size:13px;font-weight:500;cursor:pointer;"><input type="radio" name="editPassType" value="Returnable" checked onchange="updateEditPreview()" style="accent-color:#000;width:14px;height:14px;cursor:pointer;"> Returnable</label><label class="gp-cb" style="color:var(--fg);font-size:13px;font-weight:500;cursor:pointer;"><input type="radio" name="editPassType" value="Non Returnable" onchange="updateEditPreview()" style="accent-color:#000;width:14px;height:14px;cursor:pointer;"> Non Returnable</label></div>
-            <div class="section-divider"><span><i class="fas fa-calendar" style="margin-right:5px;"></i> Basic Info</span></div>
-            <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;"><div><label class="form-label">Date</label><input type="date" id="editDate" class="form-input" onchange="updateEditPreview()"></div><div><label class="form-label">Serial Number</label><input type="text" id="editSrNo" class="form-input" readonly style="opacity:0.7;cursor:default;font-weight:700;color:var(--accent);"></div></div>
-            <div class="section-divider"><span><i class="fas fa-user-tie" style="margin-right:5px;"></i> Party Details</span></div>
-            <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;"><div><label class="form-label">Client Name *</label><input type="text" id="editClient" class="form-input" placeholder="Client name" oninput="updateEditPreview()"></div><div><label class="form-label">Carried By *</label><input type="text" id="editCarriedBy" class="form-input" placeholder="Person name" oninput="updateEditPreview()"></div><div style="grid-column:1/-1;"><label class="form-label">Address</label><input type="text" id="editAddress" class="form-input" placeholder="Full address" oninput="updateEditPreview()"></div><div><label class="form-label">Mobile No.</label><input type="tel" id="editMobile" class="form-input" placeholder="+91 98765 43210" oninput="updateEditPreview()"></div><div><label class="form-label">Purpose</label><input type="text" id="editPurpose" class="form-input" placeholder="Purpose" oninput="updateEditPreview()"></div></div>
-            <div class="section-divider"><span><i class="fas fa-boxes-stacked" style="margin-right:5px;"></i> Items</span></div>
-            <div style="margin-bottom:8px;"><button class="btn-add-row" onclick="addEditItemRow()"><i class="fas fa-plus"></i> Add Item</button></div>
-            <div id="editItemsContainer" style="display:flex;flex-direction:column;gap:8px;"></div>
-            <div class="section-divider"><span><i class="fas fa-sticky-note" style="margin-right:5px;"></i> Note</span></div>
-            <div><label class="form-label">Red Stamp Note</label><input type="text" id="editNote" class="form-input" placeholder="Optional note" oninput="updateEditPreview()"></div>
-            <div style="margin-top:22px;display:flex;gap:10px;flex-wrap:wrap;"><button class="btn-download" onclick="saveEditedPass()" style="flex:1;justify-content:center;"><i class="fas fa-check"></i> Save Changes</button><button class="btn-secondary" onclick="closeEditModal()"><i class="fas fa-xmark"></i> Cancel</button></div>
+<!-- ======================== EDIT MODAL ======================== -->
+<div class="modal-overlay" id="editModal">
+    <div class="modal-box edit-modal-box" style="padding:0;overflow:hidden;">
+        <div style="padding:16px 20px;border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;background:var(--bg-card);z-index:5;">
+            <div><div style="font-weight:700;font-size:15px;"><i class="fas fa-pen-to-square" style="color:var(--accent);margin-right:6px;"></i>Edit Gate Pass</div><div style="font-size:11px;color:var(--muted);margin-top:2px;" id="editModalSubtitle"></div></div>
+            <div style="display:flex;gap:8px;">
+                <button class="btn-icon download" onclick="downloadEditedPass()" title="Download PDF"><i class="fas fa-file-pdf"></i></button>
+                <button class="modal-close" onclick="closeEditModal()"><i class="fas fa-xmark"></i></button>
+            </div>
         </div>
-        <div style="flex-shrink:0;min-width:0;overflow-x:auto;"><div style="display:flex;align-items:center;gap:8px;margin-bottom:10px;"><i class="fas fa-eye" style="color:var(--accent);font-size:12px;"></i><span style="font-size:11px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:0.1em;">Preview</span></div><div class="edit-preview-wrap" id="editPreviewWrap"></div></div>
-    </div></div>
-</div></div>
-
-<!-- UPLOAD MODAL -->
-<div class="modal-overlay" id="uploadModal"><div class="modal-box" style="max-width:560px;">
-    <button class="modal-close" onclick="closeUploadModal()"><i class="fas fa-xmark"></i></button>
-    <div style="text-align:center;margin-bottom:24px;">
-        <div style="width:56px;height:56px;background:var(--accent-glow);border:1px solid var(--accent);border-radius:14px;display:flex;align-items:center;justify-content:center;margin:0 auto 14px;"><i class="fas fa-cloud-arrow-up" style="font-size:24px;color:var(--accent);"></i></div>
-        <h3 style="font-size:20px;font-weight:800;">Upload Files</h3>
-        <p style="font-size:13px;color:var(--muted);margin-top:6px;">Upload scanned gate passes, photos, PDFs</p>
+        <div style="padding:22px;max-height:80vh;overflow-y:auto;" class="form-scroll">
+            <div style="display:flex;gap:24px;flex-wrap:wrap;">
+                <div style="flex:1;min-width:320px;">
+                    <input type="hidden" id="editPassId">
+                    <div class="section-divider"><span><i class="fas fa-tag" style="margin-right:5px;"></i> Pass Type</span></div>
+                    <div style="display:flex;gap:20px;margin-bottom:4px;">
+                        <label class="gp-cb" style="color:var(--fg);font-size:13px;font-weight:500;cursor:pointer;"><input type="radio" name="editPassType" value="Returnable" checked onchange="updateEditPreview()" style="accent-color:#000;width:14px;height:14px;cursor:pointer;"> Returnable</label>
+                        <label class="gp-cb" style="color:var(--fg);font-size:13px;font-weight:500;cursor:pointer;"><input type="radio" name="editPassType" value="Non Returnable" onchange="updateEditPreview()" style="accent-color:#000;width:14px;height:14px;cursor:pointer;"> Non Returnable</label>
+                    </div>
+                    <div class="section-divider"><span><i class="fas fa-calendar" style="margin-right:5px;"></i> Basic Info</span></div>
+                    <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
+                        <div><label class="form-label">Date</label><input type="date" id="editDate" class="form-input" onchange="updateEditPreview()"></div>
+                        <div><label class="form-label">Serial Number</label><input type="text" id="editSrNo" class="form-input" readonly style="opacity:0.7;cursor:default;font-weight:700;color:var(--accent);"></div>
+                    </div>
+                    <div class="section-divider"><span><i class="fas fa-user-tie" style="margin-right:5px;"></i> Party Details</span></div>
+                    <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
+                        <div><label class="form-label">Client Name *</label><input type="text" id="editClient" class="form-input" placeholder="Client / Company name" oninput="updateEditPreview()"></div>
+                        <div><label class="form-label">Carried By *</label><input type="text" id="editCarriedBy" class="form-input" placeholder="Person name" oninput="updateEditPreview()"></div>
+                        <div style="grid-column:1/-1;"><label class="form-label">Address</label><input type="text" id="editAddress" class="form-input" placeholder="Full address" oninput="updateEditPreview()"></div>
+                        <div><label class="form-label">Mobile No.</label><input type="tel" id="editMobile" class="form-input" placeholder="+91 98765 43210" oninput="updateEditPreview()"></div>
+                        <div><label class="form-label">Purpose</label><input type="text" id="editPurpose" class="form-input" placeholder="Testing / Repair / Delivery" oninput="updateEditPreview()"></div>
+                    </div>
+                    <div class="section-divider"><span><i class="fas fa-boxes-stacked" style="margin-right:5px;"></i> Items</span></div>
+                    <div style="margin-bottom:8px;display:flex;gap:8px;"><button class="btn-add-row" onclick="addEditItemRow()"><i class="fas fa-plus"></i> Add Item</button></div>
+                    <div id="editItemsContainer" style="display:flex;flex-direction:column;gap:8px;"></div>
+                    <div class="section-divider"><span><i class="fas fa-sticky-note" style="margin-right:5px;"></i> Note</span></div>
+                    <div><label class="form-label">Red Stamp Note (optional)</label><input type="text" id="editNote" class="form-input" placeholder="e.g. TESTING PURPOSE RETURNABLE" oninput="updateEditPreview()"></div>
+                    <div style="margin-top:22px;display:flex;gap:10px;flex-wrap:wrap;">
+                        <button class="btn-download" onclick="saveEditedPass()" style="flex:1;justify-content:center;"><i class="fas fa-check"></i> Save Changes</button>
+                        <button class="btn-secondary" onclick="closeEditModal()" style="flex-shrink:0;"><i class="fas fa-xmark"></i> Cancel</button>
+                    </div>
+                </div>
+                <div style="flex-shrink:0;min-width:0;overflow-x:auto;">
+                    <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px;"><i class="fas fa-eye" style="color:var(--accent);font-size:12px;"></i><span style="font-size:11px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:0.1em;">Preview</span></div>
+                    <div class="edit-preview-wrap" id="editPreviewWrap"></div>
+                </div>
+            </div>
+        </div>
     </div>
-    <div style="margin-bottom:16px;"><label class="form-label">Link to Gate Pass (optional)</label><select class="form-input" id="uploadPassSelect" style="cursor:pointer;"><option value="">-- No link (standalone) --</option></select></div>
-    <div class="upload-zone" id="uploadZone" onclick="document.getElementById('uploadFileInput').click()"><i class="fas fa-file-arrow-up"></i><p style="font-size:14px;font-weight:600;color:var(--fg);margin-bottom:4px;">Click to browse or drag & drop</p><p style="font-size:12px;color:var(--muted);">JPG, PNG, PDF, DOCX, or any file</p></div>
-    <input type="file" id="uploadFileInput" multiple accept="*/*" style="display:none;" onchange="handleFileSelect(event)">
-    <div id="uploadFileList" style="display:flex;flex-direction:column;gap:8px;margin-top:16px;"></div>
-    <div id="uploadResult" style="display:none;margin-top:18px;padding:14px;border-radius:8px;border:1px solid var(--border);background:var(--input-bg);"></div>
-    <div style="margin-top:18px;display:flex;gap:10px;justify-content:flex-end;">
-        <button class="btn-secondary" onclick="closeUploadModal()"><i class="fas fa-xmark"></i> Close</button>
-        <button class="btn-download" id="uploadSaveBtn" onclick="uploadSelectedFiles()" style="display:none;padding:10px 20px;font-size:13px;"><i class="fas fa-check"></i> Upload Files</button>
-    </div>
-</div></div>
+</div>
 
-<!-- IMAGE PREVIEW OVERLAY -->
+<!-- ======================== UPLOAD MODAL (All File Types) ======================== -->
+<div class="modal-overlay" id="uploadModal">
+    <div class="modal-box" style="max-width:560px;">
+        <button class="modal-close" onclick="closeUploadModal()"><i class="fas fa-xmark"></i></button>
+        <div style="text-align:center;margin-bottom:24px;">
+            <div style="width:56px;height:56px;background:var(--accent-glow);border:1px solid var(--accent);border-radius:14px;display:flex;align-items:center;justify-content:center;margin:0 auto 14px;"><i class="fas fa-cloud-arrow-up" style="font-size:24px;color:var(--accent);"></i></div>
+            <h3 style="font-size:20px;font-weight:800;">Upload Files</h3>
+            <p style="font-size:13px;color:var(--muted);margin-top:6px;">Upload scanned gate passes, photos, PDFs or any document</p>
+        </div>
+
+        <!-- Link to pass -->
+        <div style="margin-bottom:16px;">
+            <label class="form-label">Link to Gate Pass (optional)</label>
+            <select class="form-input" id="uploadPassSelect" style="cursor:pointer;">
+                <option value="">-- No link (standalone upload) --</option>
+            </select>
+        </div>
+
+        <div class="upload-zone" id="uploadZone" onclick="document.getElementById('uploadFileInput').click()">
+            <i class="fas fa-file-arrow-up" style="display:block;"></i>
+            <p style="font-size:14px;font-weight:600;color:var(--fg);margin-bottom:4px;">Click to browse or drag & drop</p>
+            <p style="font-size:12px;color:var(--muted);">JPG, PNG, PDF, DOCX, or any file type</p>
+        </div>
+        <input type="file" id="uploadFileInput" multiple accept="*/*" style="display:none;" onchange="handleFileSelect(event)">
+
+        <!-- Selected files list -->
+        <div id="uploadFileList" style="display:none;margin-top:16px;display:flex;flex-direction:column;gap:8px;"></div>
+
+        <div id="uploadResult" style="display:none;margin-top:18px;padding:14px;border-radius:8px;border:1px solid var(--border);background:var(--input-bg);"></div>
+
+        <div style="margin-top:18px;display:flex;gap:10px;justify-content:flex-end;">
+            <button class="btn-secondary" onclick="closeUploadModal()"><i class="fas fa-xmark"></i> Close</button>
+            <button class="btn-download" id="uploadSaveBtn" onclick="uploadSelectedFiles()" style="display:none;padding:10px 20px;font-size:13px;"><i class="fas fa-check"></i> Upload Files</button>
+        </div>
+    </div>
+</div>
+
+<!-- ======================== ATTACHMENTS VIEWER MODAL ======================== -->
+<div class="modal-overlay" id="attachModal">
+    <div class="modal-box" style="max-width:720px;padding:0;overflow:hidden;">
+        <div style="padding:16px 20px;border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;">
+            <div><div style="font-weight:700;font-size:15px;"><i class="fas fa-paperclip" style="color:#bb8fce;margin-right:6px;"></i>Attachments</div><div style="font-size:11px;color:var(--muted);margin-top:2px;" id="attachModalSubtitle"></div></div>
+            <div style="display:flex;gap:8px;">
+                <button class="btn-icon attach" onclick="addMoreFilesToPass()" title="Add more files"><i class="fas fa-plus"></i></button>
+                <button class="modal-close" onclick="closeAttachModal()"><i class="fas fa-xmark"></i></button>
+            </div>
+        </div>
+        <div style="padding:20px;max-height:65vh;overflow-y:auto;" class="form-scroll" id="attachGrid"></div>
+    </div>
+</div>
+
+<!-- Image Preview Overlay -->
 <div class="preview-overlay" id="imagePreview" onclick="closeImagePreview()">
     <button class="preview-overlay-close" onclick="closeImagePreview()"><i class="fas fa-xmark"></i></button>
-    <button class="preview-overlay-nav prev" onclick="event.stopPropagation();navigatePreview(-1)"><i class="fas fa-chevron-left"></i></button>
-    <button class="preview-overlay-nav next" onclick="event.stopPropagation();navigatePreview(1)"><i class="fas fa-chevron-right"></i></button>
-    <img id="imagePreviewImg" src="" alt="Preview" onclick="event.stopPropagation();">
-    <div class="preview-overlay-info" id="previewInfo" onclick="event.stopPropagation();"><span class="fname" id="previewFileName"></span><span id="previewFileMeta"></span></div>
+    <img id="imagePreviewImg" src="" alt="Preview">
 </div>
 
-<!-- CONFIRM MODAL -->
-<div class="modal-overlay" id="confirmModal"><div class="modal-box" style="max-width:400px;text-align:center;padding:36px;">
-    <i class="fas fa-triangle-exclamation" style="font-size:36px;color:var(--red-accent);margin-bottom:16px;"></i>
-    <h3 style="font-size:18px;font-weight:700;margin-bottom:8px;" id="confirmTitle">Are you sure?</h3>
-    <p style="font-size:13px;color:var(--muted);margin-bottom:24px;" id="confirmMsg"></p>
-    <div style="display:flex;gap:10px;justify-content:center;"><button class="btn-secondary" onclick="closeConfirm()">Cancel</button><button style="background:var(--red-accent);color:#fff;border:none;padding:10px 24px;border-radius:8px;font-weight:700;font-size:13px;cursor:pointer;font-family:'Inter',sans-serif;" id="confirmAction">Delete</button></div>
-</div></div>
+<!-- Confirm Modal -->
+<div class="modal-overlay" id="confirmModal">
+    <div class="modal-box" style="max-width:400px;text-align:center;padding:36px;">
+        <i class="fas fa-triangle-exclamation" style="font-size:36px;color:var(--red-accent);margin-bottom:16px;"></i>
+        <h3 style="font-size:18px;font-weight:700;margin-bottom:8px;" id="confirmTitle">Are you sure?</h3>
+        <p style="font-size:13px;color:var(--muted);margin-bottom:24px;" id="confirmMsg">This action cannot be undone.</p>
+        <div style="display:flex;gap:10px;justify-content:center;">
+            <button class="btn-secondary" onclick="closeConfirm()">Cancel</button>
+            <button style="background:var(--red-accent);color:#fff;border:none;padding:10px 24px;border-radius:8px;font-weight:700;font-size:13px;cursor:pointer;font-family:'Inter',sans-serif;" id="confirmAction">Delete</button>
+        </div>
+    </div>
+</div>
 
-<!-- TOAST -->
+<!-- Toast -->
 <div class="toast" id="toast"><i class="fas fa-check-circle"></i><span id="toastMsg"></span></div>
 
 <script>
-const STORAGE_KEY='limburg_gp_list',COUNTER_KEY='limburg_gp_counter',DB_NAME='LPSL_GatePass_Files',DB_VERSION=1,STORE_NAME='files';
-let dbInstance=null,currentItems=[],itemIdCounter=0,viewingPassId=null,editItems=[],editItemIdCounter=0,pendingUploadFiles=[],viewingAttachPassId=null,allFilesCache=[],fileFilter='all',selectedFileIds=new Set(),previewFileIds=[],previewIndex=0;
+    // ============================
+    // Constants
+    // ============================
+    const STORAGE_KEY = 'limburg_gp_list';
+    const COUNTER_KEY = 'limburg_gp_counter';
+    const DB_NAME = 'LPSL_GatePass_Files';
+    const DB_VERSION = 1;
+    const STORE_NAME = 'files';
 
-// IndexedDB
-function openDB(){return new Promise((r,j)=>{if(dbInstance){r(dbInstance);return;}const q=indexedDB.open(DB_NAME,DB_VERSION);q.onupgradeneeded=e=>{const d=e.target.result;if(!d.objectStoreNames.contains(STORE_NAME))d.createObjectStore(STORE_NAME,{keyPath:'id'});};q.onsuccess=e=>{dbInstance=e.target.result;r(dbInstance);};q.onerror=e=>j(e.target.error);});}
-async function dbAdd(rec){const d=await openDB();return new Promise((r,j)=>{const t=d.transaction(STORE_NAME,'readwrite');t.objectStore(STORE_NAME).add(rec);t.oncomplete=()=>r();t.onerror=e=>j(e.target.error);});}
-async function dbGet(id){const d=await openDB();return new Promise((r,j)=>{const t=d.transaction(STORE_NAME,'readonly');const q=t.objectStore(STORE_NAME).get(id);q.onsuccess=()=>r(q.result);q.onerror=e=>j(e.target.error);});}
-async function dbGetAll(){const d=await openDB();return new Promise((r,j)=>{const t=d.transaction(STORE_NAME,'readonly');const q=t.objectStore(STORE_NAME).getAll();q.onsuccess=()=>r(q.result||[]);q.onerror=e=>j(e.target.error);});}
-async function dbGetByPassId(pid){const a=await dbGetAll();return a.filter(f=>f.passId===pid);}
-async function dbDelete(id){const d=await openDB();return new Promise((r,j)=>{const t=d.transaction(STORE_NAME,'readwrite');t.objectStore(STORE_NAME).delete(id);t.oncomplete=()=>r();t.onerror=e=>j(e.target.error);});}
-async function dbDeleteByPassId(pid){const fs=await dbGetByPassId(pid);for(const f of fs)await dbDelete(f.id);}
-async function dbClear(){const d=await openDB();return new Promise((r,j)=>{const t=d.transaction(STORE_NAME,'readwrite');t.objectStore(STORE_NAME).clear();t.oncomplete=()=>r();t.onerror=e=>j(e.target.error);});}
+    // ============================
+    // IndexedDB for file storage
+    // ============================
+    let dbInstance = null;
 
-function esc(s){const d=document.createElement('div');d.textContent=s||'';return d.innerHTML;}
-function getPassList(){try{return JSON.parse(localStorage.getItem(STORAGE_KEY)||'[]');}catch{return[];}}
-function updateRegCount(){document.getElementById('regCount').textContent=getPassList().length;}
-function formatFileSize(b){if(b<1024)return b+' B';if(b<1048576)return(b/1024).toFixed(1)+' KB';return(b/1048576).toFixed(1)+' MB';}
-function getFileIconClass(t){if(!t)return'other';if(t.startsWith('image/'))return'img';if(t==='application/pdf')return'pdf';return'other';}
-function getFileIconName(t){if(!t)return'fa-file';if(t.startsWith('image/'))return'fa-file-image';if(t==='application/pdf')return'fa-file-pdf';if(t.includes('word')||t.includes('document'))return'fa-file-word';if(t.includes('sheet')||t.includes('excel'))return'fa-file-excel';return'fa-file';}
+    function openDB() {
+        return new Promise((resolve, reject) => {
+            if (dbInstance) { resolve(dbInstance); return; }
+            const req = indexedDB.open(DB_NAME, DB_VERSION);
+            req.onupgradeneeded = (e) => {
+                const db = e.target.result;
+                if (!db.objectStoreNames.contains(STORE_NAME)) {
+                    db.createObjectStore(STORE_NAME, { keyPath: 'id' });
+                }
+            };
+            req.onsuccess = (e) => { dbInstance = e.target.result; resolve(dbInstance); };
+            req.onerror = (e) => reject(e.target.error);
+        });
+    }
 
-const today=new Date();document.getElementById('gpDate').value=today.toISOString().split('T')[0];
-function getNextSerial(){let c=parseInt(localStorage.getItem(COUNTER_KEY)||'0')+1;localStorage.setItem(COUNTER_KEY,c.toString());return`LPS-${today.getFullYear()}-${String(c).padStart(4,'0')}`;}
-document.getElementById('gpSrNo').value=getNextSerial();addItemRow();updatePreview();updateRegCount();refreshFileCount();
+    async function dbAdd(record) {
+        const db = await openDB();
+        return new Promise((resolve, reject) => {
+            const tx = db.transaction(STORE_NAME, 'readwrite');
+            tx.objectStore(STORE_NAME).add(record);
+            tx.oncomplete = () => resolve();
+            tx.onerror = (e) => reject(e.target.error);
+        });
+    }
 
-function switchTab(tab){['createPanel','registryPanel','filesPanel'].forEach(id=>{document.getElementById(id).style.display='none';});document.getElementById('tabCreate').classList.remove('active');document.getElementById('tabRegistry').classList.remove('active');document.getElementById('tabFiles').classList.remove('active');if(tab==='create'){document.getElementById('createPanel').style.display='block';document.getElementById('tabCreate').classList.add('active');}else if(tab==='registry'){document.getElementById('registryPanel').style.display='block';document.getElementById('tabRegistry').classList.add('active');renderRegistry();}else if(tab==='files'){document.getElementById('filesPanel').style.display='block';document.getElementById('tabFiles').classList.add('active');renderFilesTab();}}
+    async function dbGet(id) {
+        const db = await openDB();
+        return new Promise((resolve, reject) => {
+            const tx = db.transaction(STORE_NAME, 'readonly');
+            const req = tx.objectStore(STORE_NAME).get(id);
+            req.onsuccess = () => resolve(req.result);
+            req.onerror = (e) => reject(e.target.error);
+        });
+    }
 
-// Create items
-function addItemRow(){itemIdCounter++;const id=itemIdCounter;currentItems.push({id,desc:'',unit:'',qty:'',remarks:''});const c=document.getElementById('itemsFormContainer');const r=document.createElement('div');r.id=`item-form-${id}`;r.style.cssText='display:grid;grid-template-columns:1fr 70px 60px 100px 32px;gap:6px;align-items:center;padding:8px 10px;background:var(--input-bg);border:1px solid var(--border);border-radius:6px;animation:fadeIn 0.25s ease;';r.innerHTML=`<input type="text" class="form-input" style="font-size:12px;padding:7px 10px;" placeholder="Item description" oninput="updateItem(${id},'desc',this.value)"><input type="text" class="form-input" style="font-size:12px;padding:7px 10px;text-align:center;" placeholder="PCS" oninput="updateItem(${id},'unit',this.value)"><input type="text" class="form-input" style="font-size:12px;padding:7px 10px;text-align:center;" placeholder="0" oninput="updateItem(${id},'qty',this.value)"><input type="text" class="form-input" style="font-size:12px;padding:7px 10px;" placeholder="Remarks" oninput="updateItem(${id},'remarks',this.value)"><button class="btn-remove-row" onclick="removeItemRow(${id})"><i class="fas fa-xmark"></i></button>`;c.appendChild(r);updatePreview();}
-function updateItem(id,f,v){const i=currentItems.find(x=>x.id===id);if(i)i[f]=v;updatePreview();}
-function removeItemRow(id){currentItems=currentItems.filter(i=>i.id!==id);const e=document.getElementById(`item-form-${id}`);if(e)e.remove();if(!currentItems.length)addItemRow();updatePreview();}
+    async function dbGetAll() {
+        const db = await openDB();
+        return new Promise((resolve, reject) => {
+            const tx = db.transaction(STORE_NAME, 'readonly');
+            const req = tx.objectStore(STORE_NAME).getAll();
+            req.onsuccess = () => resolve(req.result || []);
+            req.onerror = (e) => reject(e.target.error);
+        });
+    }
 
-// Create preview
-function updatePreview(){const s=document.querySelector('input[name="passType"]:checked').value;document.querySelectorAll('input[name="passTypePreview"]').forEach(r=>r.checked=r.value===s);const dv=document.getElementById('gpDate').value;document.getElementById('pDate').textContent=dv?new Date(dv+'T00:00:00').toLocaleDateString('en-IN',{day:'2-digit',month:'short',year:'numeric'}):'--';document.getElementById('pSrNo').textContent=document.getElementById('gpSrNo').value;setF('pClient',document.getElementById('gpClient').value);setF('pCarriedBy',document.getElementById('gpCarriedBy').value);setF('pAddress',document.getElementById('gpAddress').value);setF('pMobile',document.getElementById('gpMobile').value);setF('pPurpose',document.getElementById('gpPurpose').value);renderIT('itemsTableBody',currentItems);const n=document.getElementById('gpNote').value.trim(),st=document.getElementById('pNoteStamp');if(n){st.textContent=n.toUpperCase();st.classList.add('show');}else st.classList.remove('show');}
-function setF(id,v){const e=document.getElementById(id);if(v.trim()){e.textContent=v.trim();e.classList.remove('empty');}else{e.textContent='Not provided';e.classList.add('empty');}}
-function renderIT(tid,items){const tb=document.getElementById(tid);const fl=items.filter(i=>(i.desc||'').trim());if(!fl.length){tb.innerHTML='<tr class="empty-row"><td colspan="5">No items added yet</td></tr>';return;}let h='';fl.forEach((i,idx)=>{h+=`<tr><td>${idx+1}</td><td style="text-align:left;font-weight:500;">${esc(i.desc)||'—'}</td><td>${esc(i.unit)||'—'}</td><td>${esc(i.qty)||'—'}</td><td style="font-size:11px;color:#555;">${esc(i.remarks)||'—'}</td></tr>`;});for(let i=0;i<Math.max(0,4-fl.length);i++)h+=`<tr><td style="color:#ccc;">${fl.length+i+1}</td><td></td><td></td><td></td><td></td></tr>`;tb.innerHTML=h;}
-['gpClient','gpCarriedBy','gpAddress','gpMobile','gpPurpose','gpDate'].forEach(id=>{const e=document.getElementById(id);e.addEventListener('input',updatePreview);e.addEventListener('change',updatePreview);});
+    async function dbGetByPassId(passId) {
+        const all = await dbGetAll();
+        return all.filter(f => f.passId === passId);
+    }
 
-// Build pass HTML
-function buildPassHTML(d){const items=d.items||[],fi=items.filter(i=>(i.desc||'').trim()),ir=fi.map((i,idx)=>`<tr><td>${idx+1}</td><td style="text-align:left;font-weight:500;">${esc(i.desc)||'—'}</td><td>${esc(i.unit)||'—'}</td><td>${esc(i.qty)||'—'}</td><td style="font-size:11px;color:#555;">${esc(i.remarks)||'—'}</td></tr>`).join(''),er=Array.from({length:Math.max(0,4-fi.length)},(_,i)=>`<tr><td style="color:#ccc;">${fi.length+i+1}</td><td></td><td></td><td></td><td></td></tr>`).join(''),df=d.date?new Date(d.date+'T00:00:00').toLocaleDateString('en-IN',{day:'2-digit',month:'short',year:'numeric'}):'--',ns=d.note?`<div class="gp-note-box show">${esc(d.note).toUpperCase()}</div>`:'<div class="gp-note-box"></div>';return`<div class="gate-pass" style="width:760px;background:#fff;color:#000;font-family:'Inter',sans-serif;font-size:12px;border:2px solid #000;position:relative;"><div class="gp-header" style="display:flex;align-items:center;justify-content:space-between;padding:12px 18px;border-bottom:2px solid #000;"><div style="display:flex;align-items:center;gap:12px;"><img src="https://z-cdn-media.chatglm.cn/files/d5e1f8e4-de6c-4aa3-baca-c8e3ac756f23.png?auth_key=1882562728-186c577ea1c042abb2bd5beb48c61184-0-1daa0eb13aa71be2ae2e9cd4a3159ce5" alt="Logo" style="width:70px;height:70px;object-fit:contain;flex-shrink:0;"><div><div style="font-size:16px;font-weight:800;color:#000;line-height:1.2;text-transform:uppercase;">Limburg Power Solutions Ltd</div><div style="font-size:9px;color:#444;margin-top:2px;">Plot No. 45-48, Industrial Area Phase-II,<br>Chandigarh - 160002, India</div></div></div><div style="text-align:right;font-size:9.5px;color:#333;line-height:1.6;"><div><strong>Ph:</strong> +91-172-4001234</div><div><strong>Email:</strong> info@limburgpower.com</div><div><strong>Web:</strong> www.limburgpower.com</div><div style="margin-top:4px;font-weight:800;color:#000;font-size:10px;">GSTIN: 04AABCL1234A1Z5</div></div></div><div style="text-align:center;padding:10px 0;border-bottom:1.5px solid #000;"><div style="font-size:20px;font-weight:900;text-transform:uppercase;letter-spacing:0.15em;color:#000;">Gate Pass</div></div><div style="display:flex;align-items:center;gap:24px;padding:8px 18px;border-bottom:1.5px solid #000;font-size:12px;font-weight:600;"><label style="display:flex;align-items:center;gap:5px;"><input type="radio" ${d.type==='Returnable'?'checked':''} disabled style="accent-color:#000;width:14px;height:14px;"> Returnable</label><label style="display:flex;align-items:center;gap:5px;"><input type="radio" ${d.type!=='Returnable'?'checked':''} disabled style="accent-color:#000;width:14px;height:14px;"> Non Returnable</label><div style="margin-left:auto;display:flex;align-items:center;gap:6px;"><span style="font-weight:700;">Date:</span><span style="font-weight:500;">${df}</span></div><div style="display:flex;align-items:center;gap:6px;"><span style="font-weight:700;">SR No:</span><span style="font-weight:600;">${esc(d.srNo)}</span></div></div><div style="display:grid;grid-template-columns:auto 1fr auto 1fr;gap:0;border-bottom:1.5px solid #000;"><div style="padding:7px 12px;border-right:1px solid #999;background:#f0f0ec;font-weight:700;color:#222;min-width:90px;">Client</div><div style="padding:7px 12px;color:#111;font-weight:500;">${esc(d.client)||'<span style="color:#bbb;font-style:italic;">Not provided</span>'}</div><div style="padding:7px 12px;border-right:1px solid #999;background:#f0f0ec;font-weight:700;color:#222;min-width:90px;">Carried By</div><div style="padding:7px 12px;color:#111;font-weight:500;">${esc(d.carriedBy)||'<span style="color:#bbb;font-style:italic;">Not provided</span>'}</div></div><div style="display:grid;grid-template-columns:auto 1fr auto 1fr;gap:0;border-bottom:1.5px solid #000;"><div style="padding:7px 12px;border-right:1px solid #999;background:#f0f0ec;font-weight:700;color:#222;min-width:90px;">Address</div><div style="padding:7px 12px;color:#111;font-weight:500;grid-column:span 3;">${esc(d.address)||'<span style="color:#bbb;font-style:italic;">Not provided</span>'}</div></div><div style="display:grid;grid-template-columns:auto 1fr auto 1fr;gap:0;border-bottom:none;"><div style="padding:7px 12px;border-right:1px solid #999;background:#f0f0ec;font-weight:700;color:#222;min-width:90px;">Mobile No.</div><div style="padding:7px 12px;color:#111;font-weight:500;">${esc(d.mobile)||'<span style="color:#bbb;font-style:italic;">Not provided</span>'}</div><div style="padding:7px 12px;border-right:1px solid #999;background:#f0f0ec;font-weight:700;color:#222;min-width:90px;">Purpose</div><div style="padding:7px 12px;color:#111;font-weight:500;">${esc(d.purpose)||'<span style="color:#bbb;font-style:italic;">Not provided</span>'}</div></div><table style="width:100%;border-collapse:collapse;"><thead><tr><th style="background:#1a1a1a;color:#fff;font-size:10.5px;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;padding:7px 8px;text-align:center;border:1px solid #333;width:40px;">SL</th><th style="background:#1a1a1a;color:#fff;font-size:10.5px;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;padding:7px 8px;text-align:left;border:1px solid #333;">Description</th><th style="background:#1a1a1a;color:#fff;font-size:10.5px;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;padding:7px 8px;text-align:center;border:1px solid #333;width:65px;">Unit</th><th style="background:#1a1a1a;color:#fff;font-size:10.5px;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;padding:7px 8px;text-align:center;border:1px solid #333;width:65px;">Qty</th><th style="background:#1a1a1a;color:#fff;font-size:10.5px;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;padding:7px 8px;text-align:center;border:1px solid #333;width:120px;">Remarks</th></tr></thead><tbody>${ir||'<tr><td colspan="5" style="color:#bbb;font-style:italic;text-align:center;padding:14px 8px;font-size:11px;">No items</td></tr>'}${er}</tbody></table>${ns}<div style="display:grid;grid-template-columns:1fr 1fr 1fr 1fr;border-top:1.5px solid #000;"><div style="padding:10px 12px 12px;text-align:center;border-right:1px solid #999;min-height:70px;display:flex;flex-direction:column;justify-content:flex-end;"><div style="border-top:1px solid #000;padding-top:5px;font-size:9.5px;font-weight:700;text-transform:uppercase;letter-spacing:0.05em;color:#222;margin-top:auto;">Received By</div></div><div style="padding:10px 12px 12px;text-align:center;border-right:1px solid #999;min-height:70px;display:flex;flex-direction:column;justify-content:flex-end;"><div style="border-top:1px solid #000;padding-top:5px;font-size:9.5px;font-weight:700;text-transform:uppercase;letter-spacing:0.05em;color:#222;margin-top:auto;">Prepared By</div></div><div style="padding:10px 12px 12px;text-align:center;border-right:1px solid #999;min-height:70px;display:flex;flex-direction:column;justify-content:flex-end;"><div style="border-top:1px solid #000;padding-top:5px;font-size:9.5px;font-weight:700;text-transform:uppercase;letter-spacing:0.05em;color:#222;margin-top:auto;">Store Incharge</div></div><div style="padding:10px 12px 12px;text-align:center;min-height:70px;display:flex;flex-direction:column;justify-content:flex-end;"><div style="border-top:1px solid #000;padding-top:5px;font-size:9.5px;font-weight:700;text-transform:uppercase;letter-spacing:0.05em;color:#222;margin-top:auto;">Authorized Sign</div></div></div></div>`;}
+    async function dbDelete(id) {
+        const db = await openDB();
+        return new Promise((resolve, reject) => {
+            const tx = db.transaction(STORE_NAME, 'readwrite');
+            tx.objectStore(STORE_NAME).delete(id);
+            tx.oncomplete = () => resolve();
+            tx.onerror = (e) => reject(e.target.error);
+        });
+    }
 
-// Save & Download
-function saveAndDownload(){const cl=document.getElementById('gpClient').value.trim(),cb=document.getElementById('gpCarriedBy').value.trim(),fi=currentItems.filter(i=>i.desc.trim());if(!cl){showToast('Enter client name.','warning');return;}if(!cb){showToast('Enter carried by.','warning');return;}if(!fi.length){showToast('Add at least one item.','warning');return;}const d={id:Date.now().toString(36)+Math.random().toString(36).slice(2,6),srNo:document.getElementById('gpSrNo').value,date:document.getElementById('gpDate').value,type:document.querySelector('input[name="passType"]:checked').value,client:cl,carriedBy:cb,address:document.getElementById('gpAddress').value.trim(),mobile:document.getElementById('gpMobile').value.trim(),purpose:document.getElementById('gpPurpose').value.trim(),note:document.getElementById('gpNote').value.trim(),items:fi.map(i=>({desc:i.desc.trim(),unit:i.unit.trim(),qty:i.qty.trim(),remarks:i.remarks.trim()})),createdAt:new Date().toISOString()};const l=getPassList();l.unshift(d);localStorage.setItem(STORAGE_KEY,JSON.stringify(l));downloadPassPDF(d,()=>{showToast(`Pass ${d.srNo} saved!`,'success');updateRegCount();resetForm();});}
-function downloadPassPDF(d,cb){const btn=document.getElementById('downloadBtn');btn.innerHTML='<i class="fas fa-spinner fa-spin"></i> Generating...';btn.style.pointerEvents='none';const t=document.createElement('div');t.innerHTML=buildPassHTML(d);const e=t.firstElementChild;document.body.appendChild(e);html2pdf().set({margin:[4,2,4,2],filename:`GatePass_${d.srNo}.pdf`,image:{type:'jpeg',quality:0.98},html2canvas:{scale:2,useCORS:true,backgroundColor:'#ffffff'},jsPDF:{unit:'mm',format:'a4',orientation:'portrait'}}).from(e).save().then(()=>{document.body.removeChild(e);btn.innerHTML='<i class="fas fa-file-pdf"></i> Save & Download';btn.style.pointerEvents='auto';if(cb)cb();}).catch(()=>{document.body.removeChild(e);btn.innerHTML='<i class="fas fa-file-pdf"></i> Save & Download';btn.style.pointerEvents='auto';showToast('PDF failed.','error');});}
-function resetForm(){['gpClient','gpCarriedBy','gpAddress','gpMobile','gpPurpose','gpNote'].forEach(id=>document.getElementById(id).value='');document.getElementById('gpDate').value=new Date().toISOString().split('T')[0];document.querySelector('input[name="passType"][value="Returnable"]').checked=true;document.getElementById('gpSrNo').value=getNextSerial();currentItems=[];itemIdCounter=0;document.getElementById('itemsFormContainer').innerHTML='';addItemRow();updatePreview();}
+    async function dbDeleteByPassId(passId) {
+        const files = await dbGetByPassId(passId);
+        for (const f of files) await dbDelete(f.id);
+    }
 
-// Dropdowns
-function toggleDropdown(id){const m=document.getElementById(id);const o=m.classList.contains('open');closeAllDropdowns();if(!o)m.classList.add('open');}
-function toggleRowDropdown(ev,id){ev.stopPropagation();const m=document.getElementById(`rowDrop-${id}`);const o=m.classList.contains('open');closeAllDropdowns();if(!o)m.classList.add('open');}
-function closeAllDropdowns(){document.querySelectorAll('.dropdown-menu,.row-dropdown').forEach(m=>m.classList.remove('open'));}
-document.addEventListener('click',e=>{if(!e.target.closest('.dropdown-wrap'))closeAllDropdowns();});
+    async function dbClear() {
+        const db = await openDB();
+        return new Promise((resolve, reject) => {
+            const tx = db.transaction(STORE_NAME, 'readwrite');
+            tx.objectStore(STORE_NAME).clear();
+            tx.oncomplete = () => resolve();
+            tx.onerror = (e) => reject(e.target.error);
+        });
+    }
 
-// Registry
-let attachCountsCache={};
-async function loadAttachCounts(){const a=await dbGetAll();attachCountsCache={};a.forEach(f=>{attachCountsCache[f.passId]=(attachCountsCache[f.passId]||0)+1;});}
-async function renderRegistry(){await loadAttachCounts();const list=getPassList(),search=(document.getElementById('searchBox').value||'').toLowerCase(),ft=document.getElementById('filterType').value;let filtered=list.filter(p=>{const ms=!search||p.srNo.toLowerCase().includes(search)||(p.client||'').toLowerCase().includes(search)||(p.carriedBy||'').toLowerCase().includes(search);const mt=ft==='all'||p.type===ft;return ms&&mt;});const total=list.length,ret=list.filter(p=>p.type==='Returnable').length,nr=list.filter(p=>p.type==='Non Returnable').length,tf=Object.values(attachCountsCache).reduce((a,b)=>a+b,0);
-document.getElementById('statsRow').innerHTML=`<div style="background:var(--bg-card);border:1px solid var(--border);border-radius:10px;padding:14px 16px;"><div style="font-size:10px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:0.1em;">Total</div><div style="font-size:26px;font-weight:900;color:var(--fg);margin-top:4px;">${total}</div></div><div style="background:var(--bg-card);border:1px solid var(--border);border-radius:10px;padding:14px 16px;"><div style="font-size:10px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:0.1em;">Returnable</div><div style="font-size:26px;font-weight:900;color:#6ddb98;margin-top:4px;">${ret}</div></div><div style="background:var(--bg-card);border:1px solid var(--border);border-radius:10px;padding:14px 16px;"><div style="font-size:10px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:0.1em;">Non-Return</div><div style="font-size:26px;font-weight:900;color:#e88;margin-top:4px;">${nr}</div></div><div style="background:var(--bg-card);border:1px solid var(--border);border-radius:10px;padding:14px 16px;"><div style="font-size:10px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:0.1em;">Files</div><div style="font-size:26px;font-weight:900;color:#bb8fce;margin-top:4px;">${tf}</div></div>`;
-const tb=document.getElementById('regTableBody'),es=document.getElementById('emptyState'),t=document.getElementById('regTable');if(!filtered.length){t.style.display='none';es.style.display='block';return;}t.style.display='table';es.style.display='none';
-tb.innerHTML=filtered.map(p=>{const ic=(p.items||[]).filter(i=>(i.desc||'').trim()).length,df=p.date?new Date(p.date+'T00:00:00').toLocaleDateString('en-IN',{day:'2-digit',month:'short',year:'numeric'}):'--',tc=p.type==='Returnable'?'type-returnable':'type-non-returnable',fc=attachCountsCache[p.id]||0,fb=fc>0?`<span class="attach-count-badge" onclick="switchTab('files');event.stopPropagation();"><i class="fas fa-paperclip" style="font-size:10px;"></i> ${fc}</span>`:'<span style="color:var(--muted);font-size:11px;">—</span>';return`<tr><td><span class="sr-cell">${esc(p.srNo)}</span></td><td style="white-space:nowrap;">${df}</td><td><span class="type-badge ${tc}">${esc(p.type||'—')}</span></td><td style="font-weight:600;max-width:130px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">${esc(p.client)||'—'}</td><td style="max-width:100px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">${esc(p.carriedBy)||'—'}</td><td><span style="background:var(--accent-glow);color:var(--accent);padding:2px 8px;border-radius:10px;font-size:11px;font-weight:700;">${ic}</span></td><td>${fb}</td><td style="max-width:80px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;color:var(--muted);">${esc(p.purpose)||'—'}</td><td style="text-align:center;"><div style="display:flex;gap:4px;justify-content:center;position:relative;"><button class="btn-icon attach" onclick="switchTab('files')" title="Files"><i class="fas fa-paperclip"></i></button><button class="btn-icon edit" onclick="openEditModal('${p.id}')" title="Edit"><i class="fas fa-pen"></i></button><button class="btn-icon download" onclick="downloadSinglePass('${p.id}')" title="PDF"><i class="fas fa-file-pdf"></i></button><div class="dropdown-wrap" style="position:relative;"><button class="btn-icon" onclick="toggleRowDropdown(event,'${p.id}')" title="More"><i class="fas fa-ellipsis-vertical"></i></button><div class="row-dropdown" id="rowDrop-${p.id}"><button class="dropdown-item" onclick="viewPass('${p.id}');closeAllDropdowns();"><i class="fas fa-eye" style="color:var(--accent);"></i> View</button><button class="dropdown-item" onclick="openEditModal('${p.id}');closeAllDropdowns();"><i class="fas fa-pen-to-square" style="color:#3498db;"></i> Edit</button><button class="dropdown-item" onclick="downloadSinglePass('${p.id}');closeAllDropdowns();"><i class="fas fa-download" style="color:#2ecc71;"></i> Download</button><div class="dropdown-divider"></div><button class="dropdown-item" onclick="duplicatePass('${p.id}');closeAllDropdowns();"><i class="fas fa-copy" style="color:#e67e22;"></i> Duplicate</button><button class="dropdown-item" onclick="deletePass('${p.id}');closeAllDropdowns();" style="color:var(--red-accent);"><i class="fas fa-trash"></i> Delete</button></div></div></div></td></tr>`;}).join('');}
+    // ============================
+    // State
+    // ============================
+    let currentItems = [];
+    let itemIdCounter = 0;
+    let viewingPassId = null;
+    let editItems = [];
+    let editItemIdCounter = 0;
+    let pendingUploadFiles = [];
+    let viewingAttachPassId = null;
 
-// View/Download/Delete/Duplicate
-function viewPass(id){const p=getPassList().find(x=>x.id===id);if(!p){showToast('Not found.','error');return;}viewingPassId=id;document.getElementById('modalTitle').textContent=`Gate Pass - ${p.srNo}`;document.getElementById('modalSubtitle').textContent=`${p.type} | ${p.client||'No client'}`;document.getElementById('modalPassContainer').innerHTML=buildPassHTML(p);document.getElementById('viewModal').classList.add('show');}
-function downloadFromModal(){if(viewingPassId)downloadSinglePass(viewingPassId);}
-function closeModal(){document.getElementById('viewModal').classList.remove('show');viewingPassId=null;}
-function downloadSinglePass(id){const p=getPassList().find(x=>x.id===id);if(!p){showToast('Not found.','error');return;}showToast(`Generating ${p.srNo}...`,'info');const t=document.createElement('div');t.innerHTML=buildPassHTML(p);const e=t.firstElementChild;document.body.appendChild(e);html2pdf().set({margin:[4,2,4,2],filename:`GatePass_${p.srNo}.pdf`,image:{type:'jpeg',quality:0.98},html2canvas:{scale:2,useCORS:true,backgroundColor:'#ffffff'},jsPDF:{unit:'mm',format:'a4',orientation:'portrait'}}).from(e).save().then(()=>{document.body.removeChild(e);showToast(`Downloaded ${p.srNo}`,'success');}).catch(()=>{document.body.removeChild(e);showToast('PDF failed.','error');});}
-function deletePass(id){const p=getPassList().find(x=>x.id===id);if(!p)return;document.getElementById('confirmTitle').textContent='Delete Gate Pass?';document.getElementById('confirmMsg').textContent=`Delete ${p.srNo} for "${p.client||'N/A'}" and all its files?`;document.getElementById('confirmAction').onclick=async()=>{const nl=getPassList().filter(x=>x.id!==id);localStorage.setItem(STORAGE_KEY,JSON.stringify(nl));await dbDeleteByPassId(id);updateRegCount();renderRegistry();closeConfirm();showToast(`Deleted ${p.srNo}`,'success');};document.getElementById('confirmModal').classList.add('show');}
-function duplicatePass(id){const p=getPassList().find(x=>x.id===id);if(!p)return;const np={...p,id:Date.now().toString(36)+Math.random().toString(36).slice(2,6),srNo:getNextSerial(),items:(p.items||[]).map(i=>({...i})),createdAt:new Date().toISOString()};const l=getPassList();l.unshift(np);localStorage.setItem(STORAGE_KEY,JSON.stringify(l));updateRegCount();renderRegistry();showToast(`Duplicated as ${np.srNo}`,'success');}
+    // ============================
+    // Init
+    // ============================
+    const today = new Date();
+    const dateStr = today.toISOString().split('T')[0];
+    document.getElementById('gpDate').value = dateStr;
 
-// Edit modal
-function openEditModal(id){const p=getPassList().find(x=>x.id===id);if(!p){showToast('Not found.','error');return;}document.getElementById('editPassId').value=id;document.getElementById('editSrNo').value=p.srNo||'';document.getElementById('editDate').value=p.date||'';document.getElementById('editClient').value=p.client||'';document.getElementById('editCarriedBy').value=p.carriedBy||'';document.getElementById('editAddress').value=p.address||'';document.getElementById('editMobile').value=p.mobile||'';document.getElementById('editPurpose').value=p.purpose||'';document.getElementById('editNote').value=p.note||'';document.querySelectorAll('input[name="editPassType"]').forEach(r=>r.checked=r.value===(p.type||'Returnable'));editItems=[];editItemIdCounter=0;document.getElementById('editItemsContainer').innerHTML='';(p.items||[]).forEach(i=>addEditItemRow(i.desc||'',i.unit||'',i.qty||'',i.remarks||''));if(!editItems.length)addEditItemRow();document.getElementById('editModalSubtitle').textContent=`${p.srNo} | ${p.type}`;updateEditPreview();document.getElementById('editModal').classList.add('show');}
-function closeEditModal(){document.getElementById('editModal').classList.remove('show');}
-function addEditItemRow(d,u,q,r){editItemIdCounter++;const id=editItemIdCounter;editItems.push({id,desc:d||'',unit:u||'',qty:q||'',remarks:r||''});const row=document.createElement('div');row.id=`edit-item-${id}`;row.className='edit-items-row';row.innerHTML=`<input type="text" class="form-input" style="font-size:12px;padding:7px 10px;" placeholder="Description" value="${esc(d||'')}" oninput="updateEditItem(${id},'desc',this.value)"><input type="text" class="form-input" style="font-size:12px;padding:7px 10px;text-align:center;" placeholder="PCS" value="${esc(u||'')}" oninput="updateEditItem(${id},'unit',this.value)"><input type="text" class="form-input" style="font-size:12px;padding:7px 10px;text-align:center;" placeholder="0" value="${esc(q||'')}" oninput="updateEditItem(${id},'qty',this.value)"><input type="text" class="form-input" style="font-size:12px;padding:7px 10px;" placeholder="Remarks" value="${esc(r||'')}" oninput="updateEditItem(${id},'remarks',this.value)"><button class="btn-remove-row" onclick="removeEditItemRow(${id})"><i class="fas fa-xmark"></i></button>`;document.getElementById('editItemsContainer').appendChild(row);}
-function updateEditItem(id,f,v){const i=editItems.find(x=>x.id===id);if(i)i[f]=v;updateEditPreview();}
-function removeEditItemRow(id){editItems=editItems.filter(i=>i.id!==id);const e=document.getElementById(`edit-item-${id}`);if(e)e.remove();if(!editItems.length)addEditItemRow();updateEditPreview();}
-function updateEditPreview(){document.getElementById('editPreviewWrap').innerHTML=buildPassHTML(getEditFormData());}
-function getEditFormData(){return{srNo:document.getElementById('editSrNo').value,date:document.getElementById('editDate').value,type:document.querySelector('input[name="editPassType"]:checked').value,client:document.getElementById('editClient').value.trim(),carriedBy:document.getElementById('editCarriedBy').value.trim(),address:document.getElementById('editAddress').value.trim(),mobile:document.getElementById('editMobile').value.trim(),purpose:document.getElementById('editPurpose').value.trim(),note:document.getElementById('editNote').value.trim(),items:editItems.filter(i=>i.desc.trim()).map(i=>({desc:i.desc.trim(),unit:i.unit.trim(),qty:i.qty.trim(),remarks:i.remarks.trim()}))};}
-function saveEditedPass(){const id=document.getElementById('editPassId').value,d=getEditFormData();if(!d.client){showToast('Client required.','warning');return;}if(!d.carriedBy){showToast('Carried by required.','warning');return;}if(!d.items.length){showToast('Add items.','warning');return;}const l=getPassList(),idx=l.findIndex(p=>p.id===id);if(idx===-1){showToast('Not found.','error');return;}l[idx]={...l[idx],...d,updatedAt:new Date().toISOString()};localStorage.setItem(STORAGE_KEY,JSON.stringify(l));updateRegCount();renderRegistry();closeEditModal();showToast(`Updated ${d.srNo}`,'success');}
-function downloadEditedPass(){const d=getEditFormData();if(!d.items.length){showToast('Add items.','warning');return;}showToast(`Generating ${d.srNo}...`,'info');const t=document.createElement('div');t.innerHTML=buildPassHTML(d);const e=t.firstElementChild;document.body.appendChild(e);html2pdf().set({margin:[4,2,4,2],filename:`GatePass_${d.srNo}_edited.pdf`,image:{type:'jpeg',quality:0.98},html2canvas:{scale:2,useCORS:true,backgroundColor:'#ffffff'},jsPDF:{unit:'mm',format:'a4',orientation:'portrait'}}).from(e).save().then(()=>{document.body.removeChild(e);showToast(`Downloaded ${d.srNo}`,'success');}).catch(()=>{document.body.removeChild(e);showToast('PDF failed.','error');});}
+    function getNextSerial() {
+        let counter = parseInt(localStorage.getItem(COUNTER_KEY) || '0') + 1;
+        localStorage.setItem(COUNTER_KEY, counter.toString());
+        return `LPS-${today.getFullYear()}-${String(counter).padStart(4, '0')}`;
+    }
+    document.getElementById('gpSrNo').value = getNextSerial();
 
-// ======================== ALL FILES TAB ========================
-async function refreshFileCount(){const a=await dbGetAll();document.getElementById('fileCount').textContent=a.length;}
-function setFileFilter(f,el){fileFilter=f;document.querySelectorAll('#fileFilterChips .filter-chip').forEach(c=>c.classList.remove('active'));el.classList.add('active');renderFilesTab();}
+    addItemRow();
+    updatePreview();
+    updateRegCount();
 
-async function renderFilesTab(){
-    allFilesCache=await dbGetAll();
-    const search=(document.getElementById('fileSearchBox').value||'').toLowerCase();
-    let filtered=allFilesCache.filter(f=>{
-        const ms=!search||f.fileName.toLowerCase().includes(search);
-        if(fileFilter==='image')return ms&&f.fileType&&f.fileType.startsWith('image/');
-        if(fileFilter==='pdf')return ms&&f.fileType==='application/pdf';
-        if(fileFilter==='other')return ms&&!(f.fileType&&f.fileType.startsWith('image/'))&&f.fileType!=='application/pdf';
-        return ms;
-    });
-    filtered.sort((a,b)=>new Date(b.uploadedAt||0)-new Date(a.uploadedAt||0));
+    // ============================
+    // Helpers
+    // ============================
+    function esc(s) { const d = document.createElement('div'); d.textContent = s || ''; return d.innerHTML; }
+    function getPassList() { try { return JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]'); } catch { return []; } }
+    function updateRegCount() { document.getElementById('regCount').textContent = getPassList().length; }
+    function formatFileSize(bytes) {
+        if (bytes < 1024) return bytes + ' B';
+        if (bytes < 1048576) return (bytes / 1024).toFixed(1) + ' KB';
+        return (bytes / 1048576).toFixed(1) + ' MB';
+    }
+    function getFileIconClass(type) {
+        if (!type) return 'other';
+        if (type.startsWith('image/')) return 'img';
+        if (type === 'application/pdf') return 'pdf';
+        return 'other';
+    }
+    function getFileIconName(type) {
+        if (!type) return 'fa-file';
+        if (type.startsWith('image/')) return 'fa-file-image';
+        if (type === 'application/pdf') return 'fa-file-pdf';
+        if (type.includes('word') || type.includes('document')) return 'fa-file-word';
+        if (type.includes('sheet') || type.includes('excel')) return 'fa-file-excel';
+        return 'fa-file';
+    }
 
-    const imgCount=allFilesCache.filter(f=>f.fileType&&f.fileType.startsWith('image/')).length;
-    const pdfCount=allFilesCache.filter(f=>f.fileType==='application/pdf').length;
-    const otherCount=allFilesCache.length-imgCount-pdfCount;
-    const totalSize=allFilesCache.reduce((a,f)=>a+(f.fileSize||0),0);
+    // ============================
+    // Tab Switching
+    // ============================
+    function switchTab(tab) {
+        document.getElementById('createPanel').style.display = tab === 'create' ? 'block' : 'none';
+        document.getElementById('registryPanel').style.display = tab === 'registry' ? 'block' : 'none';
+        document.getElementById('tabCreate').classList.toggle('active', tab === 'create');
+        document.getElementById('tabRegistry').classList.toggle('active', tab === 'registry');
+        if (tab === 'registry') renderRegistry();
+    }
 
-    document.getElementById('fileStatsRow').innerHTML=`
-        <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:10px;padding:14px 16px;"><div style="font-size:10px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:0.1em;">Total Files</div><div style="font-size:26px;font-weight:900;color:var(--fg);margin-top:4px;">${allFilesCache.length}</div></div>
-        <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:10px;padding:14px 16px;"><div style="font-size:10px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:0.1em;">Images</div><div style="font-size:26px;font-weight:900;color:#2ecc71;margin-top:4px;">${imgCount}</div></div>
-        <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:10px;padding:14px 16px;"><div style="font-size:10px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:0.1em;">PDFs</div><div style="font-size:26px;font-weight:900;color:#e74c3c;margin-top:4px;">${pdfCount}</div></div>
-        <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:10px;padding:14px 16px;"><div style="font-size:10px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:0.1em;">Total Size</div><div style="font-size:26px;font-weight:900;color:#bb8fce;margin-top:4px;">${formatFileSize(totalSize)}</div></div>`;
+    // ============================
+    // Items Management (Create)
+    // ============================
+    function addItemRow() {
+        itemIdCounter++;
+        const id = itemIdCounter;
+        currentItems.push({ id, desc: '', unit: '', qty: '', remarks: '' });
+        const container = document.getElementById('itemsFormContainer');
+        const row = document.createElement('div');
+        row.id = `item-form-${id}`;
+        row.style.cssText = 'display:grid;grid-template-columns:1fr 70px 60px 100px 32px;gap:6px;align-items:center;padding:8px 10px;background:var(--input-bg);border:1px solid var(--border);border-radius:6px;animation:fadeIn 0.25s ease;';
+        row.innerHTML = `<input type="text" class="form-input" style="font-size:12px;padding:7px 10px;" placeholder="Item description" oninput="updateItem(${id},'desc',this.value)"><input type="text" class="form-input" style="font-size:12px;padding:7px 10px;text-align:center;" placeholder="PCS" oninput="updateItem(${id},'unit',this.value)"><input type="text" class="form-input" style="font-size:12px;padding:7px 10px;text-align:center;" placeholder="0" oninput="updateItem(${id},'qty',this.value)"><input type="text" class="form-input" style="font-size:12px;padding:7px 10px;" placeholder="Remarks" oninput="updateItem(${id},'remarks',this.value)"><button class="btn-remove-row" onclick="removeItemRow(${id})" title="Remove"><i class="fas fa-xmark"></i></button>`;
+        container.appendChild(row);
+        updatePreview();
+    }
+    function updateItem(id, field, value) { const item = currentItems.find(i => i.id === id); if (item) item[field] = value; updatePreview(); }
+    function removeItemRow(id) { currentItems = currentItems.filter(i => i.id !== id); const el = document.getElementById(`item-form-${id}`); if (el) el.remove(); if (!currentItems.length) addItemRow(); updatePreview(); }
 
-    const grid=document.getElementById('filesGrid'),es=document.getElementById('filesEmptyState');
-    if(!filtered.length){grid.innerHTML='';es.style.display='block';updateBulkBar();return;}
-    es.style.display='none';
+    // ============================
+    // Preview Update (Create)
+    // ============================
+    function updatePreview() {
+        const sel = document.querySelector('input[name="passType"]:checked').value;
+        document.querySelectorAll('input[name="passTypePreview"]').forEach(r => r.checked = r.value === sel);
+        const dv = document.getElementById('gpDate').value;
+        document.getElementById('pDate').textContent = dv ? new Date(dv + 'T00:00:00').toLocaleDateString('en-IN', { day: '2-digit', month: 'short', year: 'numeric' }) : '--';
+        document.getElementById('pSrNo').textContent = document.getElementById('gpSrNo').value;
+        setField('pClient', document.getElementById('gpClient').value);
+        setField('pCarriedBy', document.getElementById('gpCarriedBy').value);
+        setField('pAddress', document.getElementById('gpAddress').value);
+        setField('pMobile', document.getElementById('gpMobile').value);
+        setField('pPurpose', document.getElementById('gpPurpose').value);
+        renderItemsTable('itemsTableBody', currentItems);
+        const note = document.getElementById('gpNote').value.trim();
+        const stamp = document.getElementById('pNoteStamp');
+        if (note) { stamp.textContent = note.toUpperCase(); stamp.classList.add('show'); } else { stamp.classList.remove('show'); }
+    }
+    function setField(elId, val) { const el = document.getElementById(elId); if (val.trim()) { el.textContent = val.trim(); el.classList.remove('empty'); } else { el.textContent = 'Not provided'; el.classList.add('empty'); } }
+    function renderItemsTable(tbodyId, items) {
+        const tbody = document.getElementById(tbodyId);
+        const filled = items.filter(i => (i.desc || '').trim());
+        if (!filled.length) { tbody.innerHTML = '<tr class="empty-row"><td colspan="5">No items added yet</td></tr>'; return; }
+        let h = '';
+        filled.forEach((item, idx) => { h += `<tr><td>${idx+1}</td><td style="text-align:left;font-weight:500;">${esc(item.desc)||'—'}</td><td>${esc(item.unit)||'—'}</td><td>${esc(item.qty)||'—'}</td><td style="font-size:11px;color:#555;">${esc(item.remarks)||'—'}</td></tr>`; });
+        for (let i = 0; i < Math.max(0, 4 - filled.length); i++) h += `<tr><td style="color:#ccc;">${filled.length+i+1}</td><td></td><td></td><td></td><td></td></tr>`;
+        tbody.innerHTML = h;
+    }
+    ['gpClient','gpCarriedBy','gpAddress','gpMobile','gpPurpose','gpDate'].forEach(id => { const el = document.getElementById(id); el.addEventListener('input', updatePreview); el.addEventListener('change', updatePreview); });
 
-    const passes=getPassList();
-    grid.innerHTML=`<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:16px;">`+filtered.map(f=>{
-        const isImg=f.fileType&&f.fileType.startsWith('image/');
-        const iconName=getFileIconName(f.fileType);
-        const pass=passes.find(p=>p.id===f.passId);
-        const passLabel=pass?`${pass.srNo} - ${esc(pass.client||'Unknown')}`:'<span style="color:var(--muted);">Not linked</span>';
-        const dateStr=f.uploadedAt?new Date(f.uploadedAt).toLocaleDateString('en-IN',{day:'2-digit',month:'short',year:'numeric'}):'';
-        const checked=selectedFileIds.has(f.id)?'checked':'';
-        const thumbSrc=isImg?`id="fthumb-${f.id}" src=""`:'';
-        const thumbTag=isImg?`<img class="file-card-thumb" ${thumbSrc} alt="${esc(f.fileName)}">`:`<div class="file-card-thumb-placeholder" onclick="previewOrDownload('${f.id}')"><i class="fas ${iconName}"></i></div>`;
-        return`<div class="file-card" id="fcard-${f.id}">
-            <div style="position:relative;">${thumbTag}<div class="file-card-overlay" onclick="previewOrDownload('${f.id}')"><i class="fas fa-${isImg?'magnifying-glass-plus':'download'}"></i></div>
-            <div style="position:absolute;top:8px;left:8px;"><input type="checkbox" class="select-all-check" ${checked} onchange="toggleFileSelect('${f.id}',this.checked)" onclick="event.stopPropagation();"></div>
-            </div>
-            <div class="file-card-body">
-                <div class="file-card-name" title="${esc(f.fileName)}">${esc(f.fileName)}</div>
-                <div class="file-card-meta">
-                    <span>${formatFileSize(f.fileSize)} &middot; ${dateStr}</span>
-                    <span class="file-card-link" onclick="event.stopPropagation();goToPass('${f.passId}')">${passLabel}</span>
-                </div>
-                <div class="file-card-actions">
-                    <button class="btn-icon view" onclick="previewOrDownload('${f.id}')" title="${isImg?'Preview':'Download'}"><i class="fas fa-${isImg?'eye':'download'}"></i></button>
-                    <button class="btn-icon download" onclick="downloadAttachment('${f.id}')" title="Download"><i class="fas fa-download"></i></button>
-                    <button class="btn-icon danger" onclick="deleteSingleFile('${f.id}')" title="Delete"><i class="fas fa-trash"></i></button>
-                </div>
-            </div>
+    // ============================
+    // Build Gate Pass HTML
+    // ============================
+    function buildPassHTML(data) {
+        const items = data.items || [];
+        const filledItems = items.filter(i => (i.desc || '').trim());
+        const itemsRows = filledItems.map((item, idx) => `<tr><td>${idx+1}</td><td style="text-align:left;font-weight:500;">${esc(item.desc)||'—'}</td><td>${esc(item.unit)||'—'}</td><td>${esc(item.qty)||'—'}</td><td style="font-size:11px;color:#555;">${esc(item.remarks)||'—'}</td></tr>`).join('');
+        const emptyRows = Array.from({length: Math.max(0, 4 - filledItems.length)}, (_, i) => { const n = filledItems.length + i + 1; return `<tr><td style="color:#ccc;">${n}</td><td></td><td></td><td></td><td></td></tr>`; }).join('');
+        const dateFormatted = data.date ? new Date(data.date+'T00:00:00').toLocaleDateString('en-IN',{day:'2-digit',month:'short',year:'numeric'}) : '--';
+        const noteStamp = data.note ? `<div class="gp-note-box show">${esc(data.note).toUpperCase()}</div>` : '<div class="gp-note-box"></div>';
+        return `<div class="gate-pass" style="width:760px;background:#fff;color:#000;font-family:'Inter',sans-serif;font-size:12px;border:2px solid #000;position:relative;">
+            <div class="gp-header" style="display:flex;align-items:center;justify-content:space-between;padding:12px 18px;border-bottom:2px solid #000;"><div style="display:flex;align-items:center;gap:12px;"><img src="https://z-cdn-media.chatglm.cn/files/d5e1f8e4-de6c-4aa3-baca-c8e3ac756f23.png?auth_key=1882562728-186c577ea1c042abb2bd5beb48c61184-0-1daa0eb13aa71be2ae2e9cd4a3159ce5" alt="Logo" style="width:70px;height:70px;object-fit:contain;flex-shrink:0;"><div><div style="font-size:16px;font-weight:800;color:#000;line-height:1.2;text-transform:uppercase;">Limburg Power Solutions Ltd</div><div style="font-size:9px;color:#444;margin-top:2px;">Plot No. 45-48, Industrial Area Phase-II,<br>Chandigarh - 160002, India</div></div></div><div style="text-align:right;font-size:9.5px;color:#333;line-height:1.6;"><div><strong>Ph:</strong> +91-172-4001234</div><div><strong>Email:</strong> info@limburgpower.com</div><div><strong>Web:</strong> www.limburgpower.com</div><div style="margin-top:4px;font-weight:800;color:#000;font-size:10px;">GSTIN: 04AABCL1234A1Z5</div></div></div>
+            <div style="text-align:center;padding:10px 0;border-bottom:1.5px solid #000;"><div style="font-size:20px;font-weight:900;text-transform:uppercase;letter-spacing:0.15em;color:#000;">Gate Pass</div></div>
+            <div style="display:flex;align-items:center;gap:24px;padding:8px 18px;border-bottom:1.5px solid #000;font-size:12px;font-weight:600;"><label style="display:flex;align-items:center;gap:5px;"><input type="radio" ${data.type==='Returnable'?'checked':''} disabled style="accent-color:#000;width:14px;height:14px;"> Returnable</label><label style="display:flex;align-items:center;gap:5px;"><input type="radio" ${data.type!=='Returnable'?'checked':''} disabled style="accent-color:#000;width:14px;height:14px;"> Non Returnable</label><div style="margin-left:auto;display:flex;align-items:center;gap:6px;"><span style="font-weight:700;">Date:</span><span style="font-weight:500;">${dateFormatted}</span></div><div style="display:flex;align-items:center;gap:6px;"><span style="font-weight:700;">SR No:</span><span style="font-weight:600;">${esc(data.srNo)}</span></div></div>
+            <div style="display:grid;grid-template-columns:auto 1fr auto 1fr;gap:0;border-bottom:1.5px solid #000;"><div style="padding:7px 12px;border-right:1px solid #999;background:#f0f0ec;font-weight:700;color:#222;min-width:90px;">Client</div><div style="padding:7px 12px;color:#111;font-weight:500;">${esc(data.client)||'<span style="color:#bbb;font-style:italic;">Not provided</span>'}</div><div style="padding:7px 12px;border-right:1px solid #999;background:#f0f0ec;font-weight:700;color:#222;min-width:90px;">Carried By</div><div style="padding:7px 12px;color:#111;font-weight:500;">${esc(data.carriedBy)||'<span style="color:#bbb;font-style:italic;">Not provided</span>'}</div></div>
+            <div style="display:grid;grid-template-columns:auto 1fr auto 1fr;gap:0;border-bottom:1.5px solid #000;"><div style="padding:7px 12px;border-right:1px solid #999;background:#f0f0ec;font-weight:700;color:#222;min-width:90px;">Address</div><div style="padding:7px 12px;color:#111;font-weight:500;grid-column:span 3;">${esc(data.address)||'<span style="color:#bbb;font-style:italic;">Not provided</span>'}</div></div>
+            <div style="display:grid;grid-template-columns:auto 1fr auto 1fr;gap:0;border-bottom:none;"><div style="padding:7px 12px;border-right:1px solid #999;background:#f0f0ec;font-weight:700;color:#222;min-width:90px;">Mobile No.</div><div style="padding:7px 12px;color:#111;font-weight:500;">${esc(data.mobile)||'<span style="color:#bbb;font-style:italic;">Not provided</span>'}</div><div style="padding:7px 12px;border-right:1px solid #999;background:#f0f0ec;font-weight:700;color:#222;min-width:90px;">Purpose</div><div style="padding:7px 12px;color:#111;font-weight:500;">${esc(data.purpose)||'<span style="color:#bbb;font-style:italic;">Not provided</span>'}</div></div>
+            <table style="width:100%;border-collapse:collapse;"><thead><tr><th style="background:#1a1a1a;color:#fff;font-size:10.5px;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;padding:7px 8px;text-align:center;border:1px solid #333;width:40px;">SL</th><th style="background:#1a1a1a;color:#fff;font-size:10.5px;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;padding:7px 8px;text-align:left;border:1px solid #333;">Description</th><th style="background:#1a1a1a;color:#fff;font-size:10.5px;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;padding:7px 8px;text-align:center;border:1px solid #333;width:65px;">Unit</th><th style="background:#1a1a1a;color:#fff;font-size:10.5px;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;padding:7px 8px;text-align:center;border:1px solid #333;width:65px;">Qty</th><th style="background:#1a1a1a;color:#fff;font-size:10.5px;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;padding:7px 8px;text-align:center;border:1px solid #333;width:120px;">Remarks</th></tr></thead><tbody>${itemsRows||'<tr><td colspan="5" style="color:#bbb;font-style:italic;text-align:center;padding:14px 8px;font-size:11px;">No items</td></tr>'}${emptyRows}</tbody></table>
+            ${noteStamp}
+            <div style="display:grid;grid-template-columns:1fr 1fr 1fr 1fr;border-top:1.5px solid #000;"><div style="padding:10px 12px 12px;text-align:center;border-right:1px solid #999;min-height:70px;display:flex;flex-direction:column;justify-content:flex-end;"><div style="border-top:1px solid #000;padding-top:5px;font-size:9.5px;font-weight:700;text-transform:uppercase;letter-spacing:0.05em;color:#222;margin-top:auto;">Received By</div></div><div style="padding:10px 12px 12px;text-align:center;border-right:1px solid #999;min-height:70px;display:flex;flex-direction:column;justify-content:flex-end;"><div style="border-top:1px solid #000;padding-top:5px;font-size:9.5px;font-weight:700;text-transform:uppercase;letter-spacing:0.05em;color:#222;margin-top:auto;">Prepared By</div></div><div style="padding:10px 12px 12px;text-align:center;border-right:1px solid #999;min-height:70px;display:flex;flex-direction:column;justify-content:flex-end;"><div style="border-top:1px solid #000;padding-top:5px;font-size:9.5px;font-weight:700;text-transform:uppercase;letter-spacing:0.05em;color:#222;margin-top:auto;">Store Incharge</div></div><div style="padding:10px 12px 12px;text-align:center;min-height:70px;display:flex;flex-direction:column;justify-content:flex-end;"><div style="border-top:1px solid #000;padding-top:5px;font-size:9.5px;font-weight:700;text-transform:uppercase;letter-spacing:0.05em;color:#222;margin-top:auto;">Authorized Sign</div></div></div>
         </div>`;
-    }).join('')+`</div>`;
+    }
 
-    // Load image thumbs
-    filtered.filter(f=>f.fileType&&f.fileType.startsWith('image/')).forEach(async f=>{try{const r=await dbGet(f.id);if(r&&r.fileData){const b=new Blob([r.fileData],{type:r.fileType});const u=URL.createObjectURL(b);const img=document.getElementById(`fthumb-${f.id}`);if(img)img.src=u;}}catch(e){}});
-    updateBulkBar();
-}
+    // ============================
+    // Save & Download (Create)
+    // ============================
+    function saveAndDownload() {
+        const client = document.getElementById('gpClient').value.trim();
+        const carriedBy = document.getElementById('gpCarriedBy').value.trim();
+        const filledItems = currentItems.filter(i => i.desc.trim());
+        if (!client) { showToast('Please enter the client name.', 'warning'); document.getElementById('gpClient').focus(); return; }
+        if (!carriedBy) { showToast('Please enter who is carrying the items.', 'warning'); document.getElementById('gpCarriedBy').focus(); return; }
+        if (!filledItems.length) { showToast('Please add at least one item.', 'warning'); return; }
+        const data = { id: Date.now().toString(36) + Math.random().toString(36).slice(2, 6), srNo: document.getElementById('gpSrNo').value, date: document.getElementById('gpDate').value, type: document.querySelector('input[name="passType"]:checked').value, client, carriedBy, address: document.getElementById('gpAddress').value.trim(), mobile: document.getElementById('gpMobile').value.trim(), purpose: document.getElementById('gpPurpose').value.trim(), note: document.getElementById('gpNote').value.trim(), items: filledItems.map(i => ({ desc: i.desc.trim(), unit: i.unit.trim(), qty: i.qty.trim(), remarks: i.remarks.trim() })), createdAt: new Date().toISOString() };
+        const list = getPassList(); list.unshift(data); localStorage.setItem(STORAGE_KEY, JSON.stringify(list));
+        downloadPassPDF(data, () => { showToast(`Pass ${data.srNo} saved and downloaded!`, 'success'); updateRegCount(); resetForm(); });
+    }
 
-function previewOrDownload(id){const f=allFilesCache.find(x=>x.id===id);if(!f)return;if(f.fileType&&f.fileType.startsWith('image/')){openImagePreviewFromFiles(id);}else{downloadAttachment(id);}}
+    function downloadPassPDF(data, callback) {
+        const btn = document.getElementById('downloadBtn');
+        btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Generating...'; btn.style.pointerEvents = 'none';
+        const tempDiv = document.createElement('div'); tempDiv.innerHTML = buildPassHTML(data); const element = tempDiv.firstElementChild; document.body.appendChild(element);
+        const opt = { margin: [4,2,4,2], filename: `GatePass_${data.srNo}.pdf`, image: { type: 'jpeg', quality: 0.98 }, html2canvas: { scale: 2, useCORS: true, backgroundColor: '#ffffff' }, jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' } };
+        html2pdf().set(opt).from(element).save().then(() => { document.body.removeChild(element); btn.innerHTML = '<i class="fas fa-file-pdf"></i> Save & Download'; btn.style.pointerEvents = 'auto'; if (callback) callback(); }).catch(err => { document.body.removeChild(element); btn.innerHTML = '<i class="fas fa-file-pdf"></i> Save & Download'; btn.style.pointerEvents = 'auto'; showToast('PDF generation failed.', 'error'); });
+    }
 
-function goToPass(passId){if(!passId)return;const p=getPassList().find(x=>x.id===passId);if(p){switchTab('registry');setTimeout(()=>{document.getElementById('searchBox').value=p.srNo;renderRegistry();},100);}else{showToast('Linked pass not found.','warning');}}
+    function resetForm() {
+        document.getElementById('gpClient').value = ''; document.getElementById('gpCarriedBy').value = ''; document.getElementById('gpAddress').value = ''; document.getElementById('gpMobile').value = ''; document.getElementById('gpPurpose').value = ''; document.getElementById('gpNote').value = ''; document.getElementById('gpDate').value = new Date().toISOString().split('T')[0];
+        document.querySelector('input[name="passType"][value="Returnable"]').checked = true; document.getElementById('gpSrNo').value = getNextSerial();
+        currentItems = []; itemIdCounter = 0; document.getElementById('itemsFormContainer').innerHTML = ''; addItemRow(); updatePreview();
+    }
 
-function toggleFileSelect(id,checked){if(checked)selectedFileIds.add(id);else selectedFileIds.delete(id);updateBulkBar();}
-function updateBulkBar(){const btn=document.getElementById('bulkDeleteBtn');const cnt=document.getElementById('bulkDeleteCount');if(selectedFileIds.size>0){btn.style.display='inline-flex';cnt.textContent=selectedFileIds.size;}else{btn.style.display='none';}}
-function deleteSelectedFiles(){if(!selectedFileIds.size)return;document.getElementById('confirmTitle').textContent='Delete Selected Files?';document.getElementById('confirmMsg').textContent=`Permanently delete ${selectedFileIds.size} file(s)?`;document.getElementById('confirmAction').onclick=async()=>{for(const id of selectedFileIds)await dbDelete(id);selectedFileIds.clear();refreshFileCount();renderFilesTab();closeConfirm();showToast('Files deleted.','success');};document.getElementById('confirmModal').classList.add('show');}
-function deleteSingleFile(id){document.getElementById('confirmTitle').textContent='Delete File?';document.getElementById('confirmMsg').textContent='This file will be permanently deleted.';document.getElementById('confirmAction').onclick=async()=>{await dbDelete(id);selectedFileIds.delete(id);refreshFileCount();renderFilesTab();closeConfirm();showToast('File deleted.','success');};document.getElementById('confirmModal').classList.add('show');}
+    // ============================
+    // Dropdown Management
+    // ============================
+    function toggleDropdown(menuId) { const menu = document.getElementById(menuId); const isOpen = menu.classList.contains('open'); closeAllDropdowns(); if (!isOpen) menu.classList.add('open'); }
+    function toggleRowDropdown(event, id) { event.stopPropagation(); const menu = document.getElementById(`rowDrop-${id}`); const isOpen = menu.classList.contains('open'); closeAllDropdowns(); if (!isOpen) menu.classList.add('open'); }
+    function closeAllDropdowns() { document.querySelectorAll('.dropdown-menu, .row-dropdown').forEach(m => m.classList.remove('open')); }
+    document.addEventListener('click', (e) => { if (!e.target.closest('.dropdown-wrap')) closeAllDropdowns(); });
 
-// Image preview with navigation
-async function openImagePreviewFromFiles(id){const imgFiles=allFilesCache.filter(f=>f.fileType&&f.fileType.startsWith('image/')).sort((a,b)=>new Date(a.uploadedAt||0)-new Date(b.uploadedAt||0));previewFileIds=imgFiles.map(f=>f.id);previewIndex=previewFileIds.indexOf(id);if(previewIndex===-1)previewIndex=0;await showPreviewImage();}
-async function showPreviewImage(){if(!previewFileIds.length)return;const id=previewFileIds[previewIndex];const f=allFilesCache.find(x=>x.id===id);if(!f)return;try{const r=await dbGet(id);if(!r)return;const b=new Blob([r.fileData],{type:r.fileType});const u=URL.createObjectURL(b);const img=document.getElementById('imagePreviewImg');if(img.src)URL.revokeObjectURL(img.src);img.src=u;document.getElementById('previewFileName').textContent=f.fileName;document.getElementById('previewFileMeta').textContent=`${formatFileSize(f.fileSize)} | ${previewIndex+1} of ${previewFileIds.length}`;document.getElementById('imagePreview').classList.add('show');}catch(e){}}
-function navigatePreview(dir){previewIndex+=dir;if(previewIndex<0)previewIndex=previewFileIds.length-1;if(previewIndex>=previewFileIds.length)previewIndex=0;showPreviewImage();}
-function closeImagePreview(){document.getElementById('imagePreview').classList.remove('show');const img=document.getElementById('imagePreviewImg');if(img.src)URL.revokeObjectURL(img.src);img.src='';}
+    // ============================
+    // Registry Rendering (with attachment counts)
+    // ============================
+    let attachCountsCache = {};
 
-// Upload
-function openUploadModal(){pendingUploadFiles=[];document.getElementById('uploadFileInput').value='';document.getElementById('uploadResult').style.display='none';document.getElementById('uploadFileList').innerHTML='';document.getElementById('uploadSaveBtn').style.display='none';document.getElementById('uploadZone').classList.remove('drag-over');const list=getPassList();const sel=document.getElementById('uploadPassSelect');sel.innerHTML='<option value="">-- No link (standalone) --</option>';list.forEach(p=>{sel.innerHTML+=`<option value="${p.id}">${p.srNo} - ${esc(p.client||'No client')}</option>`;});document.getElementById('uploadModal').classList.add('show');}
-function closeUploadModal(){document.getElementById('uploadModal').classList.remove('show');}
-const uploadZone=document.getElementById('uploadZone');
-uploadZone.addEventListener('dragover',e=>{e.preventDefault();uploadZone.classList.add('drag-over');});
-uploadZone.addEventListener('dragleave',()=>{uploadZone.classList.remove('drag-over');});
-uploadZone.addEventListener('drop',e=>{e.preventDefault();uploadZone.classList.remove('drag-over');addFilesToPending(e.dataTransfer.files);});
-function handleFileSelect(e){addFilesToPending(e.target.files);}
-function addFilesToPending(fl){for(const f of fl){pendingUploadFiles.push({tempId:'p_'+Date.now()+'_'+Math.random().toString(36).slice(2,6),file:f});}renderPendingFiles();}
-function removePendingFile(tid){pendingUploadFiles=pendingUploadFiles.filter(f=>f.tempId!==tid);renderPendingFiles();}
-function renderPendingFiles(){const c=document.getElementById('uploadFileList'),b=document.getElementById('uploadSaveBtn');if(!pendingUploadFiles.length){c.innerHTML='';b.style.display='none';return;}b.style.display='inline-flex';c.innerHTML=pendingUploadFiles.map(f=>{const ic=getFileIconClass(f.file.type),in=getFileIconName(f.file.type);return`<div class="file-chip"><div class="file-chip-icon ${ic}"><i class="fas ${in}"></i></div><div class="file-chip-info"><div class="file-chip-name" title="${esc(f.file.name)}">${esc(f.file.name)}</div><div class="file-chip-size">${formatFileSize(f.file.size)}</div></div><button class="btn-remove-row" onclick="removePendingFile('${f.tempId}')"><i class="fas fa-xmark"></i></button></div>`;}).join('');}
-async function uploadSelectedFiles(){if(!pendingUploadFiles.length){showToast('No files.','warning');return;}const pid=document.getElementById('uploadPassSelect').value||null;const btn=document.getElementById('uploadSaveBtn');btn.innerHTML='<i class="fas fa-spinner" style="animation:spin 1s linear infinite;"></i> Uploading...';btn.style.pointerEvents='none';let ok=0,fail=0;for(const pf of pendingUploadFiles){try{const ab=await pf.file.arrayBuffer();await dbAdd({id:'file_'+Date.now()+'_'+Math.random().toString(36).slice(2,8),passId:pid,fileName:pf.file.name,fileType:pf.file.type,fileSize:pf.file.size,fileData:ab,uploadedAt:new Date().toISOString()});ok++;}catch(e){fail++;}}btn.innerHTML='<i class="fas fa-check"></i> Upload Files';btn.style.pointerEvents='auto';pendingUploadFiles=[];renderPendingFiles();let msg=`<strong>${ok}</strong> file${ok!==1?'s':''} uploaded.`;if(fail)msg+=`<br><span style="color:var(--red-accent);">${fail} failed.</span>`;if(pid){const p=getPassList().find(x=>x.id===pid);msg+=`<br><span style="color:var(--muted);">Linked to: ${p?p.srNo:'?'}</span>`;}showUploadResult('success',msg);refreshFileCount();renderFilesTab();}
-function showUploadResult(t,m){const e=document.getElementById('uploadResult');e.style.display='block';if(t==='success'){e.style.borderColor='var(--emerald)';e.style.background='rgba(42,107,66,0.1)';e.innerHTML=`<div style="display:flex;align-items:flex-start;gap:10px;"><i class="fas fa-check-circle" style="color:#6ddb98;font-size:18px;margin-top:2px;"></i><div style="font-size:13px;line-height:1.5;">${m}</div></div>`;}else{e.style.borderColor='var(--red-accent)';e.style.background='rgba(192,57,43,0.1)';e.innerHTML=`<div style="display:flex;align-items:flex-start;gap:10px;"><i class="fas fa-exclamation-circle" style="color:var(--red-accent);font-size:18px;margin-top:2px;"></i><div style="font-size:13px;line-height:1.5;">${m}</div></div>`;}}
+    async function loadAttachCounts() {
+        const allFiles = await dbGetAll();
+        attachCountsCache = {};
+        allFiles.forEach(f => { attachCountsCache[f.passId] = (attachCountsCache[f.passId] || 0) + 1; });
+    }
 
-async function downloadAttachment(id){try{const r=await dbGet(id);if(!r){showToast('Not found.','error');return;}const b=new Blob([r.fileData],{type:r.fileType});const u=URL.createObjectURL(b);const a=document.createElement('a');a.href=u;a.download=r.fileName;document.body.appendChild(a);a.click();document.body.removeChild(a);URL.revokeObjectURL(u);showToast(`Downloaded ${r.fileName}`,'success');}catch(e){showToast('Download failed.','error');}}
+    async function renderRegistry() {
+        await loadAttachCounts();
+        const list = getPassList();
+        const search = (document.getElementById('searchBox').value || '').toLowerCase();
+        const filterType = document.getElementById('filterType').value;
+        let filtered = list.filter(p => {
+            const ms = !search || p.srNo.toLowerCase().includes(search) || (p.client || '').toLowerCase().includes(search) || (p.carriedBy || '').toLowerCase().includes(search) || (p.purpose || '').toLowerCase().includes(search);
+            const mt = filterType === 'all' || p.type === filterType;
+            return ms && mt;
+        });
 
-// Import JSON
-function importFromJSON(){const inp=document.createElement('input');inp.type='file';inp.accept='.json';inp.onchange=e=>{const f=e.target.files[0];if(!f)return;const rd=new FileReader();rd.onload=ev=>{try{const d=JSON.parse(ev.target.result);let ps=Array.isArray(d)?d:(d&&d.srNo?[d]:(d&&d.passes?d.passes:[]));const vp=ps.filter(p=>p.srNo).map(p=>({id:p.id||Date.now().toString(36)+Math.random().toString(36).slice(2,6),srNo:p.srNo,date:p.date||'',type:p.type||'Returnable',client:p.client||'',carriedBy:p.carriedBy||'',address:p.address||'',mobile:p.mobile||'',purpose:p.purpose||'',note:p.note||'',items:(p.items||[]).map(i=>({desc:i.desc||'',unit:i.unit||'',qty:i.qty||'',remarks:i.remarks||''})),createdAt:p.createdAt||new Date().toISOString()}));if(!vp.length){showToast('No valid passes.','error');return;}const ex=getPassList();const sn=new Set(ex.map(p=>p.srNo));let add=0,skip=0;vp.forEach(p=>{if(sn.has(p.srNo)){skip++;}else{ex.push(p);sn.add(p.srNo);add++;}});localStorage.setItem(STORAGE_KEY,JSON.stringify(ex));updateRegCount();renderRegistry();showToast(`Imported ${add}. ${skip} skipped.`,'success');}catch(err){showToast('Invalid JSON.','error');}};rd.readAsText(f);};inp.click();}
+        const total = list.length, ret = list.filter(p => p.type === 'Returnable').length, nonRet = list.filter(p => p.type === 'Non Returnable').length;
+        const thisMonth = list.filter(p => { if (!p.date) return false; const d = new Date(p.date+'T00:00:00'); const n = new Date(); return d.getMonth() === n.getMonth() && d.getFullYear() === n.getFullYear(); }).length;
+        const totalFiles = Object.values(attachCountsCache).reduce((a, b) => a + b, 0);
 
-// Export
-function exportAllCSV(){const l=getPassList();if(!l.length){showToast('No passes.','warning');return;}let c='SR No,Date,Type,Client,Carried By,Address,Mobile,Purpose,Note,Items\n';l.forEach(p=>{c+=`"${p.srNo}","${p.date||''}","${p.type||''}","${p.client||''}","${p.carriedBy||''}","${p.address||''}","${p.mobile||''}","${p.purpose||''}","${p.note||''}","${(p.items||[]).length}"\n`;});dlBlob(c,'GatePasses.csv','text/csv');showToast('Exported CSV','success');}
-function exportAllJSON(){const l=getPassList();if(!l.length){showToast('No passes.','warning');return;}dlBlob(JSON.stringify({exportedAt:new Date().toISOString(),totalPasses:l.length,passes:l},null,2),'GatePasses.json','application/json');showToast('Exported JSON','success');}
-function dlBlob(c,f,m){const b=new Blob([c],{type:m});const u=URL.createObjectURL(b);const a=document.createElement('a');a.href=u;a.download=f;document.body.appendChild(a);a.click();document.body.removeChild(a);URL.revokeObjectURL(u);}
+        document.getElementById('statsRow').innerHTML = `
+            <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:10px;padding:14px 16px;"><div style="font-size:10px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:0.1em;">Total Passes</div><div style="font-size:26px;font-weight:900;color:var(--fg);margin-top:4px;">${total}</div></div>
+            <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:10px;padding:14px 16px;"><div style="font-size:10px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:0.1em;">Returnable</div><div style="font-size:26px;font-weight:900;color:#6ddb98;margin-top:4px;">${ret}</div></div>
+            <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:10px;padding:14px 16px;"><div style="font-size:10px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:0.1em;">Non-Returnable</div><div style="font-size:26px;font-weight:900;color:#e88;margin-top:4px;">${nonRet}</div></div>
+            <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:10px;padding:14px 16px;"><div style="font-size:10px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:0.1em;">Uploaded Files</div><div style="font-size:26px;font-weight:900;color:#bb8fce;margin-top:4px;">${totalFiles}</div></div>`;
 
-function clearAllData(){const l=getPassList();if(!l.length){showToast('No data.','warning');return;}document.getElementById('confirmTitle').textContent='Clear All Data?';document.getElementById('confirmMsg').textContent=`Delete all ${l.length} passes AND all uploaded files?`;document.getElementById('confirmAction').onclick=async()=>{localStorage.setItem(STORAGE_KEY,'[]');localStorage.setItem(COUNTER_KEY,'0');await dbClear();updateRegCount();refreshFileCount();renderRegistry();renderFilesTab();closeConfirm();showToast('All cleared.','success');};document.getElementById('confirmModal').classList.add('show');}
+        const tbody = document.getElementById('regTableBody');
+        const emptyState = document.getElementById('emptyState');
+        const table = document.getElementById('regTable');
+        if (!filtered.length) { table.style.display = 'none'; emptyState.style.display = 'block'; return; }
+        table.style.display = 'table'; emptyState.style.display = 'none';
 
-// Confirm / Toast
-function closeConfirm(){document.getElementById('confirmModal').classList.remove('show');}
-let toastTimer=null;
-function showToast(m,t){const toast=document.getElementById('toast'),icon=toast.querySelector('i');document.getElementById('toastMsg').textContent=m;if(t==='warning'){icon.className='fas fa-exclamation-triangle';icon.style.color='#e67e22';toast.style.borderColor='#e67e22';}else if(t==='error'){icon.className='fas fa-times-circle';icon.style.color='var(--red-accent)';toast.style.borderColor='var(--red-accent)';}else if(t==='info'){icon.className='fas fa-info-circle';icon.style.color='#3498db';toast.style.borderColor='#3498db';}else{icon.className='fas fa-check-circle';icon.style.color='var(--accent)';toast.style.borderColor='var(--emerald)';}toast.classList.add('show');clearTimeout(toastTimer);toastTimer=setTimeout(()=>toast.classList.remove('show'),3500);}
+        tbody.innerHTML = filtered.map(p => {
+            const itemCount = (p.items || []).filter(i => (i.desc || '').trim()).length;
+            const dateFormatted = p.date ? new Date(p.date+'T00:00:00').toLocaleDateString('en-IN',{day:'2-digit',month:'short',year:'numeric'}) : '--';
+            const typeClass = p.type === 'Returnable' ? 'type-returnable' : 'type-non-returnable';
+            const fileCount = attachCountsCache[p.id] || 0;
+            const fileBadge = fileCount > 0 ? `<span class="attach-count-badge" onclick="openAttachViewer('${p.id}');event.stopPropagation();"><i class="fas fa-paperclip" style="font-size:10px;"></i> ${fileCount}</span>` : '<span style="color:var(--muted);font-size:11px;">—</span>';
+            return `<tr>
+                <td><span class="sr-cell">${esc(p.srNo)}</span></td>
+                <td style="white-space:nowrap;">${dateFormatted}</td>
+                <td><span class="type-badge ${typeClass}">${esc(p.type || '—')}</span></td>
+                <td style="font-weight:600;max-width:140px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">${esc(p.client) || '—'}</td>
+                <td style="max-width:110px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">${esc(p.carriedBy) || '—'}</td>
+                <td><span style="background:var(--accent-glow);color:var(--accent);padding:2px 8px;border-radius:10px;font-size:11px;font-weight:700;">${itemCount}</span></td>
+                <td>${fileBadge}</td>
+                <td style="max-width:90px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;color:var(--muted);">${esc(p.purpose) || '—'}</td>
+                <td style="text-align:center;"><div style="display:flex;gap:4px;justify-content:center;position:relative;">
+                    <button class="btn-icon attach" onclick="openAttachViewer('${p.id}')" title="Attachments"><i class="fas fa-paperclip"></i></button>
+                    <button class="btn-icon edit" onclick="openEditModal('${p.id}')" title="Edit"><i class="fas fa-pen"></i></button>
+                    <button class="btn-icon download" onclick="downloadSinglePass('${p.id}')" title="Download PDF"><i class="fas fa-file-pdf"></i></button>
+                    <div class="dropdown-wrap" style="position:relative;">
+                        <button class="btn-icon" onclick="toggleRowDropdown(event,'${p.id}')" title="More"><i class="fas fa-ellipsis-vertical"></i></button>
+                        <div class="row-dropdown" id="rowDrop-${p.id}">
+                            <button class="dropdown-item" onclick="viewPass('${p.id}');closeAllDropdowns();"><i class="fas fa-eye" style="color:var(--accent);"></i> View Pass</button>
+                            <button class="dropdown-item" onclick="openEditModal('${p.id}');closeAllDropdowns();"><i class="fas fa-pen-to-square" style="color:#3498db;"></i> Edit Pass</button>
+                            <button class="dropdown-item" onclick="openAttachViewer('${p.id}');closeAllDropdowns();"><i class="fas fa-paperclip" style="color:#bb8fce;"></i> Attachments</button>
+                            <button class="dropdown-item" onclick="downloadSinglePass('${p.id}');closeAllDropdowns();"><i class="fas fa-download" style="color:#2ecc71;"></i> Download PDF</button>
+                            <div class="dropdown-divider"></div>
+                            <button class="dropdown-item" onclick="duplicatePass('${p.id}');closeAllDropdowns();"><i class="fas fa-copy" style="color:#e67e22;"></i> Duplicate</button>
+                            <button class="dropdown-item" onclick="deletePass('${p.id}');closeAllDropdowns();" style="color:var(--red-accent);"><i class="fas fa-trash"></i> Delete</button>
+                        </div>
+                    </div>
+                </div></td>
+            </tr>`;
+        }).join('');
+    }
 
-// Keyboard / overlay close
-document.addEventListener('keydown',e=>{if(e.key==='Escape'){closeModal();closeEditModal();closeUploadModal();closeConfirm();closeImagePreview();closeAllDropdowns();}if(document.getElementById('imagePreview').classList.contains('show')){if(e.key==='ArrowLeft')navigatePreview(-1);if(e.key==='ArrowRight')navigatePreview(1);}});
-['viewModal','editModal','uploadModal','confirmModal'].forEach(id=>{document.getElementById(id).addEventListener('click',e=>{if(e.target===e.currentTarget){if(id==='viewModal')closeModal();else if(id==='editModal')closeEditModal();else if(id==='uploadModal')closeUploadModal();else if(id==='confirmModal')closeConfirm();}});});
+    // ============================
+    // View / Download / Delete / Duplicate Pass
+    // ============================
+    function viewPass(id) {
+        const pass = getPassList().find(p => p.id === id);
+        if (!pass) { showToast('Pass not found.', 'error'); return; }
+        viewingPassId = id;
+        document.getElementById('modalTitle').textContent = `Gate Pass - ${pass.srNo}`;
+        document.getElementById('modalSubtitle').textContent = `${pass.type} | ${pass.client || 'No client'} | ${pass.carriedBy || 'N/A'}`;
+        document.getElementById('modalPassContainer').innerHTML = buildPassHTML(pass);
+        document.getElementById('viewModal').classList.add('show');
+    }
+    function downloadFromModal() { if (viewingPassId) downloadSinglePass(viewingPassId); }
+    function closeModal() { document.getElementById('viewModal').classList.remove('show'); viewingPassId = null; }
+
+    function downloadSinglePass(id) {
+        const pass = getPassList().find(p => p.id === id);
+        if (!pass) { showToast('Pass not found.', 'error'); return; }
+        showToast(`Generating PDF for ${pass.srNo}...`, 'info');
+        const tempDiv = document.createElement('div'); tempDiv.innerHTML = buildPassHTML(pass); const element = tempDiv.firstElementChild; document.body.appendChild(element);
+        const opt = { margin: [4,2,4,2], filename: `GatePass_${pass.srNo}.pdf`, image: { type: 'jpeg', quality: 0.98 }, html2canvas: { scale: 2, useCORS: true, backgroundColor: '#ffffff' }, jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' } };
+        html2pdf().set(opt).from(element).save().then(() => { document.body.removeChild(element); showToast(`Downloaded ${pass.srNo}`, 'success'); }).catch(err => { document.body.removeChild(element); showToast('PDF generation failed.', 'error'); });
+    }
+
+    function deletePass(id) {
+        const pass = getPassList().find(p => p.id === id);
+        if (!pass) return;
+        document.getElementById('confirmTitle').textContent = 'Delete Gate Pass?';
+        document.getElementById('confirmMsg').textContent = `This will permanently delete pass ${pass.srNo} for "${pass.client || 'N/A'}" and all its uploaded files.`;
+        document.getElementById('confirmAction').onclick = async () => {
+            const newList = getPassList().filter(p => p.id !== id);
+            localStorage.setItem(STORAGE_KEY, JSON.stringify(newList));
+            await dbDeleteByPassId(id);
+            updateRegCount(); renderRegistry(); closeConfirm();
+            showToast(`Pass ${pass.srNo} deleted.`, 'success');
+        };
+        document.getElementById('confirmModal').classList.add('show');
+    }
+
+    function duplicatePass(id) {
+        const pass = getPassList().find(p => p.id === id);
+        if (!pass) return;
+        const newPass = { ...pass, id: Date.now().toString(36) + Math.random().toString(36).slice(2, 6), srNo: getNextSerial(), items: (pass.items || []).map(i => ({...i})), createdAt: new Date().toISOString() };
+        const list = getPassList(); list.unshift(newPass); localStorage.setItem(STORAGE_KEY, JSON.stringify(list));
+        updateRegCount(); renderRegistry(); showToast(`Duplicated as ${newPass.srNo}`, 'success');
+    }
+
+    // ============================
+    // EDIT MODAL
+    // ============================
+    function openEditModal(id) {
+        const pass = getPassList().find(p => p.id === id);
+        if (!pass) { showToast('Pass not found.', 'error'); return; }
+        document.getElementById('editPassId').value = id;
+        document.getElementById('editSrNo').value = pass.srNo || '';
+        document.getElementById('editDate').value = pass.date || '';
+        document.getElementById('editClient').value = pass.client || '';
+        document.getElementById('editCarriedBy').value = pass.carriedBy || '';
+        document.getElementById('editAddress').value = pass.address || '';
+        document.getElementById('editMobile').value = pass.mobile || '';
+        document.getElementById('editPurpose').value = pass.purpose || '';
+        document.getElementById('editNote').value = pass.note || '';
+        document.querySelectorAll('input[name="editPassType"]').forEach(r => r.checked = r.value === (pass.type || 'Returnable'));
+        editItems = []; editItemIdCounter = 0; document.getElementById('editItemsContainer').innerHTML = '';
+        (pass.items || []).forEach(item => addEditItemRow(item.desc || '', item.unit || '', item.qty || '', item.remarks || ''));
+        if (!editItems.length) addEditItemRow();
+        document.getElementById('editModalSubtitle').textContent = `${pass.srNo} | ${pass.type}`;
+        updateEditPreview(); document.getElementById('editModal').classList.add('show');
+    }
+    function closeEditModal() { document.getElementById('editModal').classList.remove('show'); }
+
+    function addEditItemRow(desc, unit, qty, remarks) {
+        editItemIdCounter++;
+        const id = editItemIdCounter;
+        editItems.push({ id, desc: desc || '', unit: unit || '', qty: qty || '', remarks: remarks || '' });
+        const row = document.createElement('div'); row.id = `edit-item-${id}`; row.className = 'edit-items-row';
+        row.innerHTML = `<input type="text" class="form-input" style="font-size:12px;padding:7px 10px;" placeholder="Item description" value="${esc(desc||'')}" oninput="updateEditItem(${id},'desc',this.value)"><input type="text" class="form-input" style="font-size:12px;padding:7px 10px;text-align:center;" placeholder="PCS" value="${esc(unit||'')}" oninput="updateEditItem(${id},'unit',this.value)"><input type="text" class="form-input" style="font-size:12px;padding:7px 10px;text-align:center;" placeholder="0" value="${esc(qty||'')}" oninput="updateEditItem(${id},'qty',this.value)"><input type="text" class="form-input" style="font-size:12px;padding:7px 10px;" placeholder="Remarks" value="${esc(remarks||'')}" oninput="updateEditItem(${id},'remarks',this.value)"><button class="btn-remove-row" onclick="removeEditItemRow(${id})" title="Remove"><i class="fas fa-xmark"></i></button>`;
+        document.getElementById('editItemsContainer').appendChild(row);
+    }
+    function updateEditItem(id, field, value) { const item = editItems.find(i => i.id === id); if (item) item[field] = value; updateEditPreview(); }
+    function removeEditItemRow(id) { editItems = editItems.filter(i => i.id !== id); const el = document.getElementById(`edit-item-${id}`); if (el) el.remove(); if (!editItems.length) addEditItemRow(); updateEditPreview(); }
+    function updateEditPreview() { document.getElementById('editPreviewWrap').innerHTML = buildPassHTML(getEditFormData()); }
+    function getEditFormData() {
+        return { srNo: document.getElementById('editSrNo').value, date: document.getElementById('editDate').value, type: document.querySelector('input[name="editPassType"]:checked').value, client: document.getElementById('editClient').value.trim(), carriedBy: document.getElementById('editCarriedBy').value.trim(), address: document.getElementById('editAddress').value.trim(), mobile: document.getElementById('editMobile').value.trim(), purpose: document.getElementById('editPurpose').value.trim(), note: document.getElementById('editNote').value.trim(), items: editItems.filter(i => i.desc.trim()).map(i => ({ desc: i.desc.trim(), unit: i.unit.trim(), qty: i.qty.trim(), remarks: i.remarks.trim() })) };
+    }
+    function saveEditedPass() {
+        const id = document.getElementById('editPassId').value; const data = getEditFormData();
+        if (!data.client) { showToast('Client name is required.', 'warning'); return; }
+        if (!data.carriedBy) { showToast('Carried by is required.', 'warning'); return; }
+        if (!data.items.length) { showToast('Add at least one item.', 'warning'); return; }
+        const list = getPassList(); const idx = list.findIndex(p => p.id === id);
+        if (idx === -1) { showToast('Pass not found.', 'error'); return; }
+        list[idx] = { ...list[idx], ...data, updatedAt: new Date().toISOString() };
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(list)); updateRegCount(); renderRegistry(); closeEditModal(); showToast(`Pass ${data.srNo} updated!`, 'success');
+    }
+    function downloadEditedPass() {
+        const data = getEditFormData();
+        if (!data.items.length) { showToast('Add at least one item.', 'warning'); return; }
+        showToast(`Generating PDF for ${data.srNo}...`, 'info');
+        const tempDiv = document.createElement('div'); tempDiv.innerHTML = buildPassHTML(data); const element = tempDiv.firstElementChild; document.body.appendChild(element);
+        const opt = { margin: [4,2,4,2], filename: `GatePass_${data.srNo}_edited.pdf`, image: { type: 'jpeg', quality: 0.98 }, html2canvas: { scale: 2, useCORS: true, backgroundColor: '#ffffff' }, jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' } };
+        html2pdf().set(opt).from(element).save().then(() => { document.body.removeChild(element); showToast(`Downloaded ${data.srNo}`, 'success'); }).catch(() => { document.body.removeChild(element); showToast('PDF generation failed.', 'error'); });
+    }
+
+    // ============================
+    // UPLOAD MODAL (All file types - JPG, PNG, PDF, etc.)
+    // ============================
+    function openUploadModal() {
+        pendingUploadFiles = [];
+        document.getElementById('uploadFileInput').value = '';
+        document.getElementById('uploadResult').style.display = 'none';
+        document.getElementById('uploadFileList').innerHTML = '';
+        document.getElementById('uploadSaveBtn').style.display = 'none';
+        document.getElementById('uploadZone').classList.remove('drag-over');
+        // Populate pass select
+        const list = getPassList();
+        const sel = document.getElementById('uploadPassSelect');
+        sel.innerHTML = '<option value="">-- No link (standalone upload) --</option>';
+        list.forEach(p => { sel.innerHTML += `<option value="${p.id}">${p.srNo} - ${esc(p.client || 'No client')}</option>`; });
+        document.getElementById('uploadModal').classList.add('show');
+    }
+    function closeUploadModal() { document.getElementById('uploadModal').classList.remove('show'); }
+
+    // Drag & drop
+    const uploadZone = document.getElementById('uploadZone');
+    uploadZone.addEventListener('dragover', (e) => { e.preventDefault(); uploadZone.classList.add('drag-over'); });
+    uploadZone.addEventListener('dragleave', () => { uploadZone.classList.remove('drag-over'); });
+    uploadZone.addEventListener('drop', (e) => { e.preventDefault(); uploadZone.classList.remove('drag-over'); addFilesToPending(e.dataTransfer.files); });
+
+    function handleFileSelect(event) { addFilesToPending(event.target.files); }
+
+    function addFilesToPending(fileList) {
+        for (const file of fileList) {
+            // Generate a unique temp ID for this pending file
+            const tempId = 'pending_' + Date.now() + '_' + Math.random().toString(36).slice(2, 6);
+            pendingUploadFiles.push({ tempId, file });
+        }
+        renderPendingFiles();
+    }
+
+    function removePendingFile(tempId) {
+        pendingUploadFiles = pendingUploadFiles.filter(f => f.tempId !== tempId);
+        renderPendingFiles();
+    }
+
+    function renderPendingFiles() {
+        const container = document.getElementById('uploadFileList');
+        const saveBtn = document.getElementById('uploadSaveBtn');
+
+        if (!pendingUploadFiles.length) {
+            container.innerHTML = '';
+            saveBtn.style.display = 'none';
+            return;
+        }
+
+        saveBtn.style.display = 'inline-flex';
+        container.innerHTML = pendingUploadFiles.map(f => {
+            const iconClass = getFileIconClass(f.file.type);
+            const iconName = getFileIconName(f.file.type);
+            return `<div class="file-chip">
+                <div class="file-chip-icon ${iconClass}"><i class="fas ${iconName}"></i></div>
+                <div class="file-chip-info">
+                    <div class="file-chip-name" title="${esc(f.file.name)}">${esc(f.file.name)}</div>
+                    <div class="file-chip-size">${formatFileSize(f.file.size)} &middot; ${esc(f.file.type || 'unknown type')}</div>
+                </div>
+                <button class="btn-remove-row" onclick="removePendingFile('${f.tempId}')" title="Remove"><i class="fas fa-xmark"></i></button>
+            </div>`;
+        }).join('');
+    }
+
+    async function uploadSelectedFiles() {
+        if (!pendingUploadFiles.length) { showToast('No files selected.', 'warning'); return; }
+
+        const passId = document.getElementById('uploadPassSelect').value || null;
+        const saveBtn = document.getElementById('uploadSaveBtn');
+        saveBtn.innerHTML = '<i class="fas fa-spinner" style="animation:spin 1s linear infinite;"></i> Uploading...';
+        saveBtn.style.pointerEvents = 'none';
+
+        let uploaded = 0, failed = 0;
+
+        for (const pf of pendingUploadFiles) {
+            try {
+                const arrayBuffer = await pf.file.arrayBuffer();
+                const record = {
+                    id: 'file_' + Date.now() + '_' + Math.random().toString(36).slice(2, 8),
+                    passId: passId,
+                    fileName: pf.file.name,
+                    fileType: pf.file.type,
+                    fileSize: pf.file.size,
+                    fileData: arrayBuffer,
+                    uploadedAt: new Date().toISOString()
+                };
+                await dbAdd(record);
+                uploaded++;
+            } catch (err) {
+                console.error('Upload failed for', pf.file.name, err);
+                failed++;
+            }
+        }
+
+        saveBtn.innerHTML = '<i class="fas fa-check"></i> Upload Files';
+        saveBtn.style.pointerEvents = 'auto';
+
+        pendingUploadFiles = [];
+        renderPendingFiles();
+
+        let msg = `<strong>${uploaded}</strong> file${uploaded !== 1 ? 's' : ''} uploaded successfully.`;
+        if (failed > 0) msg += `<br><span style="color:var(--red-accent);">${failed} file${failed !== 1 ? 's' : ''} failed.</span>`;
+        if (passId) {
+            const pass = getPassList().find(p => p.id === passId);
+            msg += `<br><span style="color:var(--muted);">Linked to: ${pass ? pass.srNo : 'Unknown'}</span>`;
+        }
+        showUploadResult('success', msg);
+        updateRegCount();
+        renderRegistry();
+    }
+
+    function showUploadResult(type, message) {
+        const el = document.getElementById('uploadResult'); el.style.display = 'block';
+        if (type === 'success') {
+            el.style.borderColor = 'var(--emerald)'; el.style.background = 'rgba(42,107,66,0.1)';
+            el.innerHTML = `<div style="display:flex;align-items:flex-start;gap:10px;"><i class="fas fa-check-circle" style="color:#6ddb98;font-size:18px;margin-top:2px;"></i><div style="font-size:13px;line-height:1.5;">${message}</div></div>`;
+        } else {
+            el.style.borderColor = 'var(--red-accent)'; el.style.background = 'rgba(192,57,43,0.1)';
+            el.innerHTML = `<div style="display:flex;align-items:flex-start;gap:10px;"><i class="fas fa-exclamation-circle" style="color:var(--red-accent);font-size:18px;margin-top:2px;"></i><div style="font-size:13px;line-height:1.5;">${message}</div></div>`;
+        }
+    }
+
+    // ============================
+    // ATTACHMENTS VIEWER
+    // ============================
+    async function openAttachViewer(passId) {
+        viewingAttachPassId = passId;
+        const pass = getPassList().find(p => p.id === passId);
+        const files = await dbGetByPassId(passId);
+        document.getElementById('attachModalSubtitle').textContent = pass ? `${pass.srNo} - ${pass.client || 'No client'}` : 'All files';
+        const grid = document.getElementById('attachGrid');
+
+        if (!files.length) {
+            grid.innerHTML = `<div class="empty-state" style="padding:40px 20px;"><i class="fas fa-paperclip" style="font-size:36px;"></i><p>No files uploaded yet for this gate pass.</p><p style="font-size:12px;margin-top:6px;">Click the + button above to upload JPG, PNG, PDF or any file.</p></div>`;
+        } else {
+            grid.innerHTML = `<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:14px;">` +
+                files.map(f => {
+                    const iconClass = getFileIconClass(f.fileType);
+                    const iconName = getFileIconName(f.fileType);
+                    const isImage = f.fileType && f.fileType.startsWith('image/');
+                    const thumbHtml = isImage
+                        ? `<img class="attach-thumb" id="thumb-${f.id}" src="" alt="${esc(f.fileName)}" onclick="previewImage('${f.id}')" style="background:var(--border);">`
+                        : `<div style="width:100%;aspect-ratio:4/3;display:flex;align-items:center;justify-content:center;background:var(--input-bg);border:1px solid var(--border);border-radius:8px;"><i class="fas ${iconName}" style="font-size:36px;opacity:0.3;"></i></div>`;
+                    const dateStr = f.uploadedAt ? new Date(f.uploadedAt).toLocaleDateString('en-IN', { day: '2-digit', month: 'short', year: 'numeric' }) : '';
+                    return `<div class="attach-card">
+                        ${thumbHtml}
+                        <div class="attach-card-body">
+                            <div class="attach-card-name" title="${esc(f.fileName)}">${esc(f.fileName)}</div>
+                            <div class="attach-card-meta">${formatFileSize(f.fileSize)} &middot; ${dateStr}</div>
+                            <div class="attach-card-actions">
+                                <button class="btn-icon download" onclick="downloadAttachment('${f.id}')" title="Download" style="width:28px;height:28px;font-size:11px;"><i class="fas fa-download"></i></button>
+                                <button class="btn-icon danger" onclick="deleteAttachment('${f.id}','${passId}')" title="Delete" style="width:28px;height:28px;font-size:11px;"><i class="fas fa-trash"></i></button>
+                            </div>
+                        </div>
+                    </div>`;
+                }).join('') + `</div>`;
+
+            // Load image thumbnails
+            files.filter(f => f.fileType && f.fileType.startsWith('image/')).forEach(async (f) => {
+                try {
+                    const record = await dbGet(f.id);
+                    if (record && record.fileData) {
+                        const blob = new Blob([record.fileData], { type: record.fileType });
+                        const url = URL.createObjectURL(blob);
+                        const img = document.getElementById(`thumb-${f.id}`);
+                        if (img) img.src = url;
+                    }
+                } catch (e) { console.error('Thumb load error', e); }
+            });
+        }
+        document.getElementById('attachModal').classList.add('show');
+    }
+
+    function closeAttachModal() { document.getElementById('attachModal').classList.remove('show'); viewingAttachPassId = null; }
+
+    function addMoreFilesToPass() {
+        closeAttachModal();
+        openUploadModal();
+        // Pre-select the pass
+        setTimeout(() => {
+            const sel = document.getElementById('uploadPassSelect');
+            if (viewingAttachPassId) sel.value = viewingAttachPassId;
+        }, 100);
+    }
+
+    async function downloadAttachment(fileId) {
+        try {
+            const record = await dbGet(fileId);
+            if (!record) { showToast('File not found.', 'error'); return; }
+            const blob = new Blob([record.fileData], { type: record.fileType });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a'); a.href = url; a.download = record.fileName;
+            document.body.appendChild(a); a.click(); document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+            showToast(`Downloaded ${record.fileName}`, 'success');
+        } catch (e) { showToast('Download failed.', 'error'); console.error(e); }
+    }
+
+    async function deleteAttachment(fileId, passId) {
+        document.getElementById('confirmTitle').textContent = 'Delete File?';
+        document.getElementById('confirmMsg').textContent = 'This file will be permanently deleted.';
+        document.getElementById('confirmAction').onclick = async () => {
+            await dbDelete(fileId);
+            closeConfirm();
+            if (passId) openAttachViewer(passId);
+            renderRegistry();
+            showToast('File deleted.', 'success');
+        };
+        document.getElementById('confirmModal').classList.add('show');
+    }
+
+    // ============================
+    // Image Preview Overlay
+    // ============================
+    async function previewImage(fileId) {
+        try {
+            const record = await dbGet(fileId);
+            if (!record) return;
+            const blob = new Blob([record.fileData], { type: record.fileType });
+            const url = URL.createObjectURL(blob);
+            document.getElementById('imagePreviewImg').src = url;
+            document.getElementById('imagePreview').classList.add('show');
+        } catch (e) { console.error(e); }
+    }
+    function closeImagePreview() {
+        document.getElementById('imagePreview').classList.remove('show');
+        const img = document.getElementById('imagePreviewImg');
+        if (img.src) URL.revokeObjectURL(img.src);
+        img.src = '';
+    }
+
+    // ============================
+    // Import JSON Data (separate from file upload)
+    // ============================
+    function importFromJSON() {
+        const input = document.createElement('input');
+        input.type = 'file'; input.accept = '.json';
+        input.onchange = (e) => {
+            const file = e.target.files[0]; if (!file) return;
+            const reader = new FileReader();
+            reader.onload = (ev) => {
+                try {
+                    const data = JSON.parse(ev.target.result);
+                    let passes = Array.isArray(data) ? data : (data && data.srNo ? [data] : (data && data.passes ? data.passes : []));
+                    const validPasses = passes.filter(p => p.srNo).map(p => ({ id: p.id || Date.now().toString(36) + Math.random().toString(36).slice(2,6), srNo: p.srNo, date: p.date || '', type: p.type || 'Returnable', client: p.client || '', carriedBy: p.carriedBy || '', address: p.address || '', mobile: p.mobile || '', purpose: p.purpose || '', note: p.note || '', items: (p.items||[]).map(i => ({desc:i.desc||'',unit:i.unit||'',qty:i.qty||'',remarks:i.remarks||''})), createdAt: p.createdAt || new Date().toISOString() }));
+                    if (!validPasses.length) { showToast('No valid passes found.', 'error'); return; }
+                    const existing = getPassList(); const srNos = new Set(existing.map(p => p.srNo));
+                    let added = 0, skipped = 0;
+                    validPasses.forEach(p => { if (srNos.has(p.srNo)) { skipped++; } else { existing.push(p); srNos.add(p.srNo); added++; } });
+                    localStorage.setItem(STORAGE_KEY, JSON.stringify(existing)); updateRegCount(); renderRegistry();
+                    showToast(`Imported ${added} passes. ${skipped} duplicates skipped.`, 'success');
+                } catch (err) { showToast('Invalid JSON file.', 'error'); }
+            };
+            reader.readAsText(file);
+        };
+        input.click();
+    }
+
+    // ============================
+    // Export Functions
+    // ============================
+    function exportAllCSV() {
+        const list = getPassList();
+        if (!list.length) { showToast('No passes to export.', 'warning'); return; }
+        let csv = 'SR No,Date,Type,Client,Carried By,Address,Mobile,Purpose,Note,Items Count,Item Details\n';
+        list.forEach(p => { const det = (p.items||[]).map((i,idx) => `${idx+1}. ${i.desc} (${i.qty} ${i.unit})`).join(' | '); csv += `"${p.srNo}","${p.date||''}","${p.type||''}","${p.client||''}","${p.carriedBy||''}","${p.address||''}","${p.mobile||''}","${p.purpose||''}","${p.note||''}","${(p.items||[]).length}","${det}"\n`; });
+        downloadBlob(csv, 'GatePasses_Registry.csv', 'text/csv'); showToast(`Exported ${list.length} passes as CSV`, 'success');
+    }
+    function exportAllJSON() {
+        const list = getPassList();
+        if (!list.length) { showToast('No passes to export.', 'warning'); return; }
+        downloadBlob(JSON.stringify({ exportedAt: new Date().toISOString(), totalPasses: list.length, passes: list }, null, 2), 'GatePasses_Registry.json', 'application/json');
+        showToast(`Exported ${list.length} passes as JSON`, 'success');
+    }
+    function downloadBlob(content, filename, mimeType) { const blob = new Blob([content], { type: mimeType }); const url = URL.createObjectURL(blob); const a = document.createElement('a'); a.href = url; a.download = filename; document.body.appendChild(a); a.click(); document.body.removeChild(a); URL.revokeObjectURL(url); }
+
+    // ============================
+    // Clear All Data
+    // ============================
+    function clearAllData() {
+        const list = getPassList();
+        if (!list.length) { showToast('No data to clear.', 'warning'); return; }
+        document.getElementById('confirmTitle').textContent = 'Clear All Data?';
+        document.getElementById('confirmMsg').textContent = `This will permanently delete all ${list.length} gate passes AND all uploaded files.`;
+        document.getElementById('confirmAction').onclick = async () => {
+            localStorage.setItem(STORAGE_KEY, '[]'); localStorage.setItem(COUNTER_KEY, '0');
+            await dbClear(); updateRegCount(); renderRegistry(); closeConfirm(); showToast('All data cleared.', 'success');
+        };
+        document.getElementById('confirmModal').classList.add('show');
+    }
+
+    // ============================
+    // Confirm Modal / Toast
+    // ============================
+    function closeConfirm() { document.getElementById('confirmModal').classList.remove('show'); }
+    let toastTimer = null;
+    function showToast(message, type) {
+        const toast = document.getElementById('toast'); const icon = toast.querySelector('i');
+        document.getElementById('toastMsg').textContent = message;
+        if (type === 'warning') { icon.className = 'fas fa-exclamation-triangle'; icon.style.color = '#e67e22'; toast.style.borderColor = '#e67e22'; }
+        else if (type === 'error') { icon.className = 'fas fa-times-circle'; icon.style.color = 'var(--red-accent)'; toast.style.borderColor = 'var(--red-accent)'; }
+        else if (type === 'info') { icon.className = 'fas fa-info-circle'; icon.style.color = '#3498db'; toast.style.borderColor = '#3498db'; }
+        else { icon.className = 'fas fa-check-circle'; icon.style.color = 'var(--accent)'; toast.style.borderColor = 'var(--emerald)'; }
+        toast.classList.add('show'); clearTimeout(toastTimer); toastTimer = setTimeout(() => toast.classList.remove('show'), 3500);
+    }
+
+    // ============================
+    // Keyboard & Overlay close
+    // ============================
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape') { closeModal(); closeEditModal(); closeUploadModal(); closeAttachModal(); closeConfirm(); closeImagePreview(); closeAllDropdowns(); } });
+    ['viewModal','editModal','uploadModal','confirmModal','attachModal'].forEach(id => {
+        document.getElementById(id).addEventListener('click', (e) => {
+            if (e.target === e.currentTarget) {
+                if (id === 'viewModal') closeModal();
+                else if (id === 'editModal') closeEditModal();
+                else if (id === 'uploadModal') closeUploadModal();
+                else if (id === 'confirmModal') closeConfirm();
+                else if (id === 'attachModal') closeAttachModal();
+            }
+        });
+    });
 </script>
 </body>
 </html>
